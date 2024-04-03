@@ -1274,16 +1274,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adjusting-bed-leveling-screws" class="md-nav__link">
-    Adjusting bed leveling screws
+  <a href="#nivellierschrauben-des-druckbettes-einstellen" class="md-nav__link">
+    Nivellierschrauben des Druckbettes einstellen
   </a>
   
-    <nav class="md-nav" aria-label="Adjusting bed leveling screws">
+    <nav class="md-nav" aria-label="Nivellierschrauben des Druckbettes einstellen">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fine-grained-bed-screw-adjustments" class="md-nav__link">
-    Fine grained bed screw adjustments
+  <a href="#fein-abgestufte-einstellung-der-druckbettschraube" class="md-nav__link">
+    Fein abgestufte Einstellung der Druckbettschraube
   </a>
   
 </li>
@@ -1320,7 +1320,7 @@
 <h1 id="manual-leveling">Manual leveling<a class="headerlink" href="#manual-leveling" title="Permanent link">&para;</a></h1>
 <p>Dieses Dokument beschreibt Werkzeuge zum Kalibrieren eines Z-Anschlags und zum Einstellen von Bettnivellierschrauben.</p>
 <h2 id="kalibrieren-eines-z-endstops">Kalibrieren eines Z-Endstop's<a class="headerlink" href="#kalibrieren-eines-z-endstops" title="Permanent link">&para;</a></h2>
-<p>An accurate Z endstop position is critical to obtaining high quality prints.</p>
+<p>Die genaue Position des Z-Endanschlags ist entscheidend für eine hohe Druckqualität.</p>
 <p>Note, though, the accuracy of the Z endstop switch itself can be a limiting factor. If one is using Trinamic stepper motor drivers then consider enabling <a href="Endstop_Phase.html">endstop phase</a> detection to improve the accuracy of the switch.</p>
 <p>To perform a Z endstop calibration, home the printer, command the head to move to a Z position that is at least five millimeters above the bed (if it is not already), command the head to move to an XY position near the center of the bed, then navigate to the OctoPrint terminal tab and run:</p>
 <div class="highlight"><pre><span></span><code>Z_ENDSTOP_CALIBRATE
@@ -1332,7 +1332,7 @@
 
 <p>It's preferable to use a Z endstop switch on the opposite end of the Z axis from the bed. (Homing away from the bed is more robust as then it is generally always safe to home the Z.) However, if one must home towards the bed it is recommended to adjust the endstop so that it triggers a small distance (eg, .5mm) above the bed. Almost all endstop switches can safely be depressed a small distance beyond their trigger point. When this is done, one should find that the <code>Z_ENDSTOP_CALIBRATE</code> command reports a small positive value (eg, .5mm) for the Z position_endstop. Triggering the endstop while it is still some distance from the bed reduces the risk of inadvertent bed crashes.</p>
 <p>Some printers have the ability to manually adjust the location of the physical endstop switch. However, it's recommended to perform Z endstop positioning in software with Klipper - once the physical location of the endstop is in a convenient location, one can make any further adjustments by running Z_ENDSTOP_CALIBRATE or by manually updating the Z position_endstop in the configuration file.</p>
-<h2 id="adjusting-bed-leveling-screws">Adjusting bed leveling screws<a class="headerlink" href="#adjusting-bed-leveling-screws" title="Permanent link">&para;</a></h2>
+<h2 id="nivellierschrauben-des-druckbettes-einstellen">Nivellierschrauben des Druckbettes einstellen<a class="headerlink" href="#nivellierschrauben-des-druckbettes-einstellen" title="Permanent link">&para;</a></h2>
 <p>The secret to getting good bed leveling with bed leveling screws is to utilize the printer's high precision motion system during the bed leveling process itself. This is done by commanding the nozzle to a position near each bed screw and then adjusting that screw until the bed is a set distance from the nozzle. Klipper has a tool to assist with this. In order to use the tool it is necessary to specify each screw XY location.</p>
 <p>This is done by creating a <code>[bed_screws]</code> config section. For example, it might look something similar to:</p>
 <div class="highlight"><pre><span></span><code>[bed_screws]
@@ -1349,7 +1349,7 @@ screw3: 150, 100
 <p>This tool will move the printer's nozzle to each screw XY location and then move the nozzle to a Z=0 height. At this point one can use the "paper test" to adjust the bed screw directly under the nozzle. See the information described in <a href="Bed_Level.html#the-paper-test">"the paper test"</a>, but adjust the bed screw instead of commanding the nozzle to different heights. Adjust the bed screw until there is a small amount of friction when pushing the paper back and forth.</p>
 <p>Once the screw is adjusted so that a small amount of friction is felt, run either the <code>ACCEPT</code> or <code>ADJUSTED</code> command. Use the <code>ADJUSTED</code> command if the bed screw needed an adjustment (typically anything more than about 1/8th of a turn of the screw). Use the <code>ACCEPT</code> command if no significant adjustment is necessary. Both commands will cause the tool to proceed to the next screw. (When an <code>ADJUSTED</code> command is used, the tool will schedule an additional cycle of bed screw adjustments; the tool completes successfully when all bed screws are verified to not require any significant adjustments.) One can use the <code>ABORT</code> command to exit the tool early.</p>
 <p>This system works best when the printer has a flat printing surface (such as glass) and has straight rails. Upon successful completion of the bed leveling tool the bed should be ready for printing.</p>
-<h3 id="fine-grained-bed-screw-adjustments">Fine grained bed screw adjustments<a class="headerlink" href="#fine-grained-bed-screw-adjustments" title="Permanent link">&para;</a></h3>
+<h3 id="fein-abgestufte-einstellung-der-druckbettschraube">Fein abgestufte Einstellung der Druckbettschraube<a class="headerlink" href="#fein-abgestufte-einstellung-der-druckbettschraube" title="Permanent link">&para;</a></h3>
 <p>If the printer uses three bed screws and all three screws are under the bed, then it may be possible to perform a second "high precision" bed leveling step. This is done by commanding the nozzle to locations where the bed moves a larger distance with each bed screw adjustment.</p>
 <p>For example, consider a bed with screws at locations A, B, and C:</p>
 <p><img alt="bed_screws" src="img/bed_screws.svg.png" /></p>
@@ -1394,12 +1394,12 @@ Recv: // read left screw : x=-5.0, y=190.0, z=2.47250 : adjust CW 00:02
 Recv: ok
 </code></pre></div>
 
-<p>This means that:</p>
+<p>Dies bedeutet, dass:</p>
 <ul>
-<li>front left screw is the reference point you must not change it.</li>
-<li>front right screw must be turned clockwise 1 full turn and a quarter turn</li>
-<li>rear right screw must be turned counter-clockwise 50 minutes</li>
-<li>rear left screw must be turned clockwise 2 minutes (not need it's ok)</li>
+<li>Die vordere linke Schraube ist der Bezugspunkt, der nicht verändert werden darf.</li>
+<li>die vordere rechte Schraube muss 1 volle Umdrehung und eine Vierteldrehung im Uhrzeigersinn gedreht werden</li>
+<li>die hintere rechte Schraube muss 50 Minuten gegen den Uhrzeigersinn gedreht werden</li>
+<li>die hintere linke Schraube muss 2 Minuten im Uhrzeigersinn gedreht werden</li>
 </ul>
 <p>Note that "minutes" refers to "minutes of a clock face". So, for example, 15 minutes is a quarter of a full turn.</p>
 <p>Repeat the process several times until you get a good level bed - normally when all adjustments are below 6 minutes.</p>

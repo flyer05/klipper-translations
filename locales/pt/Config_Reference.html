@@ -3652,7 +3652,7 @@ filename:
 
 <h2 id="optional-g-code-features">Optional G-Code features<a class="headerlink" href="#optional-g-code-features" title="Permanent link">&para;</a></h2>
 <h3 id="virtual_sdcard">[virtual_sdcard]<a class="headerlink" href="#virtual_sdcard" title="Permanent link">&para;</a></h3>
-<p>Um cartão SD virtual pode ser útil se a máquina hospedeira não for rápida o suficiente para rodar o OctoPrint de maneira eficiente. Ele permite que o software host do Klipper imprima diretamente arquivos gcode armazenados em um diretório no host usando comandos padrão de G-Code do cartão SD (por exemplo, M24).</p>
+<p>Um cartão SD virtual pode ser útil se a máquina hospedeira não for rápida o suficiente para executar o OctoPrint de maneira eficiente. Ele permite que o software host do Klipper imprima diretamente ficheiros gcode armazenados num diretório no host usando comandos padrão de G-Code do cartão SD (por exemplo, M24).</p>
 <div class="highlight"><pre><span></span><code>[virtual_sdcard]
 path:
 #   The path of the local directory on the host machine to look for
@@ -5829,7 +5829,7 @@ lcd_type:
 
 <h3 id="display_data">[display_data]<a class="headerlink" href="#display_data" title="Permanent link">&para;</a></h3>
 <p>Support for displaying custom data on an lcd screen. One may create any number of display groups and any number of data items under those groups. The display will show all the data items for a given group if the display_group option in the [display] section is set to the given group name.</p>
-<p>Um <a href="https://github.com/Klipper3d/klipper/blob/master/klippy/extras/display/display.cfg">default set of display groups</a> é criado automaticamente. Pode-se substituir ou estender esses itens de display_data substituindo os padrões no arquivo de configuração principal printer.cfg.</p>
+<p>Um <a href="https://github.com/Klipper3d/klipper/blob/master/klippy/extras/display/display.cfg">default set of display groups</a> é criado automaticamente. Pode-se substituir ou estender esses itens de display_data substituindo os padrões no ficheiro de configuração principal printer.cfg.</p>
 <div class="highlight"><pre><span></span><code>[display_data my_group_name my_data_name]
 position:
 #   Comma separated row and column of the display position that should
@@ -5891,7 +5891,7 @@ text:
 
 <h3 id="menu">[menu]<a class="headerlink" href="#menu" title="Permanent link">&para;</a></h3>
 <p>Customizable lcd display menus.</p>
-<p>Um <a href="https://github.com/Klipper3d/klipper/blob/master/klippy/extras/display/menu.cfg">default set of menus</a> é criado automaticamente. Você pode substituir ou estender o menu substituindo os padrões no arquivo de configuração principal printer.cfg.</p>
+<p>Um <a href="https://github.com/Klipper3d/klipper/blob/master/klippy/extras/display/menu.cfg">default set of menus</a> é criado automaticamente. Pode substituir ou estender o menu substituindo os padrões no ficheiro de configuração principal printer.cfg.</p>
 <p>See the <a href="Command_Templates.html#menu-templates">command template document</a> for information on menu attributes available during template rendering.</p>
 <div class="highlight"><pre><span></span><code># Common parameters available for all menu config sections.
 #[menu __some_list __some_name]
