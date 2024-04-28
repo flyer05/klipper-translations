@@ -13,7 +13,7 @@
     
     
       
-        <title>Commands templates - Klipper documentation</title>
+        <title>Befehlsvorlagen - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#commands-templates" class="md-skip">
+        <a href="#befehlsvorlagen" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Commands templates
+              Befehlsvorlagen
             
           </span>
         </div>
@@ -1274,22 +1274,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formatting-of-g-code-in-the-config" class="md-nav__link">
-    Formatting of G-Code in the config
+  <a href="#formatierung-von-g-code-in-der-konfigurationsdatei" class="md-nav__link">
+    Formatierung von G-Code in der Konfigurationsdatei
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-a-description-to-your-macro" class="md-nav__link">
-    Add a description to your macro
+  <a href="#fugen-sie-eine-beschreibung-zu-ihrem-makro-hinzu" class="md-nav__link">
+    Fügen Sie eine Beschreibung zu Ihrem Makro hinzu
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#saverestore-state-for-g-code-moves" class="md-nav__link">
-    Save/Restore state for G-Code moves
+  <a href="#speichernwiederherstellen-des-status-fur-g-code-bewegungen" class="md-nav__link">
+    Speichern/Wiederherstellen des Status für G-Code Bewegungen
   </a>
   
 </li>
@@ -1303,22 +1303,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#macro-parameters" class="md-nav__link">
-    Macro parameters
+  <a href="#makro-parameter" class="md-nav__link">
+    Makro Parameter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-rawparams-variable" class="md-nav__link">
-    The "rawparams" variable
+  <a href="#die-variable-rawparams" class="md-nav__link">
+    Die Variable "rawparams"
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-printer-variable" class="md-nav__link">
-    The "printer" Variable
+  <a href="#die-printer-variable" class="md-nav__link">
+    Die "printer" Variable
   </a>
   
 </li>
@@ -1329,36 +1329,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
-    Actions
+  <a href="#aktionen" class="md-nav__link">
+    Aktionen
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables" class="md-nav__link">
-    Variables
+  <a href="#variablen" class="md-nav__link">
+    Variablen
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#delayed-gcodes" class="md-nav__link">
-    Delayed Gcodes
+  <a href="#verzogerte-gcodes" class="md-nav__link">
+    Verzögerte Gcodes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#menu-templates" class="md-nav__link">
-    Menu templates
+  <a href="#menuvorlagen" class="md-nav__link">
+    Menüvorlagen
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-variables-to-disk" class="md-nav__link">
-    Save Variables to disk
+  <a href="#variablen-auf-festplatte-speichern" class="md-nav__link">
+    Variablen auf Festplatte speichern
   </a>
   
 </li>
@@ -1380,11 +1380,11 @@
 </a>
 
 
-<h1 id="commands-templates">Commands templates<a class="headerlink" href="#commands-templates" title="Permanent link">&para;</a></h1>
+<h1 id="befehlsvorlagen">Befehlsvorlagen<a class="headerlink" href="#befehlsvorlagen" title="Permanent link">&para;</a></h1>
 <p>Dieses Dokument enthält Informationen zur Implementierung von G-Code-Befehlssequenzen in gcode_macro (und ähnlichen) Konfigurationsabschnitten.</p>
 <h2 id="g-code-makro-benennung">G-Code Makro-Benennung<a class="headerlink" href="#g-code-makro-benennung" title="Permanent link">&para;</a></h2>
 <p>Case is not important for the G-Code macro name - MY_MACRO and my_macro will evaluate the same and may be called in either upper or lower case. If any numbers are used in the macro name then they must all be at the end of the name (eg, TEST_MACRO25 is valid, but MACRO25_TEST3 is not).</p>
-<h2 id="formatting-of-g-code-in-the-config">Formatting of G-Code in the config<a class="headerlink" href="#formatting-of-g-code-in-the-config" title="Permanent link">&para;</a></h2>
+<h2 id="formatierung-von-g-code-in-der-konfigurationsdatei">Formatierung von G-Code in der Konfigurationsdatei<a class="headerlink" href="#formatierung-von-g-code-in-der-konfigurationsdatei" title="Permanent link">&para;</a></h2>
 <p>Indentation is important when defining a macro in the config file. To specify a multi-line G-Code sequence it is important for each line to have proper indentation. For example:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro blink_led]
 gcode:
@@ -1394,7 +1394,7 @@ gcode:
 </code></pre></div>
 
 <p>Note how the <code>gcode:</code> config option always starts at the beginning of the line and subsequent lines in the G-Code macro never start at the beginning.</p>
-<h2 id="add-a-description-to-your-macro">Add a description to your macro<a class="headerlink" href="#add-a-description-to-your-macro" title="Permanent link">&para;</a></h2>
+<h2 id="fugen-sie-eine-beschreibung-zu-ihrem-makro-hinzu">Fügen Sie eine Beschreibung zu Ihrem Makro hinzu<a class="headerlink" href="#fugen-sie-eine-beschreibung-zu-ihrem-makro-hinzu" title="Permanent link">&para;</a></h2>
 <p>To help identify the functionality a short description can be added. Add <code>description:</code> with a short text to describe the functionality. Default is "G-Code macro" if not specified. For example:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro blink_led]
 description: Blink my_led one time
@@ -1405,7 +1405,7 @@ gcode:
 </code></pre></div>
 
 <p>The terminal will display the description when you use the <code>HELP</code> command or the autocomplete function.</p>
-<h2 id="saverestore-state-for-g-code-moves">Save/Restore state for G-Code moves<a class="headerlink" href="#saverestore-state-for-g-code-moves" title="Permanent link">&para;</a></h2>
+<h2 id="speichernwiederherstellen-des-status-fur-g-code-bewegungen">Speichern/Wiederherstellen des Status für G-Code Bewegungen<a class="headerlink" href="#speichernwiederherstellen-des-status-fur-g-code-bewegungen" title="Permanent link">&para;</a></h2>
 <p>Unfortunately, the G-Code command language can be challenging to use. The standard mechanism to move the toolhead is via the <code>G1</code> command (the <code>G0</code> command is an alias for <code>G1</code> and it can be used interchangeably with it). However, this command relies on the "G-Code parsing state" setup by <code>M82</code>, <code>M83</code>, <code>G90</code>, <code>G91</code>, <code>G92</code>, and previous <code>G1</code> commands. When creating a G-Code macro it is a good idea to always explicitly set the G-Code parsing state prior to issuing a <code>G1</code> command. (Otherwise, there is a risk the <code>G1</code> command will make an undesirable request.)</p>
 <p>A common way to accomplish that is to wrap the <code>G1</code> moves in <code>SAVE_GCODE_STATE</code>, <code>G91</code>, and <code>RESTORE_GCODE_STATE</code>. For example:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro MOVE_UP]
@@ -1419,7 +1419,7 @@ gcode:
 <p>The <code>G91</code> command places the G-Code parsing state into "relative move mode" and the <code>RESTORE_GCODE_STATE</code> command restores the state to what it was prior to entering the macro. Be sure to specify an explicit speed (via the <code>F</code> parameter) on the first <code>G1</code> command.</p>
 <h2 id="template-expansion">Template expansion<a class="headerlink" href="#template-expansion" title="Permanent link">&para;</a></h2>
 <p>The gcode_macro <code>gcode:</code> config section is evaluated using the Jinja2 template language. One can evaluate expressions at run-time by wrapping them in <code>{ }</code> characters or use conditional statements wrapped in <code>{% %}</code>. See the <a href="http://jinja.pocoo.org/docs/2.10/templates/">Jinja2 documentation</a> for further information on the syntax.</p>
-<p>An example of a complex macro:</p>
+<p>Ein Beispiel für ein komplexes Makro:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro clean_nozzle]
 gcode:
   {% set wipe_count = 8 %}
@@ -1434,7 +1434,7 @@ gcode:
   RESTORE_GCODE_STATE NAME=clean_nozzle_state
 </code></pre></div>
 
-<h3 id="macro-parameters">Macro parameters<a class="headerlink" href="#macro-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="makro-parameter">Makro Parameter<a class="headerlink" href="#makro-parameter" title="Permanent link">&para;</a></h3>
 <p>It is often useful to inspect parameters passed to the macro when it is called. These parameters are available via the <code>params</code> pseudo-variable. For example, if the macro:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro SET_PERCENT]
 gcode:
@@ -1449,11 +1449,11 @@ gcode:
   M140 S{bed_temp}
 </code></pre></div>
 
-<h3 id="the-rawparams-variable">The "rawparams" variable<a class="headerlink" href="#the-rawparams-variable" title="Permanent link">&para;</a></h3>
+<h3 id="die-variable-rawparams">Die Variable "rawparams"<a class="headerlink" href="#die-variable-rawparams" title="Permanent link">&para;</a></h3>
 <p>The full unparsed parameters for the running macro can be access via the <code>rawparams</code> pseudo-variable.</p>
 <p>Note that this will include any comments that were part of the original command.</p>
 <p>See the <a href="https://github.com/Klipper3d/klipper/blob/master/config/sample-macros.cfg">sample-macros.cfg</a> file for an example showing how to override the <code>M117</code> command using <code>rawparams</code>.</p>
-<h3 id="the-printer-variable">The "printer" Variable<a class="headerlink" href="#the-printer-variable" title="Permanent link">&para;</a></h3>
+<h3 id="die-printer-variable">Die "printer" Variable<a class="headerlink" href="#die-printer-variable" title="Permanent link">&para;</a></h3>
 <p>It is possible to inspect (and alter) the current state of the printer via the <code>printer</code> pseudo-variable. For example:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro slow_fan]
 gcode:
@@ -1470,16 +1470,16 @@ gcode:
     M117 Temp:{sensor.temperature} Humidity:{sensor.humidity}
 </code></pre></div>
 
-<h2 id="actions">Actions<a class="headerlink" href="#actions" title="Permanent link">&para;</a></h2>
+<h2 id="aktionen">Aktionen<a class="headerlink" href="#aktionen" title="Permanent link">&para;</a></h2>
 <p>There are some commands available that can alter the state of the printer. For example, <code>{ action_emergency_stop() }</code> would cause the printer to go into a shutdown state. Note that these actions are taken at the time that the macro is evaluated, which may be a significant amount of time before the generated g-code commands are executed.</p>
-<p>Available "action" commands:</p>
+<p>Verfügbare "action" Befehle:</p>
 <ul>
 <li><code>action_respond_info(msg)</code>: Write the given <code>msg</code> to the /tmp/printer pseudo-terminal. Each line of <code>msg</code> will be sent with a "// " prefix.</li>
 <li><code>action_raise_error(msg)</code>: Abort the current macro (and any calling macros) and write the given <code>msg</code> to the /tmp/printer pseudo-terminal. The first line of <code>msg</code> will be sent with a "!! " prefix and subsequent lines will have a "// " prefix.</li>
 <li><code>action_emergency_stop(msg)</code>: Transition the printer to a shutdown state. The <code>msg</code> parameter is optional, it may be useful to describe the reason for the shutdown.</li>
 <li><code>action_call_remote_method(method_name)</code>: Calls a method registered by a remote client. If the method takes parameters they should be provided via keyword arguments, ie: <code>action_call_remote_method("print_stuff", my_arg="hello_world")</code></li>
 </ul>
-<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<h2 id="variablen">Variablen<a class="headerlink" href="#variablen" title="Permanent link">&para;</a></h2>
 <p>The SET_GCODE_VARIABLE command may be useful for saving state between macro calls. Variable names may not contain any upper case characters. For example:</p>
 <div class="highlight"><pre><span></span><code>[gcode_macro start_probe]
 variable_bed_temp: 0
@@ -1500,7 +1500,7 @@ gcode:
 </code></pre></div>
 
 <p>Be sure to take the timing of macro evaluation and command execution into account when using SET_GCODE_VARIABLE.</p>
-<h2 id="delayed-gcodes">Delayed Gcodes<a class="headerlink" href="#delayed-gcodes" title="Permanent link">&para;</a></h2>
+<h2 id="verzogerte-gcodes">Verzögerte Gcodes<a class="headerlink" href="#verzogerte-gcodes" title="Permanent link">&para;</a></h2>
 <p>The [delayed_gcode] configuration option can be used to execute a delayed gcode sequence:</p>
 <div class="highlight"><pre><span></span><code>[delayed_gcode clear_display]
 gcode:
@@ -1536,7 +1536,7 @@ gcode:
 <div class="highlight"><pre><span></span><code>UPDATE_DELAYED_GCODE ID=report_temp DURATION=0
 </code></pre></div>
 
-<h2 id="menu-templates">Menu templates<a class="headerlink" href="#menu-templates" title="Permanent link">&para;</a></h2>
+<h2 id="menuvorlagen">Menüvorlagen<a class="headerlink" href="#menuvorlagen" title="Permanent link">&para;</a></h2>
 <p>If a <a href="Config_Reference.html#display">display config section</a> is enabled, then it is possible to customize the menu with <a href="Config_Reference.html#menu">menu</a> config sections.</p>
 <p>The following read-only attributes are available in menu templates:</p>
 <ul>
@@ -1557,7 +1557,7 @@ gcode:
 </ul>
 </li>
 </ul>
-<h2 id="save-variables-to-disk">Save Variables to disk<a class="headerlink" href="#save-variables-to-disk" title="Permanent link">&para;</a></h2>
+<h2 id="variablen-auf-festplatte-speichern">Variablen auf Festplatte speichern<a class="headerlink" href="#variablen-auf-festplatte-speichern" title="Permanent link">&para;</a></h2>
 <p>If a <a href="Config_Reference.html#save_variables">save_variables config section</a> has been enabled, <code>SAVE_VARIABLE VARIABLE=&lt;name&gt; VALUE=&lt;value&gt;</code> can be used to save the variable to disk so that it can be used across restarts. All stored variables are loaded into the <code>printer.save_variables.variables</code> dict at startup and can be used in gcode macros. to avoid overly long lines you can add the following at the top of the macro:</p>
 <div class="highlight"><pre><span></span><code>{% set svv = printer.save_variables.variables %}
 </code></pre></div>

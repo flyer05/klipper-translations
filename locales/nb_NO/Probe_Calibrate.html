@@ -1342,7 +1342,7 @@
 <p>Å angi nøyaktig z_offset for proben er kritisk for nøyaktige utskrifter. z_offset er avstanden mellom tuten og bunnplaten når proben utløser. Klipper sitt <code>PROBE_CALIBRATE</code>-verktøy kan brukes til å hente denne verdien. Den vil kjøre en automatisk probe for å måle probens Z-utløserposisjon og så starte en manuell probe for å hente Z-høyde for tuten. Probens z_offset vil så bli regnet ut basert på disse målingene.</p>
 <p>Start ved å nullstile skriveren og så flytte hodet til en posisjon nær midten av bunnplaten. Gå til «Terminal»-fanen i OctoPrint og kjør <code>PROBE_CALIBTRATE</code>-kommandoen for å starte verktøyet.</p>
 <p>Verktøyet vil utføre en automatisk probe, løfte hodet, flytte tuten over stedet for probingspunkt, og starte det manuelle probeverktøyet. Hvis tuten ikke flytter til en posisjon over det automatiske probepunktet, vil <code>ABORT</code> avslutte det manuelle probeverktøyet og utføre kalibrering av XY-probeforskyvning beskrevet ovenfor.</p>
-<p>Når det manuelle probeverktøyet starter, følger du stegene beskrevet i <a href="Bed_Level.html#the-paper-test">«papirtesten»</a> for å bestemme faktisk avstand mellom tut og bunnplate på gitt posisjon. Når disse stegene er fullført, kan man utføre <code>ACCEPT</code> for posisjonen, og lagre resultatet i en oppsettsfil med:</p>
+<p>Once the manual probe tool starts, follow the steps described at <a href="Bed_Level.html#the-paper-test">"the paper test"</a> to determine the actual distance between the nozzle and bed at the given location. Once those steps are complete one can <code>ACCEPT</code> the position and save the results to the config file with:</p>
 <div class="highlight"><pre><span></span><code>SAVE_CONFIG
 </code></pre></div>
 

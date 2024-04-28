@@ -1288,8 +1288,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bl-touch-clones" class="md-nav__link">
-    BL-Touch "clones"
+  <a href="#bl-touch-nachbauten" class="md-nav__link">
+    BL-Touch "Nachbauten"
   </a>
   
 </li>
@@ -1309,15 +1309,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calibrating-the-bl-touch-offsets" class="md-nav__link">
-    Calibrating the BL-Touch offsets
+  <a href="#kalibrierung-des-bl-touch-offsets" class="md-nav__link">
+    Kalibrierung des BL-Touch Offsets
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bl-touch-output-mode" class="md-nav__link">
-    BL-Touch output mode
+  <a href="#bl-touch-ausgabemodus" class="md-nav__link">
+    BL-Touch Ausgabemodus
   </a>
   
 </li>
@@ -1369,7 +1369,7 @@ z_hop_speed: 5
 <p>BLTOUCH_DEBUG COMMAND=reset</p>
 <p>This may happen if its calibration is interrupted by the probe being blocked from being extracted.</p>
 <p>However, the BL-Touch may also not be able to calibrate itself anymore. This happens if the screw on its top is in the wrong position or the magnetic core inside the probe pin has moved. If it has moved up so that it sticks to the screw, it may not be able to lower its pin anymore. With this behavior you need to open the screw and use a ball-point pen to push it gently back into place. Re-Insert the pin into the BL-Touch so that it falls into the extracted position. Carefully readjust the headless screw into place. You need to find the right position so it is able to lower and raise the pin and the red light turns on and of. Use the <code>reset</code>, <code>pin_up</code> and <code>pin_down</code> commands to achieve this.</p>
-<h2 id="bl-touch-clones">BL-Touch "clones"<a class="headerlink" href="#bl-touch-clones" title="Permanent link">&para;</a></h2>
+<h2 id="bl-touch-nachbauten">BL-Touch "Nachbauten"<a class="headerlink" href="#bl-touch-nachbauten" title="Permanent link">&para;</a></h2>
 <p>Many BL-Touch "clone" devices work correctly with Klipper using the default configuration. However, some "clone" devices may not support the <code>QUERY_PROBE</code> command and some "clone" devices may require configuration of <code>pin_up_reports_not_triggered</code> or <code>pin_up_touch_mode_reports_triggered</code>.</p>
 <p>Important! Do not configure <code>pin_up_reports_not_triggered</code> or <code>pin_up_touch_mode_reports_triggered</code> to False without first following these directions. Do not configure either of these to False on a genuine BL-Touch. Incorrectly setting these to False can increase probing time and can increase the risk of damaging the printer.</p>
 <p>Some "clone" devices do not support <code>touch_mode</code> and as a result the <code>QUERY_PROBE</code> command does not work. Despite this, it may still be possible to perform probing and homing with these devices. On these devices the <code>QUERY_PROBE</code> command during the <a href="#initial-tests">initial tests</a> will not succeed, however the subsequent <code>G28</code> (or <code>PROBE</code>) test does succeed. It may be possible to use these "clone" devices with Klipper if one does not utilize the <code>QUERY_PROBE</code> command and one does not enable the <code>probe_with_touch_mode</code> feature.</p>
@@ -1385,10 +1385,10 @@ z_hop_speed: 5
 <p>Important! Setting <code>stow_on_each_sample</code> to False can lead to Klipper making horizontal toolhead movements while the probe is deployed. Be sure to verify all probing operations have sufficient Z clearance prior to setting this value to False. If there is insufficient clearance then a horizontal move may cause the pin to catch on an obstruction and result in damage to the printer.</p>
 <p>Important! It is recommended to use <code>probe_with_touch_mode</code> configured to True when using <code>stow_on_each_sample</code> configured to False. Some "clone" devices may not detect a subsequent bed contact if <code>probe_with_touch_mode</code> is not set. On all devices, using the combination of these two settings simplifies the device signaling, which can improve overall stability.</p>
 <p>Note, however, that some "clone" devices and the BL-Touch v2.0 (and earlier) may have reduced accuracy when <code>probe_with_touch_mode</code> is set to True. On these devices it is a good idea to test the probe accuracy before and after setting <code>probe_with_touch_mode</code> (use the <code>PROBE_ACCURACY</code> command to test).</p>
-<h2 id="calibrating-the-bl-touch-offsets">Calibrating the BL-Touch offsets<a class="headerlink" href="#calibrating-the-bl-touch-offsets" title="Permanent link">&para;</a></h2>
+<h2 id="kalibrierung-des-bl-touch-offsets">Kalibrierung des BL-Touch Offsets<a class="headerlink" href="#kalibrierung-des-bl-touch-offsets" title="Permanent link">&para;</a></h2>
 <p>Follow the directions in the <a href="Probe_Calibrate.html">Probe Calibrate</a> guide to set the x_offset, y_offset, and z_offset config parameters.</p>
 <p>It's a good idea to verify that the Z offset is close to 1mm. If not, then you probably want to move the probe up or down to fix this. You want it to trigger well before the nozzle hits the bed, so that possible stuck filament or a warped bed doesn't affect any probing action. But at the same time, you want the retracted position to be as far above the nozzle as possible to avoid it touching printed parts. If an adjustment is made to the probe position, then rerun the probe calibration steps.</p>
-<h2 id="bl-touch-output-mode">BL-Touch output mode<a class="headerlink" href="#bl-touch-output-mode" title="Permanent link">&para;</a></h2>
+<h2 id="bl-touch-ausgabemodus">BL-Touch Ausgabemodus<a class="headerlink" href="#bl-touch-ausgabemodus" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>A BL-Touch V3.0 supports setting a 5V or OPEN-DRAIN output mode, a BL-Touch V3.1 supports this too, but can also store this in its internal EEPROM. If your controller board needs the fixed 5V high logic level of the 5V mode you may set the 'set_output_mode' parameter in the [bltouch] section of the printer config file to "5V".<strong><em> Only use the 5V mode if your controller boards input line is 5V tolerant. This is why the default configuration of these BL-Touch versions is OPEN-DRAIN mode. You could potentially damage your controller boards CPU </em></strong></p>

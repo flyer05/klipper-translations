@@ -1463,6 +1463,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pwm_cycle_time" class="md-nav__link">
+    pwm_cycle_time
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quad_gantry_level" class="md-nav__link">
     quad_gantry_level
   </a>
@@ -1593,7 +1600,7 @@
 
 <h1 id="status-reference">Status reference<a class="headerlink" href="#status-reference" title="Permanent link">&para;</a></h1>
 <p>Bu belge, Klipper <a href="Command_Templates.html">makrolar</a>, <a href="Config_Reference.html#display">görüntü alanları</a> ve <a href="API_Server.html">API Sunucusu</a> aracılığıyla kullanılabilen yazıcı durumu bilgilerinin bir referansıdır.</p>
-<p>The fields in this document are subject to change - if using an attribute be sure to review the <a href="Config_Changes.html">Config Changes document</a> when upgrading the Klipper software.</p>
+<p>Bu belgedeki alanlar değişebilir; bir öznitelik kullanıyorsanız Klipper yazılımını yükseltirken <a href="Config_Changes.html">Config Changes document</a> gözden geçirdiğinizden emin olun.</p>
 <h2 id="angle">angle<a class="headerlink" href="#angle" title="Permanent link">&para;</a></h2>
 <p>The following information is available in <a href="Config_Reference.html#angle">angle some_name</a> objects:</p>
 <ul>
@@ -1807,6 +1814,11 @@
 <li><code>last_query</code>: Returns True if the probe was reported as "triggered" during the last QUERY_PROBE command. Note, if this is used in a macro, due to the order of template expansion, the QUERY_PROBE command must be run prior to the macro containing this reference.</li>
 <li><code>last_z_result</code>: Returns the Z result value of the last PROBE command. Note, if this is used in a macro, due to the order of template expansion, the PROBE (or similar) command must be run prior to the macro containing this reference.</li>
 </ul>
+<h2 id="pwm_cycle_time">pwm_cycle_time<a class="headerlink" href="#pwm_cycle_time" title="Permanent link">&para;</a></h2>
+<p>The following information is available in <a href="Config_Reference.html#pwm_cycle_time">pwm_cycle_time some_name</a> objects:</p>
+<ul>
+<li><code>value</code>: The "value" of the pin, as set by a <code>SET_PIN</code> command.</li>
+</ul>
 <h2 id="quad_gantry_level">quad_gantry_level<a class="headerlink" href="#quad_gantry_level" title="Permanent link">&para;</a></h2>
 <p>The following information is available in the <code>quad_gantry_level</code> object (this object is available if quad_gantry_level is defined):</p>
 <ul>
@@ -1882,7 +1894,7 @@
 <li><code>homed_axes</code>: The current cartesian axes considered to be in a "homed" state. This is a string containing one or more of "x", "y", "z".</li>
 <li><code>axis_minimum</code>, <code>axis_maximum</code>: The axis travel limits (mm) after homing. It is possible to access the x, y, z components of this limit value (eg, <code>axis_minimum.x</code>, <code>axis_maximum.z</code>).</li>
 <li>For Delta printers the <code>cone_start_z</code> is the max z height at maximum radius (<code>printer.toolhead.cone_start_z</code>).</li>
-<li><code>max_velocity</code>, <code>max_accel</code>, <code>max_accel_to_decel</code>, <code>square_corner_velocity</code>: The current printing limits that are in effect. This may differ from the config file settings if a <code>SET_VELOCITY_LIMIT</code> (or <code>M204</code>) command alters them at run-time.</li>
+<li><code>max_velocity</code>, <code>max_accel</code>, <code>minimum_cruise_ratio</code>, <code>square_corner_velocity</code>: The current printing limits that are in effect. This may differ from the config file settings if a <code>SET_VELOCITY_LIMIT</code> (or <code>M204</code>) command alters them at run-time.</li>
 <li><code>stalls</code>: The total number of times (since the last restart) that the printer had to be paused because the toolhead moved faster than moves could be read from the G-Code input.</li>
 </ul>
 <h2 id="dual_carriage">dual_carriage<a class="headerlink" href="#dual_carriage" title="Permanent link">&para;</a></h2>

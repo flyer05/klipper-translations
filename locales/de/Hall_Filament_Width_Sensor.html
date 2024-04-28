@@ -1281,22 +1281,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#calibration-procedure" class="md-nav__link">
-    Calibration procedure
+  <a href="#kalibrierungs-prozedur" class="md-nav__link">
+    Kalibrierungs Prozedur
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-enable-sensor" class="md-nav__link">
-    How to enable sensor
+  <a href="#so-aktivieren-sie-den-sensor" class="md-nav__link">
+    So aktivieren Sie den Sensor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
+  <a href="#protokollierung" class="md-nav__link">
+    Protokollierung
   </a>
   
 </li>
@@ -1338,18 +1338,18 @@ name: Raw: {&#39;%4.0F&#39; % printer.hall_filament_width_sensor.Raw}
 index: 1
 </code></pre></div>
 
-<h2 id="calibration-procedure">Calibration procedure<a class="headerlink" href="#calibration-procedure" title="Permanent link">&para;</a></h2>
+<h2 id="kalibrierungs-prozedur">Kalibrierungs Prozedur<a class="headerlink" href="#kalibrierungs-prozedur" title="Permanent link">&para;</a></h2>
 <p>To get raw sensor value you can use menu item or <strong>QUERY_RAW_FILAMENT_WIDTH</strong> command in terminal.</p>
 <ol>
 <li>Insert first calibration rod (1.5 mm size) get first raw sensor value</li>
 <li>Insert second calibration rod (2.0 mm size) get second raw sensor value</li>
 <li>Save raw sensor values in config parameter <code>Raw_dia1</code> and <code>Raw_dia2</code></li>
 </ol>
-<h2 id="how-to-enable-sensor">How to enable sensor<a class="headerlink" href="#how-to-enable-sensor" title="Permanent link">&para;</a></h2>
-<p>By default, the sensor is disabled at power-on.</p>
+<h2 id="so-aktivieren-sie-den-sensor">So aktivieren Sie den Sensor<a class="headerlink" href="#so-aktivieren-sie-den-sensor" title="Permanent link">&para;</a></h2>
+<p>Standardmäßig ist der Sensor beim Einschalten deaktiviert.</p>
 <p>To enable the sensor, issue <strong>ENABLE_FILAMENT_WIDTH_SENSOR</strong> command or set the <code>enable</code> parameter to <code>true</code>.</p>
-<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
-<p>By default, diameter logging is disabled at power-on.</p>
+<h2 id="protokollierung">Protokollierung<a class="headerlink" href="#protokollierung" title="Permanent link">&para;</a></h2>
+<p>Standardmäßig ist die Durchmesseraufzeichnung beim Einschalten deaktiviert.</p>
 <p>Issue <strong>ENABLE_FILAMENT_WIDTH_LOG</strong> command to start logging and issue <strong>DISABLE_FILAMENT_WIDTH_LOG</strong> command to stop logging. To enable logging at power-on, set the <code>logging</code> parameter to <code>true</code>.</p>
 <p>Filament diameter is logged on every measurement interval (10 mm by default).</p>
 

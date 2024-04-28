@@ -13,7 +13,7 @@
     
     
       
-        <title>Bed leveling - Klipper documentation</title>
+        <title>Bett Nivellierung - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bed-leveling" class="md-skip">
+        <a href="#bett-nivellierung" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bed leveling
+              Bett Nivellierung
             
           </span>
         </div>
@@ -1281,8 +1281,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#determining-thermal-expansion" class="md-nav__link">
-    Determining Thermal Expansion
+  <a href="#ermittlung-der-thermischen-ausdehnung" class="md-nav__link">
+    Ermittlung der thermischen Ausdehnung
   </a>
   
 </li>
@@ -1304,7 +1304,7 @@
 </a>
 
 
-<h1 id="bed-leveling">Bed leveling<a class="headerlink" href="#bed-leveling" title="Permanent link">&para;</a></h1>
+<h1 id="bett-nivellierung">Bett Nivellierung<a class="headerlink" href="#bett-nivellierung" title="Permanent link">&para;</a></h1>
 <p>Die Bettnivellierung (auch als "Bettbewegung" bezeichnet) ist entscheidend, um qualitativ hochwertige Drucke zu erhalten. Wenn ein Bett nicht richtig "nivelliert" ist, kann dies zu schlechter Betthaftung, "Verziehen" und subtilen Problemen während des gesamten Drucks führen. Dieses Dokument dient als Leitfaden für die Durchführung der Bettnivellierung in Klipper.</p>
 <p>Es ist wichtig, das Ziel der Bettnivellierung zu verstehen. Wenn der Drucker während eines Druckvorgangs in eine Position <code>X0 Y0 Z10</code> befohlen wird, dann ist es das Ziel, dass die Düse des Druckers genau 10 mm vom Druckerbett entfernt ist. Sollte der Drucker dann auf eine Position von <code>X50 Z10</code> angewiesen werden, besteht das Ziel darin, dass die Düse während der gesamten horizontalen Bewegung einen genauen Abstand von 10 mm vom Bett einhält.</p>
 <p>Um qualitativ hochwertige Drucke zu erhalten, sollte der Drucker so kalibriert werden, dass die Z-Abstände auf etwa 25 Mikrometer (0,025 mm) genau sind. Dies ist ein kleiner Abstand - deutlich kleiner als die Breite eines typischen menschlichen Haares. Diese Größenordnung kann nicht "mit dem Auge" gemessen werden. Feine Effekte (wie Wärmeausdehnung) wirken sich auf Messungen dieser Größenordnung aus. Das Geheimnis einer hohen Genauigkeit besteht darin, einen wiederholbaren Prozess zu verwenden und eine Nivellierungsmethode zu verwenden, welche die hohe Genauigkeit des eigenen Bewegungssystems des Druckers nutzt.</p>
@@ -1352,7 +1352,7 @@ Recv: // Z position: ?????? --&gt; 5.000 &lt;-- ??????
 <p>This will accept the given Z height and proceed with the given calibration tool.</p>
 <p>The exact amount of friction felt isn't crucial, just as the amount of thermal expansion and exact width of the paper isn't crucial. Just try to obtain the same amount of friction each time one runs the test.</p>
 <p>If something goes wrong during the test, one can use the <code>ABORT</code> command to exit the calibration tool.</p>
-<h2 id="determining-thermal-expansion">Determining Thermal Expansion<a class="headerlink" href="#determining-thermal-expansion" title="Permanent link">&para;</a></h2>
+<h2 id="ermittlung-der-thermischen-ausdehnung">Ermittlung der thermischen Ausdehnung<a class="headerlink" href="#ermittlung-der-thermischen-ausdehnung" title="Permanent link">&para;</a></h2>
 <p>After successfully performing bed leveling, one may go on to calculate a more precise value for the combined impact of "thermal expansion", "thickness of the paper", and "amount of friction felt during the paper test".</p>
 <p>This type of calculation is generally not needed as most users find the simple "paper test" provides good results.</p>
 <p>The easiest way to make this calculation is to print a test object that has straight walls on all sides. The large hollow square found in <a href="prints/square.stl">docs/prints/square.stl</a> can be used for this. When slicing the object, make sure the slicer uses the same layer height and extrusion widths for the first level that it does for all subsequent layers. Use a coarse layer height (the layer height should be around 75% of the nozzle diameter) and do not use a brim or raft.</p>

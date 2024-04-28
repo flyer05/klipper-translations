@@ -1442,8 +1442,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tmc-reports-error-shorttognd-or-shorttosupply" class="md-nav__link">
-    TMC reports error: ... ShortToGND OR ShortToSupply
+  <a href="#tmc-meldet-fehler-shorttognd-oder-shorttosupply" class="md-nav__link">
+    TMC meldet Fehler: ... ShortToGND ODER ShortToSupply
   </a>
   
 </li>
@@ -1499,7 +1499,7 @@
 <h1 id="tmc-treiber">TMC Treiber<a class="headerlink" href="#tmc-treiber" title="Permanent link">&para;</a></h1>
 <p>Dieses Dokument enthält Informationen zur Verwendung von Trinamic-Schrittmotortreibern im SPI/UART-Modus auf Klipper.</p>
 <p>Klipper kann die Trinamic-Treiber auch in ihrem "Standalone-Modus" verwenden. Wenn sich die Treiber jedoch in diesem Modus befinden, ist keine spezielle Klipper-Konfiguration erforderlich und die in diesem Dokument besprochenen erweiterten Klipper-Funktionen sind nicht verfügbar.</p>
-<p>Neben diesem Dokument sollten Sie sich die <a href="Config_Reference.html#tmc-stepper-driver-configuration">TMC-Treiberkonfigurationsreferenz</a> ansehen.</p>
+<p>Zusätzlich zu diesem Dokument sollten Sie auch die <a href="Config_Reference.html#tmc-stepper-driver-configuration">TMC driver config reference</a> lesen.</p>
 <h2 id="motorstrom-abstimmen-tunen">Motorstrom abstimmen (Tunen)<a class="headerlink" href="#motorstrom-abstimmen-tunen" title="Permanent link">&para;</a></h2>
 <p>Ein höherer Treiberstrom erhöht die Positioniergenauigkeit und das Drehmoment. Ein höherer Strom erhöht jedoch auch die vom Schrittmotor und dem Schrittmotortreiber erzeugte Wärme. Wenn der Schrittmotortreiber zu heiß wird, schaltet er sich ab und Klipper meldet einen Fehler. Wenn der Schrittmotor zu heiß wird, verliert er an Drehmoment und Positioniergenauigkeit. (Wenn er sehr heiß wird, kann er auch Kunststoffteile schmelzen, die an ihm oder in seiner Nähe angebracht sind.)</p>
 <p>Als allgemeiner Tuning-Tipp sollten Sie höhere Stromwerte bevorzugen, solange der Schrittmotor nicht zu heiß wird und der Schrittmotortreiber keine Warnungen oder Fehler meldet. Im Allgemeinen ist es in Ordnung, wenn sich der Schrittmotor warm anfühlt, aber er sollte nicht so heiß werden, dass es schmerzhaft ist, ihn zu berühren.</p>
@@ -1690,7 +1690,7 @@ gcode:
 <p>Einige häufige Fehler und Tipps zu deren Diagnose:</p>
 <h4 id="tmc-meldet-fehler-ot1overtemperror">TMC meldet Fehler: <code>... ot=1(OvertempError!)</code><a class="headerlink" href="#tmc-meldet-fehler-ot1overtemperror" title="Permanent link">&para;</a></h4>
 <p>Dies bedeutet, dass sich der Motortreiber selbst deaktiviert hat, weil er zu heiß geworden ist. Typische Lösungen sind die Verringerung des Schrittmotorstroms, die Erhöhung der Kühlung des Schrittmotortreibers und/oder die Erhöhung der Kühlung des Schrittmotors.</p>
-<h4 id="tmc-reports-error-shorttognd-or-shorttosupply">TMC reports error: <code>... ShortToGND</code> OR <code>ShortToSupply</code><a class="headerlink" href="#tmc-reports-error-shorttognd-or-shorttosupply" title="Permanent link">&para;</a></h4>
+<h4 id="tmc-meldet-fehler-shorttognd-oder-shorttosupply">TMC meldet Fehler: <code>... ShortToGND</code> ODER <code>ShortToSupply</code><a class="headerlink" href="#tmc-meldet-fehler-shorttognd-oder-shorttosupply" title="Permanent link">&para;</a></h4>
 <p>Dies bedeutet, dass der Treiber sich selbst deaktiviert hat, weil er einen sehr hohen Stromfluss durch den Treiber festgestellt hat. Dies kann auf ein loses oder kurzgeschlossenes Kabel zum Schrittmotor oder im Schrittmotor selbst hinweisen.</p>
 <p>Dieser Fehler kann auch auftreten, wenn Sie den StealthChop-Modus verwenden und der TMC-Treiber die mechanische Belastung des Motors nicht genau vorhersagen kann. (Wenn der Treiber eine schlechte Vorhersage macht, kann er zu viel Strom durch den Motor schicken und seine eigene Überstromerkennung auslösen.) Um dies zu testen, deaktivieren Sie den StealthChop-Modus und prüfen Sie, ob die Fehler weiterhin auftreten.</p>
 <h4 id="tmc-meldet-fehler-reset1reset-oder-cs_actual0reset-oder-se0reset">TMC meldet Fehler: <code>... reset=1(Reset)</code> ODER <code>CS_ACTUAL=0(Reset?)</code> ODER <code>SE=0(Reset?)</code><a class="headerlink" href="#tmc-meldet-fehler-reset1reset-oder-cs_actual0reset-oder-se0reset" title="Permanent link">&para;</a></h4>

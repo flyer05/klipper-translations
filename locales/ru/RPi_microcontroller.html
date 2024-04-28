@@ -1469,19 +1469,19 @@ gpiochip1 - 8 строк:
 dtoverlay=pwm,вывод=12,функция=4
 </code></pre></div>
 
-<p>This example enables only PWM0 and routes it to gpio12. If both PWM channels need to be enabled you can use <code>pwm-2chan</code>:</p>
-<div class="highlight"><pre><span></span><code># Enable pwmchip sysfs interface
+<p>В этом примере включается только PWM0 и перенаправляется на gpio12. Если необходимо включить оба канала PWM, вы можете использовать "pwm-2chan`:</p>
+<div class="highlight"><pre><span></span><code># Включение системного интерфейса pwmchip
 dtoverlay=pwm-2chan,pin=12,func=4,pin2=13,func2=4
 </code></pre></div>
 
-<p>This example additionally enables PWM1 and routes it to gpio13.</p>
-<p>The overlay does not expose the pwm line on sysfs on boot and needs to be exported by echo'ing the number of the pwm channel to <code>/sys/class/pwm/pwmchip0/export</code>. This will create device <code>/sys/class/pwm/pwmchip0/pwm0</code> in the filesystem. The easiest way to do this is by adding this to <code>/etc/rc.local</code> before the <code>exit 0</code> line:</p>
-<div class="highlight"><pre><span></span><code># Enable pwmchip sysfs interface
+<p>В этом примере дополнительно включается PWM1 и перенаправляется в gpio13.</p>
+<p>Наложение не отображает строку pwm в sysfs при загрузке и должно быть экспортировано путем преобразования номера канала pwm в "/sys/class/pwm/pwmchip0/export`. В результате в файловой системе будет создано устройство "/sys/class/pwm/pwmchip0/pwm0". Самый простой способ сделать это - добавить это в "/etc/rc.local" перед строкой "exit 0".:</p>
+<div class="highlight"><pre><span></span><code># Активация системного интерфейса pwmchip 
 echo 0 &gt; /sys/class/pwm/pwmchip0/export
 </code></pre></div>
 
-<p>When using both PWM channels, the number of the second channel needs to be echo'd as well:</p>
-<div class="highlight"><pre><span></span><code># Enable pwmchip sysfs interface
+<p>При использовании обоих ШИМ-каналов также необходимо отразить номер второго канала:</p>
+<div class="highlight"><pre><span></span><code># Активация системного интерфейса pwmchip
 echo 0 &gt; /sys/class/pwm/pwmchip0/export
 echo 1 &gt; /sys/class/pwm/pwmchip0/export
 </code></pre></div>
@@ -1502,12 +1502,12 @@ shutdown_value: 0
 cycle_time: 0.0005
 </code></pre></div>
 
-<p>This will add hardware pwm control to gpio12 and gpio13 on the Pi (because the overlay was configured to route pwm0 to pin=12 and pwm1 to pin=13).</p>
+<p>Это добавит аппаратное управление шим к gpio12 и gpio13 на Pi (поскольку наложение было настроено на маршрутизацию pwm0 на вывод=12, а pwm1 на вывод=13).</p>
 <p>PWM0 может быть направлен в gpio12 и gpio18, PWM1 может быть направлен в gpio13 и gpio19:</p>
 <table>
 <thead>
 <tr>
-<th>PWM</th>
+<th>ШИМ</th>
 <th>вывод gpio</th>
 <th>Функция</th>
 </tr>

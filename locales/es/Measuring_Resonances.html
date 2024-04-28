@@ -1828,7 +1828,7 @@ GND+SCL
 <h3 id="software-installation">Software installation<a class="headerlink" href="#software-installation" title="Permanent link">&para;</a></h3>
 <p>Note that resonance measurements and shaper auto-calibration require additional software dependencies not installed by default. First, run on your Raspberry Pi the following commands:</p>
 <div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
+sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
 </code></pre></div>
 
 <p>Next, in order to install NumPy in the Klipper environment, run the command:</p>
@@ -2113,6 +2113,11 @@ max_smoothing: 0.25  # an example
 <p>Since the input shaper can create some smoothing in parts, especially at high accelerations, you will still need to choose the <code>max_accel</code> value that does not create too much smoothing in the printed parts. A calibration script provides an estimate for <code>max_accel</code> parameter that should not create too much smoothing. Note that the <code>max_accel</code> as displayed by the calibration script is only a theoretical maximum at which the respective shaper is still able to work without producing too much smoothing. It is by no means a recommendation to set this acceleration for printing. The maximum acceleration your printer is able to sustain depends on its mechanical properties and the maximum torque of the used stepper motors. Therefore, it is suggested to set <code>max_accel</code> in <code>[printer]</code> section that does not exceed the estimated values for X and Y axes, likely with some conservative safety margin.</p>
 <p>Alternatively, follow <a href="Resonance_Compensation.html#selecting-max_accel">this</a> part of the input shaper tuning guide and print the test model to choose <code>max_accel</code> parameter experimentally.</p>
 <p>The same notice applies to the input shaper <a href="#input-shaper-auto-calibration">auto-calibration</a> with <code>SHAPER_CALIBRATE</code> command: it is still necessary to choose the right <code>max_accel</code> value after the auto-calibration, and the suggested acceleration limits will not be applied automatically.</p>
+<p>Keep in mind that the maximum acceleration without too much smoothing depends on the <code>square_corner_velocity</code>. The general recommendation is not to change it from its default value 5.0, and this is the value used by default by the <code>calibrate_shaper.py</code> script. If you did change it though, you should inform the script about it by passing <code>--square_corner_velocity=...</code> parameter, e.g.</p>
+<div class="highlight"><pre><span></span><code>~/klipper/scripts/calibrate_shaper.py /tmp/resonances_x_*.csv -o /tmp/shaper_calibrate_x.png --square_corner_velocity=10.0
+</code></pre></div>
+
+<p>so that it can calculate the maximum acceleration recommendations correctly. Note that the <code>SHAPER_CALIBRATE</code> command already takes the configured <code>square_corner_velocity</code> parameter into account, and there is no need to specify it explicitly.</p>
 <p>If you are doing a shaper re-calibration and the reported smoothing for the suggested shaper configuration is almost the same as what you got during the previous calibration, this step can be skipped.</p>
 <h3 id="testing-custom-axes">Testing custom axes<a class="headerlink" href="#testing-custom-axes" title="Permanent link">&para;</a></h3>
 <p><code>TEST_RESONANCES</code> command supports custom axes. While this is not really useful for input shaper calibration, it can be used to study printer resonances in-depth and to check, for example, belt tension.</p>

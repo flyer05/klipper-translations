@@ -1267,23 +1267,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-contribution-process" class="md-nav__link">
-    Overview of Contribution Process
+  <a href="#uberblick-uber-den-beitragsprozess" class="md-nav__link">
+    Überblick über den Beitragsprozess
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-to-expect-in-a-review" class="md-nav__link">
-    What to expect in a review
+  <a href="#was-sie-bei-einer-uberprufung-erwarten-konnen" class="md-nav__link">
+    Was Sie bei einer Überprüfung erwarten können
   </a>
   
-    <nav class="md-nav" aria-label="What to expect in a review">
+    <nav class="md-nav" aria-label="Was Sie bei einer Überprüfung erwarten können">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#helping-with-reviews" class="md-nav__link">
-    Helping with reviews
+  <a href="#bei-der-uberarbeitung-helfen" class="md-nav__link">
+    Bei der Überarbeitung helfen
   </a>
   
 </li>
@@ -1301,15 +1301,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#format-of-commit-messages" class="md-nav__link">
-    Format of commit messages
+  <a href="#format-der-commit-nachrichten" class="md-nav__link">
+    Format der Commit Nachrichten
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing-to-klipper-translations" class="md-nav__link">
-    Contributing to Klipper Translations
+  <a href="#beitrag-zur-klipper-ubersetzung" class="md-nav__link">
+    Beitrag zur Klipper Übersetzung
   </a>
   
 </li>
@@ -1334,15 +1334,15 @@
 <h1 id="zu-klipper-beitragen">Zu Klipper beitragen<a class="headerlink" href="#zu-klipper-beitragen" title="Permanent link">&para;</a></h1>
 <p>Thank you for contributing to Klipper! This document describes the process for contributing changes to Klipper.</p>
 <p>Please see the <a href="Contact.html">contact page</a> for information on reporting an issue or for details on contacting the developers.</p>
-<h2 id="overview-of-contribution-process">Overview of Contribution Process<a class="headerlink" href="#overview-of-contribution-process" title="Permanent link">&para;</a></h2>
-<p>Contributions to Klipper generally follow a high-level process:</p>
+<h2 id="uberblick-uber-den-beitragsprozess">Überblick über den Beitragsprozess<a class="headerlink" href="#uberblick-uber-den-beitragsprozess" title="Permanent link">&para;</a></h2>
+<p>Beiträge zu Klipper folgen im Allgemeinen einem anspruchsvollen Prozess:</p>
 <ol>
 <li>A submitter starts by creating a <a href="https://github.com/Klipper3d/klipper/pulls">GitHub Pull Request</a> when a submission is ready for widespread deployment.</li>
 <li>When a <a href="#reviewers">reviewer</a> is available to <a href="#what-to-expect-in-a-review">review</a> the submission, they will assign themselves to the Pull Request on GitHub. The goal of the review is to look for defects and to check that the submission follows documented guidelines.</li>
 <li>After a successful review, the reviewer will "approve the review" on GitHub and a <a href="#reviewers">maintainer</a> will commit the change to the Klipper master branch.</li>
 </ol>
 <p>When working on enhancements, consider starting (or contributing to) a topic on <a href="Contact.html">Klipper Discourse</a>. An ongoing discussion on the forum can improve visibility of development work and may attract others interested in testing new work.</p>
-<h2 id="what-to-expect-in-a-review">What to expect in a review<a class="headerlink" href="#what-to-expect-in-a-review" title="Permanent link">&para;</a></h2>
+<h2 id="was-sie-bei-einer-uberprufung-erwarten-konnen">Was Sie bei einer Überprüfung erwarten können<a class="headerlink" href="#was-sie-bei-einer-uberprufung-erwarten-konnen" title="Permanent link">&para;</a></h2>
 <p>Contributions to Klipper are reviewed before merging. The primary goal of the review process is to check for defects and to check that the submission follows guidelines specified in the Klipper documentation.</p>
 <p>It is understood that there are many ways to accomplish a task; it is not the intent of the review to discuss the "best" implementation. Where possible, review discussions focused on facts and measurements are preferable.</p>
 <p>The majority of submissions will result in feedback from a review. Be prepared to obtain feedback, provide further details, and to update the submission if needed.</p>
@@ -1351,7 +1351,7 @@
 <li>
 <p>Is the submission free of defects and is it ready to be widely deployed?Submitters are expected to test their changes prior to submission. The reviewers look for errors, but they don't, in general, test submissions. An accepted submission is often deployed to thousands of printers within a few weeks of acceptance. Quality of submissions is therefore considered a priority.</p>
 <p>The main <a href="https://github.com/Klipper3d/klipper">Klipper3d/klipper</a> GitHub repository does not accept experimental work. Submitters should perform experimentation, debugging, and testing in their own repositories. The <a href="Contact.html">Klipper Discourse</a> server is a good place to raise awareness of new work and to find users interested in providing real-world feedback.</p>
-<p>Submissions must pass all <a href="Debugging.html">regression test cases</a>.</p>
+<p>Einsendungen müssen alle <a href="Debugging.html">regression test cases</a> bestehen.</p>
 <p>When fixing a defect in the code, submitters should have a general understanding of the root cause of that defect, and the fix should target that root cause.</p>
 <p>Code submissions should not contain excessive debugging code, debugging options, nor run-time debug logging.</p>
 <p>Comments in code submissions should focus on enhancing code maintenance. Submissions should not contain "commented out code" nor excessive comments describing past implementations. There should not be excessive "todo" comments.</p>
@@ -1398,18 +1398,18 @@
 <p>Klipper does not implement a strict "coding style guide", but modifications to existing code should follow the high-level code flow, code indentation style, and format of that existing code. Submissions of new modules and systems have more flexibility in coding style, but it is preferable for that new code to follow an internally consistent style and to generally follow industry wide coding norms.</p>
 <p>It is not a goal of a review to discuss "better implementations". However, if a reviewer struggles to understand the implementation of a submission, then they may ask for changes to make the implementation more transparent. In particular, if reviewers can not convince themselves that a submission is free of defects then changes may be necessary.</p>
 <p>As part of a review, a reviewer may create an alternate Pull Request for a topic. This may be done to avoid excessive "back and forth" on minor procedural items and thus streamline the submission process. It may also be done because the discussion inspires a reviewer to build an alternative implementation. Both situations are a normal result of a review and should not be considered criticism of the original submission.</p>
-<h3 id="helping-with-reviews">Helping with reviews<a class="headerlink" href="#helping-with-reviews" title="Permanent link">&para;</a></h3>
+<h3 id="bei-der-uberarbeitung-helfen">Bei der Überarbeitung helfen<a class="headerlink" href="#bei-der-uberarbeitung-helfen" title="Permanent link">&para;</a></h3>
 <p>We appreciate help with reviews! It is not necessary to be a <a href="#reviewers">listed reviewer</a> to perform a review. Submitters of GitHub Pull Requests are also encouraged to review their own submissions.</p>
 <p>To help with a review, follow the steps outlined in <a href="#what-to-expect-in-a-review">what to expect in a review</a> to verify the submission. After completing the review, add a comment to the GitHub Pull Request with your findings. If the submission passes the review then please state that explicitly in the comment - for example something like "I reviewed this change according to the steps in the CONTRIBUTING document and everything looks good to me". If unable to complete some steps in the review then please explicitly state which steps were reviewed and which steps were not reviewed - for example something like "I didn't check the code for defects, but I reviewed everything else in the CONTRIBUTING document and it looks good".</p>
 <p>We also appreciate testing of submissions. If the code was tested then please add a comment to the GitHub Pull Request with the results of your test - success or failure. Please explicitly state that the code was tested and the results - for example something like "I tested this code on my Acme900Z printer with a vase print and the results were good".</p>
 <h3 id="reviewers">Reviewers<a class="headerlink" href="#reviewers" title="Permanent link">&para;</a></h3>
-<p>The Klipper "reviewers" are:</p>
+<p>Die Klipper"Gutachter" sind:</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>GitHub Id</th>
-<th>Areas of interest</th>
+<th>Bereiche von Interesse</th>
 </tr>
 </thead>
 <tbody>
@@ -1426,7 +1426,7 @@
 <tr>
 <td>James Hartley</td>
 <td>@JamesH1978</td>
-<td>Configuration files</td>
+<td>Konfigurationsdateien</td>
 </tr>
 <tr>
 <td>Kevin O'Connor</td>
@@ -1436,12 +1436,12 @@
 </tbody>
 </table>
 <p>Please do not "ping" any of the reviewers and please do not direct submissions at them. All of the reviewers monitor the forums and PRs, and will take on reviews when they have time to.</p>
-<p>The Klipper "maintainers" are:</p>
+<p>Die Klipper"Betreuer" sind:</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
-<th>GitHub name</th>
+<th>GitHub Name</th>
 </tr>
 </thead>
 <tbody>
@@ -1451,7 +1451,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="format-of-commit-messages">Format of commit messages<a class="headerlink" href="#format-of-commit-messages" title="Permanent link">&para;</a></h2>
+<h2 id="format-der-commit-nachrichten">Format der Commit Nachrichten<a class="headerlink" href="#format-der-commit-nachrichten" title="Permanent link">&para;</a></h2>
 <p>Each commit should have a commit message formatted similar to the following:</p>
 <div class="highlight"><pre><span></span><code>module: Capitalized, short (50 chars or less) summary
 
@@ -1469,24 +1469,24 @@ Signed-off-by: My Name &lt;myemail@example.org&gt;
 
 <p>In the above example, <code>module</code> should be the name of a file or directory in the repository (without a file extension). For example, <code>clocksync: Fix typo in pause() call at connect time</code>. The purpose of specifying a module name in the commit message is to help provide context for the commit comments.</p>
 <p>Es ist wichtig, eine "Signed-off-by"-Zeile auf jedem Commit zu haben - sie bescheinigt, dass Sie mit dem <a href="developer-certificate-of-origin">Entwickler-Ursprungszeugnis</a> einverstanden sind. Sie muss Ihren echten Namen (sorry, keine Pseudonyme oder anonyme Beiträge) und eine aktuelle E-Mail-Adresse enthalten.</p>
-<h2 id="contributing-to-klipper-translations">Contributing to Klipper Translations<a class="headerlink" href="#contributing-to-klipper-translations" title="Permanent link">&para;</a></h2>
+<h2 id="beitrag-zur-klipper-ubersetzung">Beitrag zur Klipper Übersetzung<a class="headerlink" href="#beitrag-zur-klipper-ubersetzung" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/Klipper3d/klipper-translations">Klipper-translations Project</a> is a project dedicated to translating Klipper to different languages. <a href="https://hosted.weblate.org/projects/klipper/">Weblate</a> hosts all the Gettext strings for translating and reviewing. Locales can be displayed on <a href="https://www.klipper3d.org">klipper3d.org</a> once they satisfy the following requirements:</p>
 <ul>
-<li><input disabled="disabled" type="checkbox" /> 75% Total coverage</li>
-<li><input disabled="disabled" type="checkbox" /> All titles (H1) are translated</li>
+<li><input disabled="disabled" type="checkbox" /> 75 % Gesamtdeckung</li>
+<li><input disabled="disabled" type="checkbox" /> Alle Titel (H1) werden übersetzt</li>
 <li><input disabled="disabled" type="checkbox" /> An updated navigation hierarchy PR in klipper-translations.</li>
 </ul>
 <p>To reduce the frustration of translating domain-specific terms and gain awareness of the ongoing translations, you can submit a PR modifying the <a href="https://github.com/Klipper3d/klipper-translations">Klipper-translations Project</a> <code>readme.md</code>. Once a translation is ready, the corresponding modification to the Klipper project can be made.</p>
 <p>If a translation already exists in the Klipper repository and no longer meets the checklist above, it will be marked out-of-date after a month without updates.</p>
-<p>Once the requirements are met, you need to:</p>
+<p>Sobald die Anforderungen erfüllt sind, müssen Sie:</p>
 <ol>
-<li>update klipper-tranlations repository <a href="https://github.com/Klipper3d/klipper-translations/blob/translations/active_translations">active_translations</a></li>
+<li>klipper-translations Repository aktualisieren <a href="https://github.com/Klipper3d/klipper-translations/blob/translations/active_translations">active_translations</a></li>
 <li>Optional: add a manual-index.md file in klipper-translations repository's <code>docs\locals\&lt;lang&gt;</code> folder to replace the language specific index.md (generated index.md does not render correctly).</li>
 </ol>
-<p>Known Issues:</p>
+<p>Bekannte Probleme:</p>
 <ol>
 <li>Currently, there isn't a method for correctly translating pictures in the documentation</li>
-<li>It is impossible to translate titles in mkdocs.yml.</li>
+<li>Es ist unmöglich, Titel in mkdocs.yml zu übersetzen.</li>
 </ol>
 
               

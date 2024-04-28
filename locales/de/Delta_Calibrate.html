@@ -13,7 +13,7 @@
     
     
       
-        <title>Delta calibration - Klipper documentation</title>
+        <title>Deltakalibrierung - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#delta-calibration" class="md-skip">
+        <a href="#deltakalibrierung" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Delta calibration
+              Deltakalibrierung
             
           </span>
         </div>
@@ -1267,30 +1267,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automatic-vs-manual-probing" class="md-nav__link">
-    Automatic vs manual probing
+  <a href="#automatische-vs-manuelle-proben" class="md-nav__link">
+    Automatische vs manuelle Proben
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-delta-calibration" class="md-nav__link">
-    Basic delta calibration
+  <a href="#einfache-delta-kalibrierung" class="md-nav__link">
+    Einfache Delta Kalibrierung
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enhanced-delta-calibration" class="md-nav__link">
-    Enhanced delta calibration
+  <a href="#verbesserte-delta-kalibrierung" class="md-nav__link">
+    Verbesserte Delta Kalibrierung
   </a>
   
-    <nav class="md-nav" aria-label="Enhanced delta calibration">
+    <nav class="md-nav" aria-label="Verbesserte Delta Kalibrierung">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#additional-notes" class="md-nav__link">
-    Additional notes
+  <a href="#zusatzliche-hinweise" class="md-nav__link">
+    Zusätzliche Hinweise
   </a>
   
 </li>
@@ -1324,15 +1324,15 @@
 </a>
 
 
-<h1 id="delta-calibration">Delta calibration<a class="headerlink" href="#delta-calibration" title="Permanent link">&para;</a></h1>
+<h1 id="deltakalibrierung">Deltakalibrierung<a class="headerlink" href="#deltakalibrierung" title="Permanent link">&para;</a></h1>
 <p>Dieses Dokument beschreibt das automatische Kalibrierungssystem von Klipper für "Delta"-Drucker.</p>
 <p>Bei der Deltakalibrierung werden die Endanschlagspositionen des Druckturms, die Winkel des Druckturms, der Deltaradius und die Länge des Deltararms ermittelt. Diese Einstellungen steuern die Bewegung des Druckers auf einem Deltadrucker. Jeder dieser Parameter hat einen nicht offensichtlichen und nicht linearen Einfluss, und es ist schwierig, sie manuell zu kalibrieren. Im Gegensatz dazu kann der Software-Kalibrierungscode in nur wenigen Minuten hervorragende Ergebnisse liefern. Es ist keine spezielle Messhardware erforderlich.</p>
 <p>Ultimately, the delta calibration is dependent on the precision of the tower endstop switches. If one is using Trinamic stepper motor drivers then consider enabling <a href="Endstop_Phase.html">endstop phase</a> detection to improve the accuracy of those switches.</p>
-<h2 id="automatic-vs-manual-probing">Automatic vs manual probing<a class="headerlink" href="#automatic-vs-manual-probing" title="Permanent link">&para;</a></h2>
+<h2 id="automatische-vs-manuelle-proben">Automatische vs manuelle Proben<a class="headerlink" href="#automatische-vs-manuelle-proben" title="Permanent link">&para;</a></h2>
 <p>Klipper supports calibrating the delta parameters via a manual probing method or via an automatic Z probe.</p>
 <p>A number of delta printer kits come with automatic Z probes that are not sufficiently accurate (specifically, small differences in arm length can cause effector tilt which can skew an automatic probe). If using an automatic probe then first <a href="Probe_Calibrate.html">calibrate the probe</a> and then check for a <a href="Probe_Calibrate.html#location-bias-check">probe location bias</a>. If the automatic probe has a bias of more than 25 microns (.025mm) then use manual probing instead. Manual probing only takes a few minutes and it eliminates error introduced by the probe.</p>
 <p>If using a probe that is mounted on the side of the hotend (that is, it has an X or Y offset) then note that performing delta calibration will invalidate the results of probe calibration. These types of probes are rarely suitable for use on a delta (because minor effector tilt will result in a probe location bias). If using the probe anyway, then be sure to rerun probe calibration after any delta calibration.</p>
-<h2 id="basic-delta-calibration">Basic delta calibration<a class="headerlink" href="#basic-delta-calibration" title="Permanent link">&para;</a></h2>
+<h2 id="einfache-delta-kalibrierung">Einfache Delta Kalibrierung<a class="headerlink" href="#einfache-delta-kalibrierung" title="Permanent link">&para;</a></h2>
 <p>Klipper has a DELTA_CALIBRATE command that can perform basic delta calibration. This command probes seven different points on the bed and calculates new values for the tower angles, tower endstops, and delta radius.</p>
 <p>In order to perform this calibration the initial delta parameters (arm lengths, radius, and endstop positions) must be provided and they should have an accuracy to within a few millimeters. Most delta printer kits will provide these parameters - configure the printer with these initial defaults and then go on to run the DELTA_CALIBRATE command as described below. If no defaults are available then search online for a delta calibration guide that can provide a basic starting point.</p>
 <p>During the delta calibration process it may be necessary for the printer to probe below what would otherwise be considered the plane of the bed. It is typical to permit this during calibration by updating the config so that the printer's <code>minimum_z_position=-5</code>. (Once calibration completes, one can remove this setting from the config.)</p>
@@ -1347,7 +1347,7 @@ DELTA_CALIBRATE METHOD=manual
 </code></pre></div>
 
 <p>The basic calibration should provide delta parameters that are accurate enough for basic printing. If this is a new printer, this is a good time to print some basic objects and verify general functionality.</p>
-<h2 id="enhanced-delta-calibration">Enhanced delta calibration<a class="headerlink" href="#enhanced-delta-calibration" title="Permanent link">&para;</a></h2>
+<h2 id="verbesserte-delta-kalibrierung">Verbesserte Delta Kalibrierung<a class="headerlink" href="#verbesserte-delta-kalibrierung" title="Permanent link">&para;</a></h2>
 <p>The basic delta calibration generally does a good job of calculating delta parameters such that the nozzle is the correct distance from the bed. However, it does not attempt to calibrate X and Y dimensional accuracy. It's a good idea to perform an enhanced delta calibration to verify dimensional accuracy.</p>
 <p>This calibration procedure requires printing a test object and measuring parts of that test object with digital calipers.</p>
 <p>Prior to running an enhanced delta calibration one must run the basic delta calibration (via the DELTA_CALIBRATE command) and save the results (via the SAVE_CONFIG command). Make sure there hasn't been any notable change to the printer configuration nor hardware since last performing a basic delta calibration (if unsure, rerun the <a href="#basic-delta-calibration">basic delta calibration</a>, including SAVE_CONFIG, just prior to printing the test object described below.)</p>
@@ -1362,19 +1362,19 @@ DELTA_CALIBRATE METHOD=manual
 <div class="highlight"><pre><span></span><code>DELTA_ANALYZE CENTER_DISTS=&lt;a_dist&gt;,&lt;far_c_dist&gt;,&lt;b_dist&gt;,&lt;far_a_dist&gt;,&lt;c_dist&gt;,&lt;far_b_dist&gt;
 </code></pre></div>
 
-<p>Provide the values without spaces between them.</p>
+<p>Geben Sie die Werte ohne Leerzeichen an.</p>
 <p>Then measure the distance between the A pillar and the pillar across from the C label.</p>
 <p><img alt="delta-ab-distance" src="img/delta-outer-distance.jpg" /></p>
 <p>Then go counterclockwise and measure the distance between the pillar across from C to the B pillar, the distance between the B pillar and the pillar across from A, and so on.</p>
 <p><img alt="delta_cal_e_step2" src="img/delta_cal_e_step2.png" /></p>
-<p>Enter these parameters into Klipper:</p>
+<p>Geben Sie diese Parameter in Klipper ein:</p>
 <div class="highlight"><pre><span></span><code>DELTA_ANALYZE OUTER_DISTS=&lt;a_to_far_c&gt;,&lt;far_c_to_b&gt;,&lt;b_to_far_a&gt;,&lt;far_a_to_c&gt;,&lt;c_to_far_b&gt;,&lt;far_b_to_a&gt;
 </code></pre></div>
 
 <p>At this point it is okay to remove the object from the bed. The final measurements are of the pillars themselves. Measure the size of the center pillar along the A spoke, then the B spoke, and then the C spoke.</p>
 <p><img alt="delta-a-pillar" src="img/delta-a-pillar.jpg" /></p>
 <p><img alt="delta_cal_e_step3" src="img/delta_cal_e_step3.png" /></p>
-<p>Enter them into Klipper:</p>
+<p>Geben Sie diese in Klipper ein:</p>
 <div class="highlight"><pre><span></span><code>DELTA_ANALYZE CENTER_PILLAR_WIDTHS=&lt;a&gt;,&lt;b&gt;,&lt;c&gt;
 </code></pre></div>
 
@@ -1382,7 +1382,7 @@ DELTA_CALIBRATE METHOD=manual
 <p><img alt="delta-ab-pillar" src="img/delta-outer-pillar.jpg" /></p>
 <p>Then go counterclockwise and measure the remaining outer pillars (pillar across from C along the line to B, B pillar along the line to pillar across from A, etc.).</p>
 <p><img alt="delta_cal_e_step4" src="img/delta_cal_e_step4.png" /></p>
-<p>And enter them into Klipper:</p>
+<p>Und geben Sie diese in Klipper ein:</p>
 <div class="highlight"><pre><span></span><code>DELTA_ANALYZE OUTER_PILLAR_WIDTHS=&lt;a&gt;,&lt;far_c&gt;,&lt;b&gt;,&lt;far_a&gt;,&lt;c&gt;,&lt;far_b&gt;
 </code></pre></div>
 
@@ -1400,7 +1400,7 @@ DELTA_CALIBRATE METHOD=manual
 </code></pre></div>
 
 <p>The SAVE_CONFIG command will save both the updated delta parameters and information from the distance measurements. Future DELTA_CALIBRATE commands will also utilize this distance information. Do not attempt to reenter the raw distance measurements after running SAVE_CONFIG, as this command changes the printer configuration and the raw measurements no longer apply.</p>
-<h3 id="additional-notes">Additional notes<a class="headerlink" href="#additional-notes" title="Permanent link">&para;</a></h3>
+<h3 id="zusatzliche-hinweise">Zusätzliche Hinweise<a class="headerlink" href="#zusatzliche-hinweise" title="Permanent link">&para;</a></h3>
 <ul>
 <li>If the delta printer has good dimensional accuracy then the distance between any two pillars should be around 74mm and the width of every pillar should be around 9mm. (Specifically, the goal is for the distance between any two pillars minus the width of one of the pillars to be exactly 65mm.) Should there be a dimensional inaccuracy in the part then the DELTA_ANALYZE routine will calculate new delta parameters using both the distance measurements and the previous height measurements from the last DELTA_CALIBRATE command.</li>
 <li>DELTA_ANALYZE may produce delta parameters that are surprising. For example, it may suggest arm lengths that do not match the printer's actual arm lengths. Despite this, testing has shown that DELTA_ANALYZE often produces superior results. It is believed that the calculated delta parameters are able to account for slight errors elsewhere in the hardware. For example, small differences in arm length may result in a tilt to the effector and some of that tilt may be accounted for by adjusting the arm length parameters.</li>

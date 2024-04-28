@@ -13,7 +13,7 @@
     
     
       
-        <title>Kinematics - Klipper documentation</title>
+        <title>Kinematik - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kinematics" class="md-skip">
+        <a href="#kinematik" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kinematics
+              Kinematik
             
           </span>
         </div>
@@ -1274,8 +1274,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trapezoid-generator" class="md-nav__link">
-    Trapezoid generator
+  <a href="#trapezformiger-generator" class="md-nav__link">
+    Trapezförmiger Generator
   </a>
   
 </li>
@@ -1289,8 +1289,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#smoothed-look-ahead" class="md-nav__link">
-    Smoothed look-ahead
+  <a href="#minimum-cruise-ratio" class="md-nav__link">
+    Minimum cruise ratio
   </a>
   
 </li>
@@ -1301,44 +1301,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generating-steps" class="md-nav__link">
-    Generating steps
+  <a href="#schritte-generieren" class="md-nav__link">
+    Schritte generieren
   </a>
   
-    <nav class="md-nav" aria-label="Generating steps">
+    <nav class="md-nav" aria-label="Schritte generieren">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cartesian-robots" class="md-nav__link">
-    Cartesian Robots
+  <a href="#kartesische-roboter" class="md-nav__link">
+    Kartesische Roboter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#corexy-robots" class="md-nav__link">
-    CoreXY Robots
+  <a href="#corexy-roboter" class="md-nav__link">
+    CoreXY Roboter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#delta-robots" class="md-nav__link">
-    Delta Robots
+  <a href="#delta-roboter" class="md-nav__link">
+    Delta Roboter
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#stepper-motor-acceleration-limits" class="md-nav__link">
-    Stepper motor acceleration limits
+  <a href="#schrittmotor-beschleunigungsgrenzwerte" class="md-nav__link">
+    Schrittmotor Beschleunigungsgrenzwerte
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#extruder-kinematics" class="md-nav__link">
-    Extruder kinematics
+  <a href="#extruder-kinematik" class="md-nav__link">
+    Extruder Kinematik
   </a>
   
 </li>
@@ -1372,7 +1372,7 @@
 </a>
 
 
-<h1 id="kinematics">Kinematics<a class="headerlink" href="#kinematics" title="Permanent link">&para;</a></h1>
+<h1 id="kinematik">Kinematik<a class="headerlink" href="#kinematik" title="Permanent link">&para;</a></h1>
 <p>Dieses Dokument gibt einen Überblick darüber, wie Klipper die Roboterbewegung implementiert (seine <a href="https://en.wikipedia.org/wiki/Kinematics">Kinematik</a>). Der Inhalt kann sowohl für Entwickler, die an der Klipper-Software arbeiten wollen, als auch für Benutzer, die die Mechanik ihrer Maschinen besser verstehen wollen, von Interesse sein.</p>
 <h2 id="beschleunigung">Beschleunigung<a class="headerlink" href="#beschleunigung" title="Permanent link">&para;</a></h2>
 <p>Klipper implements a constant acceleration scheme whenever the print head changes velocity - the velocity is gradually changed to the new speed instead of suddenly jerking to it. Klipper always enforces acceleration between the tool head and the print. The filament leaving the extruder can be quite fragile - rapid jerks and/or extruder flow changes lead to poor quality and poor bed adhesion. Even when not extruding, if the print head is at the same level as the print then rapid jerking of the head can cause disruption of recently deposited filament. Limiting speed changes of the print head (relative to the print) reduces risks of disrupting the print.</p>
@@ -1381,7 +1381,7 @@
 <div class="highlight"><pre><span></span><code>velocity(time) = start_velocity + accel*time
 </code></pre></div>
 
-<h2 id="trapezoid-generator">Trapezoid generator<a class="headerlink" href="#trapezoid-generator" title="Permanent link">&para;</a></h2>
+<h2 id="trapezformiger-generator">Trapezförmiger Generator<a class="headerlink" href="#trapezformiger-generator" title="Permanent link">&para;</a></h2>
 <p>Klipper uses a traditional "trapezoid generator" to model the motion of each move - each move has a start speed, it accelerates to a cruising speed at constant acceleration, it cruises at a constant speed, and then decelerates to the end speed using constant acceleration.</p>
 <p><img alt="trapezoid" src="img/trapezoid.svg.png" /></p>
 <p>It's called a "trapezoid generator" because a velocity diagram of the move looks like a trapezoid.</p>
@@ -1397,17 +1397,19 @@
 <p>However, if the next move forms an acute angle (the head is going to travel in nearly a reverse direction on the next move) then only a small junction speed is permitted.</p>
 <p><img alt="lookahead" src="img/lookahead-slow.svg.png" /></p>
 <p>The junction speeds are determined using "approximated centripetal acceleration". Best <a href="https://onehossshay.wordpress.com/2011/09/24/improving_grbl_cornering_algorithm/">described by the author</a>. However, in Klipper, junction speeds are configured by specifying the desired speed that a 90° corner should have (the "square corner velocity"), and the junction speeds for other angles are derived from that.</p>
-<p>Key formula for look-ahead:</p>
+<p>Schlüsselformel für Look-ahead:</p>
 <div class="highlight"><pre><span></span><code>end_velocity^2 = start_velocity^2 + 2*accel*move_distance
 </code></pre></div>
 
-<h3 id="smoothed-look-ahead">Smoothed look-ahead<a class="headerlink" href="#smoothed-look-ahead" title="Permanent link">&para;</a></h3>
+<h3 id="minimum-cruise-ratio">Minimum cruise ratio<a class="headerlink" href="#minimum-cruise-ratio" title="Permanent link">&para;</a></h3>
 <p>Klipper also implements a mechanism for smoothing out the motions of short "zigzag" moves. Consider the following moves:</p>
 <p><img alt="zigzag" src="img/zigzag.svg.png" /></p>
-<p>In the above, the frequent changes from acceleration to deceleration can cause the machine to vibrate which causes stress on the machine and increases the noise. To reduce this, Klipper tracks both regular move acceleration as well as a virtual "acceleration to deceleration" rate. Using this system, the top speed of these short "zigzag" moves are limited to smooth out the printer motion:</p>
+<p>In the above, the frequent changes from acceleration to deceleration can cause the machine to vibrate which causes stress on the machine and increases the noise. Klipper implements a mechanism to ensure there is always some movement at a cruising speed between acceleration and deceleration. This is done by reducing the top speed of some moves (or sequence of moves) to ensure there is a minimum distance traveled at cruising speed relative to the distance traveled during acceleration and deceleration.</p>
+<p>Klipper implements this feature by tracking both a regular move acceleration as well as a virtual "acceleration to deceleration" rate:</p>
 <p><img alt="smoothed" src="img/smoothed.svg.png" /></p>
-<p>Specifically, the code calculates what the velocity of each move would be if it were limited to this virtual "acceleration to deceleration" rate (half the normal acceleration rate by default). In the above picture the dashed gray lines represent this virtual acceleration rate for the first move. If a move can not reach its full cruising speed using this virtual acceleration rate then its top speed is reduced to the maximum speed it could obtain at this virtual acceleration rate. For most moves the limit will be at or above the move's existing limits and no change in behavior is induced. For short zigzag moves, however, this limit reduces the top speed. Note that it does not change the actual acceleration within the move - the move continues to use the normal acceleration scheme up to its adjusted top-speed.</p>
-<h2 id="generating-steps">Generating steps<a class="headerlink" href="#generating-steps" title="Permanent link">&para;</a></h2>
+<p>Specifically, the code calculates what the velocity of each move would be if it were limited to this virtual "acceleration to deceleration" rate. In the above picture the dashed gray lines represent this virtual acceleration rate for the first move. If a move can not reach its full cruising speed using this virtual acceleration rate then its top speed is reduced to the maximum speed it could obtain at this virtual acceleration rate.</p>
+<p>For most moves the limit will be at or above the move's existing limits and no change in behavior is induced. For short zigzag moves, however, this limit reduces the top speed. Note that it does not change the actual acceleration within the move - the move continues to use the normal acceleration scheme up to its adjusted top-speed.</p>
+<h2 id="schritte-generieren">Schritte generieren<a class="headerlink" href="#schritte-generieren" title="Permanent link">&para;</a></h2>
 <p>Once the look-ahead process completes, the print head movement for the given move is fully known (time, start position, end position, velocity at each point) and it is possible to generate the step times for the move. This process is done within "kinematic classes" in the Klipper code. Outside of these kinematic classes, everything is tracked in millimeters, seconds, and in cartesian coordinate space. It's the task of the kinematic classes to convert from this generic coordinate system to the hardware specifics of the particular printer.</p>
 <p>Klipper uses an <a href="https://en.wikipedia.org/wiki/Root-finding_algorithm">iterative solver</a> to generate the step times for each stepper. The code contains the formulas to calculate the ideal cartesian coordinates of the head at each moment in time, and it has the kinematic formulas to calculate the ideal stepper positions based on those cartesian coordinates. With these formulas, Klipper can determine the ideal time that the stepper should be at each step position. The given steps are then scheduled at these calculated times.</p>
 <p>The key formula to determine how far a move should travel under constant acceleration is:</p>
@@ -1424,22 +1426,22 @@ cartesian_y_position = start_y + move_distance * total_y_movement / total_moveme
 cartesian_z_position = start_z + move_distance * total_z_movement / total_movement
 </code></pre></div>
 
-<h3 id="cartesian-robots">Cartesian Robots<a class="headerlink" href="#cartesian-robots" title="Permanent link">&para;</a></h3>
+<h3 id="kartesische-roboter">Kartesische Roboter<a class="headerlink" href="#kartesische-roboter" title="Permanent link">&para;</a></h3>
 <p>Generating steps for cartesian printers is the simplest case. The movement on each axis is directly related to the movement in cartesian space.</p>
-<p>Key formulas:</p>
+<p>Schlüsselformeln:</p>
 <div class="highlight"><pre><span></span><code>stepper_x_position = cartesian_x_position
 stepper_y_position = cartesian_y_position
 stepper_z_position = cartesian_z_position
 </code></pre></div>
 
-<h3 id="corexy-robots">CoreXY Robots<a class="headerlink" href="#corexy-robots" title="Permanent link">&para;</a></h3>
+<h3 id="corexy-roboter">CoreXY Roboter<a class="headerlink" href="#corexy-roboter" title="Permanent link">&para;</a></h3>
 <p>Generating steps on a CoreXY machine is only a little more complex than basic cartesian robots. The key formulas are:</p>
 <div class="highlight"><pre><span></span><code>stepper_a_position = cartesian_x_position + cartesian_y_position
 stepper_b_position = cartesian_x_position - cartesian_y_position
 stepper_z_position = cartesian_z_position
 </code></pre></div>
 
-<h3 id="delta-robots">Delta Robots<a class="headerlink" href="#delta-robots" title="Permanent link">&para;</a></h3>
+<h3 id="delta-roboter">Delta Roboter<a class="headerlink" href="#delta-roboter" title="Permanent link">&para;</a></h3>
 <p>Step generation on a delta robot is based on Pythagoras's theorem:</p>
 <div class="highlight"><pre><span></span><code>stepper_position = (sqrt(arm_length^2
 
@@ -1448,10 +1450,10 @@ stepper_z_position = cartesian_z_position
                     + cartesian_z_position)
 </code></pre></div>
 
-<h3 id="stepper-motor-acceleration-limits">Stepper motor acceleration limits<a class="headerlink" href="#stepper-motor-acceleration-limits" title="Permanent link">&para;</a></h3>
+<h3 id="schrittmotor-beschleunigungsgrenzwerte">Schrittmotor Beschleunigungsgrenzwerte<a class="headerlink" href="#schrittmotor-beschleunigungsgrenzwerte" title="Permanent link">&para;</a></h3>
 <p>With delta kinematics it is possible for a move that is accelerating in cartesian space to require an acceleration on a particular stepper motor greater than the move's acceleration. This can occur when a stepper arm is more horizontal than vertical and the line of movement passes near that stepper's tower. Although these moves could require a stepper motor acceleration greater than the printer's maximum configured move acceleration, the effective mass moved by that stepper would be smaller. Thus the higher stepper acceleration does not result in significantly higher stepper torque and it is therefore considered harmless.</p>
 <p>However, to avoid extreme cases, Klipper enforces a maximum ceiling on stepper acceleration of three times the printer's configured maximum move acceleration. (Similarly, the maximum velocity of the stepper is limited to three times the maximum move velocity.) In order to enforce this limit, moves at the extreme edge of the build envelope (where a stepper arm may be nearly horizontal) will have a lower maximum acceleration and velocity.</p>
-<h3 id="extruder-kinematics">Extruder kinematics<a class="headerlink" href="#extruder-kinematics" title="Permanent link">&para;</a></h3>
+<h3 id="extruder-kinematik">Extruder Kinematik<a class="headerlink" href="#extruder-kinematik" title="Permanent link">&para;</a></h3>
 <p>Klipper implements extruder motion in its own kinematic class. Since the timing and speed of each print head movement is fully known for each move, it's possible to calculate the step times for the extruder independently from the step time calculations of the print head movement.</p>
 <p>Basic extruder movement is simple to calculate. The step time generation uses the same formulas that cartesian robots use:</p>
 <div class="highlight"><pre><span></span><code>stepper_position = requested_e_position

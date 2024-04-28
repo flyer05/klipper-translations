@@ -13,7 +13,7 @@
     
     
       
-        <title>CANBUS protocol - Klipper documentation</title>
+        <title>CANBUS Protokoll - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#canbus-protocol" class="md-skip">
+        <a href="#canbus-protokoll" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CANBUS protocol
+              CANBUS Protokoll
             
           </span>
         </div>
@@ -1274,11 +1274,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#admin-messages" class="md-nav__link">
-    Admin messages
+  <a href="#admin-nachrichten" class="md-nav__link">
+    Admin Nachrichten
   </a>
   
-    <nav class="md-nav" aria-label="Admin messages">
+    <nav class="md-nav" aria-label="Admin Nachrichten">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1308,8 +1308,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-packets" class="md-nav__link">
-    Data Packets
+  <a href="#datenpakete" class="md-nav__link">
+    Datenpakete
   </a>
   
 </li>
@@ -1331,22 +1331,22 @@
 </a>
 
 
-<h1 id="canbus-protocol">CANBUS protocol<a class="headerlink" href="#canbus-protocol" title="Permanent link">&para;</a></h1>
+<h1 id="canbus-protokoll">CANBUS Protokoll<a class="headerlink" href="#canbus-protokoll" title="Permanent link">&para;</a></h1>
 <p>This document describes the protocol Klipper uses to communicate over <a href="https://en.wikipedia.org/wiki/CAN_bus">CAN bus</a>. See <CANBUS.md> for information on configuring Klipper with CAN bus.</p>
 <h2 id="mikrocontroller-id-zuweisung">Mikrocontroller-ID-Zuweisung<a class="headerlink" href="#mikrocontroller-id-zuweisung" title="Permanent link">&para;</a></h2>
 <p>Klipper verwendet nur CAN 2.0A Standard-CAN-Bus-Pakete, die auf 8 Datenbytes und einen 11-Bit-CAN-Bus-Identifier begrenzt sind. Um eine effiziente Kommunikation zu unterstützen, wird jedem Mikrocontroller während der Laufzeit eine eindeutige 1-Byte-CAN-Bus-Nodeid (<code>canbus_nodeid</code>) für den allgemeinen Klipper-Befehls- und Antwortverkehr zugewiesen. Klipper-Befehlsnachrichten, die vom Host zum Mikrocontroller gehen, verwenden die CAN-Bus-ID <code>canbus_nodeid * 2 + 256</code>, während Klipper-Antwortnachrichten vom Mikrocontroller zum Host <code>canbus_nodeid * 2 + 256 + 1</code> verwenden.</p>
 <p>Each micro-controller has a factory assigned unique chip identifier that is used during id assignment. This identifier can exceed the length of one CAN packet, so a hash function is used to generate a unique 6-byte id (<code>canbus_uuid</code>) from the factory id.</p>
-<h2 id="admin-messages">Admin messages<a class="headerlink" href="#admin-messages" title="Permanent link">&para;</a></h2>
+<h2 id="admin-nachrichten">Admin Nachrichten<a class="headerlink" href="#admin-nachrichten" title="Permanent link">&para;</a></h2>
 <p>Admin messages are used for id assignment. Admin messages sent from host to micro-controller use the CAN bus id <code>0x3f0</code> and messages sent from micro-controller to host use the CAN bus id <code>0x3f1</code>. All micro-controllers listen to messages on id <code>0x3f0</code>; that id can be thought of as a "broadcast address".</p>
 <h3 id="cmd_query_unassigned-message">CMD_QUERY_UNASSIGNED message<a class="headerlink" href="#cmd_query_unassigned-message" title="Permanent link">&para;</a></h3>
 <p>This command queries all micro-controllers that have not yet been assigned a <code>canbus_nodeid</code>. Unassigned micro-controllers will respond with a RESP_NEED_NODEID response message.</p>
-<p>The CMD_QUERY_UNASSIGNED message format is: <code>&lt;1-byte message_id = 0x00&gt;</code></p>
+<p>Das CMD_QUERY_UNASSIGNED Nachrichtenformat ist: <code>&lt;1-byte message_id = 0x00&gt;</code></p>
 <h3 id="cmd_set_klipper_nodeid-message">CMD_SET_KLIPPER_NODEID message<a class="headerlink" href="#cmd_set_klipper_nodeid-message" title="Permanent link">&para;</a></h3>
-<p>This command assigns a <code>canbus_nodeid</code> to the micro-controller with a given <code>canbus_uuid</code>.</p>
+<p>Dieser Befehl weist dem Mikrocontroller mit einer bestimmten <code>canbus_uuid</code> eine<code>canbus_nodeid</code> zu.</p>
 <p>The CMD_SET_KLIPPER_NODEID message format is: <code>&lt;1-byte message_id = 0x01&gt;&lt;6-byte canbus_uuid&gt;&lt;1-byte canbus_nodeid&gt;</code></p>
 <h3 id="resp_need_nodeid-message">RESP_NEED_NODEID message<a class="headerlink" href="#resp_need_nodeid-message" title="Permanent link">&para;</a></h3>
 <p>The RESP_NEED_NODEID message format is: <code>&lt;1-byte message_id = 0x20&gt;&lt;6-byte canbus_uuid&gt;&lt;1-byte set_klipper_nodeid = 0x01&gt;</code></p>
-<h2 id="data-packets">Data Packets<a class="headerlink" href="#data-packets" title="Permanent link">&para;</a></h2>
+<h2 id="datenpakete">Datenpakete<a class="headerlink" href="#datenpakete" title="Permanent link">&para;</a></h2>
 <p>A micro-controller that has been assigned a nodeid via the CMD_SET_KLIPPER_NODEID command can send and receive data packets.</p>
 <p>The packet data in messages using the node's receive CAN bus id (<code>canbus_nodeid * 2 + 256</code>) are simply appended to a buffer, and when a complete <a href="Protocol.html">mcu protocol message</a> is found its contents are parsed and processed. The data is treated as a byte stream - there is no requirement for the start of a Klipper message block to align with the start of a CAN bus packet.</p>
 <p>Similarly, mcu protocol message responses are sent from micro-controller to host by copying the message data into one or more packets with the node's transmit CAN bus id (<code>canbus_nodeid * 2 + 256 + 1</code>).</p>

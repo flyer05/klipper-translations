@@ -13,7 +13,7 @@
     
     
       
-        <title>Example configurations - Klipper documentation</title>
+        <title>Beispielkonfigurationen - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#example-configurations" class="md-skip">
+        <a href="#beispielkonfigurationen" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Example configurations
+              Beispielkonfigurationen
             
           </span>
         </div>
@@ -1267,8 +1267,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guidelines" class="md-nav__link">
-    Guidelines
+  <a href="#richtlinien" class="md-nav__link">
+    Richtlinien
   </a>
   
 </li>
@@ -1290,10 +1290,10 @@
 </a>
 
 
-<h1 id="example-configurations">Example configurations<a class="headerlink" href="#example-configurations" title="Permanent link">&para;</a></h1>
+<h1 id="beispielkonfigurationen">Beispielkonfigurationen<a class="headerlink" href="#beispielkonfigurationen" title="Permanent link">&para;</a></h1>
 <p>Dieses Dokument enthält Richtlinien für das Einbringen einer Klipper-Beispielkonfiguration in das Klipper-Github-Repository (zu finden im <a href="https://github.com/Klipper3d/klipper/blob/master/config/">config-Verzeichnis</a>).</p>
 <p>Beachten Sie, dass der <a href="https://community.klipper3d.org">Klipper Community Discourse Server</a> auch eine nützliche Ressource ist, um Konfigurationsdateien zu finden und zu teilen.</p>
-<h2 id="guidelines">Guidelines<a class="headerlink" href="#guidelines" title="Permanent link">&para;</a></h2>
+<h2 id="richtlinien">Richtlinien<a class="headerlink" href="#richtlinien" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Select the appropriate config filename prefix:<ol>
 <li>The <code>printer</code> prefix is used for stock printers sold by a mainstream manufacturer.</li>
@@ -1318,10 +1318,10 @@
 <li>The top of each config file should list the type of micro-controller the user should select during "make menuconfig". It should also have a reference to "docs/Config_Reference.md".</li>
 <li>Do not copy the field documentation into the example config files. (Doing so creates a maintenance burden as an update to the documentation would then require changing it in many places.)</li>
 <li>Example config files should not contain a "SAVE_CONFIG" section. If necessary, copy the relevant fields from the SAVE_CONFIG section to the appropriate section in the main config area.</li>
-<li>Use <code>field: value</code> syntax instead of <code>field=value</code>.</li>
+<li>Verwenden Sie die Syntax <code>field: value</code> anstelle von <code>field=value</code>.</li>
 <li>When adding an extruder <code>rotation_distance</code> it is preferable to specify a <code>gear_ratio</code> if the extruder has a gearing mechanism. We expect the rotation_distance in the example configs to correlate with the circumference of the hobbed gear in the extruder - it is normally in the range of 20 to 35mm. When specifying a <code>gear_ratio</code> it is preferable to specify the actual gears on the mechanism (eg, prefer <code>gear_ratio: 80:20</code> over <code>gear_ratio: 4:1</code>). See the <a href="Rotation_Distance.html#using-a-gear_ratio">rotation distance document</a> for more information.</li>
 <li>Avoid defining field values that are set to their default value. For example, one should not specify <code>min_extrude_temp: 170</code> as that is already the default value.</li>
-<li>Where possible, lines should not exceed 80 columns.</li>
+<li>Wenn möglich, sollten die Zeilen nicht länger als 80 Spalten sein.</li>
 <li>Avoid adding attribution or revision messages to the config files. (For example, avoid adding lines like "this file was created by ...".) Place attribution and change history in the git commit message.</li>
 </ol>
 </li>

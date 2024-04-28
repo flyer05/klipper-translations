@@ -13,7 +13,7 @@
     
     
       
-        <title>Frequently Asked Questions - Klipper documentation</title>
+        <title>Häufig gestellte Fragen - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#frequently-asked-questions" class="md-skip">
+        <a href="#haufig-gestellte-fragen" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Frequently Asked Questions
+              Häufig gestellte Fragen
             
           </span>
         </div>
@@ -1323,8 +1323,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#do-i-have-to-use-octoprint" class="md-nav__link">
-    Do I have to use OctoPrint?
+  <a href="#muss-ich-octoprint-benutzen" class="md-nav__link">
+    Muss ich OctoPrint benutzen?
   </a>
   
 </li>
@@ -1365,8 +1365,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-raspberry-pi-keeps-rebooting-during-prints" class="md-nav__link">
-    My Raspberry Pi keeps rebooting during prints
+  <a href="#mein-raspberry-pi-startet-wahrend-des-druckens-immer-wieder-neu" class="md-nav__link">
+    Mein Raspberry Pi startet während des Druckens immer wieder neu
   </a>
   
 </li>
@@ -1421,15 +1421,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-do-i-upgrade-to-the-latest-software" class="md-nav__link">
-    How do I upgrade to the latest software?
+  <a href="#wie-kann-ich-ein-upgrade-auf-die-neueste-softwareversion-durchfuhren" class="md-nav__link">
+    Wie kann ich ein Upgrade auf die neueste Softwareversion durchführen?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-do-i-uninstall-klipper" class="md-nav__link">
-    How do I uninstall Klipper?
+  <a href="#wie-deinstalliere-ich-klipper" class="md-nav__link">
+    Wie deinstalliere ich Klipper?
   </a>
   
 </li>
@@ -1451,11 +1451,11 @@
 </a>
 
 
-<h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
+<h1 id="haufig-gestellte-fragen">Häufig gestellte Fragen<a class="headerlink" href="#haufig-gestellte-fragen" title="Permanent link">&para;</a></h1>
 <h2 id="wie-kann-ich-fur-das-projekt-spenden">Wie kann ich für das Projekt spenden?<a class="headerlink" href="#wie-kann-ich-fur-das-projekt-spenden" title="Permanent link">&para;</a></h2>
 <p>Thank you for your support. See the <a href="Sponsors.html">Sponsors page</a> for information.</p>
 <h2 id="wie-berechne-ich-den-konfigurationsparameter-rotation_distance">Wie berechne ich den Konfigurationsparameter rotation_distance?<a class="headerlink" href="#wie-berechne-ich-den-konfigurationsparameter-rotation_distance" title="Permanent link">&para;</a></h2>
-<p>Siehe das Dokument <a href="Rotation_Distance.html">Rotationsabstand</a>.</p>
+<p>Siehe das Dokument <a href="Rotation_Distance.html">rotation distance document</a>.</p>
 <h2 id="wo-ist-meine-serielle-schnittstelle">Wo ist meine serielle Schnittstelle?<a class="headerlink" href="#wo-ist-meine-serielle-schnittstelle" title="Permanent link">&para;</a></h2>
 <p>Die allgemeine Methode, einen seriellen USB-Anschluss zu finden, besteht darin, <code>ls /dev/serial/by-id/*</code> von einem ssh-Terminal auf dem Host-Rechner aus auszuführen. Dies wird wahrscheinlich eine ähnliche Ausgabe wie die folgende erzeugen:</p>
 <div class="highlight"><pre><span></span><code>/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
@@ -1507,7 +1507,7 @@ baud: 250000
 </code></pre></div>
 
 <p>If you choose to do this, you will need to implement the necessary start, stop, and installation scripts (if any). The <a href="https://github.com/Klipper3d/klipper/blob/master/scripts/install-octopi.sh">install-octopi.sh</a> script and the <a href="https://github.com/Klipper3d/klipper/blob/master/scripts/klipper-start.sh">klipper-start.sh</a> script may be useful as examples.</p>
-<h2 id="do-i-have-to-use-octoprint">Do I have to use OctoPrint?<a class="headerlink" href="#do-i-have-to-use-octoprint" title="Permanent link">&para;</a></h2>
+<h2 id="muss-ich-octoprint-benutzen">Muss ich OctoPrint benutzen?<a class="headerlink" href="#muss-ich-octoprint-benutzen" title="Permanent link">&para;</a></h2>
 <p>The Klipper software is not dependent on OctoPrint. It is possible to use alternative software to send commands to Klipper, but doing so requires Linux admin knowledge.</p>
 <p>Klipper creates a "virtual serial port" via the "/tmp/printer" file, and it emulates a classic 3d-printer serial interface via that file. In general, alternative software may work with Klipper as long as it can be configured to use "/tmp/printer" for the printer serial port.</p>
 <h2 id="why-cant-i-move-the-stepper-before-homing-the-printer">Why can't I move the stepper before homing the printer?<a class="headerlink" href="#why-cant-i-move-the-stepper-before-homing-the-printer" title="Permanent link">&para;</a></h2>
@@ -1531,7 +1531,7 @@ baud: 250000
 <li>Verify stepper, heater, and other printer wires are not crimped or frayed. (Printer movement may place stress on a faulty wire causing it to lose contact, briefly short, or generate excessive noise.)</li>
 <li>There have been reports of high USB noise when both the printer's power supply and the host's 5V power supply are mixed. (If you find that the micro-controller powers on when either the printer's power supply is on or the USB cable is plugged in, then it indicates the 5V power supplies are being mixed.) It may help to configure the micro-controller to use power from only one source. (Alternatively, if the micro-controller board can not configure its power source, one may modify a USB cable so that it does not carry 5V power between the host and micro-controller.)</li>
 </ul>
-<h2 id="my-raspberry-pi-keeps-rebooting-during-prints">My Raspberry Pi keeps rebooting during prints<a class="headerlink" href="#my-raspberry-pi-keeps-rebooting-during-prints" title="Permanent link">&para;</a></h2>
+<h2 id="mein-raspberry-pi-startet-wahrend-des-druckens-immer-wieder-neu">Mein Raspberry Pi startet während des Druckens immer wieder neu<a class="headerlink" href="#mein-raspberry-pi-startet-wahrend-des-druckens-immer-wieder-neu" title="Permanent link">&para;</a></h2>
 <p>This is most likely do to voltage fluctuations. Follow the same troubleshooting steps for a <a href="#i-keep-getting-random-lost-communication-with-mcu-errors">"Lost communication with MCU"</a> error.</p>
 <h2 id="when-i-set-restart_methodcommand-my-avr-device-just-hangs-on-a-restart">When I set <code>restart_method=command</code> my AVR device just hangs on a restart<a class="headerlink" href="#when-i-set-restart_methodcommand-my-avr-device-just-hangs-on-a-restart" title="Permanent link">&para;</a></h2>
 <p>Some old versions of the AVR bootloader have a known bug in watchdog event handling. This typically manifests when the printer.cfg file has restart_method set to "command". When the bug occurs, the AVR device will be unresponsive until power is removed and reapplied to the device (the power or status LEDs may also blink repeatedly until the power is removed).</p>
@@ -1564,7 +1564,7 @@ baud: 250000
 <p>Short answer: We want to know if our printers detect a problem so that the underlying issue can be fixed and we can obtain great quality prints. We definitely do not want our printers to silently produce low quality prints.</p>
 <p>Long answer: Klipper has been engineered to automatically workaround many transient problems. For example, it automatically detects communication errors and will retransmit; it schedules actions in advance and buffers commands at multiple layers to enable precise timing even with intermittent interference. However, should the software detect an error that it can not recover from, if it is commanded to take an invalid action, or if it detects it is hopelessly unable to perform its commanded task, then Klipper will report an error. In these situations there is a high risk of producing a low-quality print (or worse). It is hoped that alerting the user will empower them to fix the underlying issue and improve the overall quality of their prints.</p>
 <p>There are some related questions: Why doesn't Klipper pause the print instead? Report a warning instead? Check for errors before the print? Ignore errors in user typed commands? etc? Currently Klipper reads commands using the G-Code protocol, and unfortunately the G-Code command protocol is not flexible enough to make these alternatives practical today. There is developer interest in improving the user experience during abnormal events, but it is expected that will require notable infrastructure work (including a shift away from G-Code).</p>
-<h2 id="how-do-i-upgrade-to-the-latest-software">How do I upgrade to the latest software?<a class="headerlink" href="#how-do-i-upgrade-to-the-latest-software" title="Permanent link">&para;</a></h2>
+<h2 id="wie-kann-ich-ein-upgrade-auf-die-neueste-softwareversion-durchfuhren">Wie kann ich ein Upgrade auf die neueste Softwareversion durchführen?<a class="headerlink" href="#wie-kann-ich-ein-upgrade-auf-die-neueste-softwareversion-durchfuhren" title="Permanent link">&para;</a></h2>
 <p>The first step to upgrading the software is to review the latest <a href="Config_Changes.html">config changes</a> document. On occasion, changes are made to the software that require users to update their settings as part of a software upgrade. It is a good idea to review this document prior to upgrading.</p>
 <p>When ready to upgrade, the general method is to ssh into the Raspberry Pi and run:</p>
 <div class="highlight"><pre><span></span><code>cd ~/klipper
@@ -1591,7 +1591,7 @@ sudo service klipper restart
 <p>If after using this shortcut the software warns about needing to reflash the micro-controller or some other unusual error occurs, then follow the full upgrade steps outlined above.</p>
 <p>If any errors persist then double check the <a href="Config_Changes.html">config changes</a> document, as you may need to modify the printer configuration.</p>
 <p>Note that the RESTART and FIRMWARE_RESTART g-code commands do not load new software - the above "sudo service klipper restart" and "make flash" commands are needed for a software change to take effect.</p>
-<h2 id="how-do-i-uninstall-klipper">How do I uninstall Klipper?<a class="headerlink" href="#how-do-i-uninstall-klipper" title="Permanent link">&para;</a></h2>
+<h2 id="wie-deinstalliere-ich-klipper">Wie deinstalliere ich Klipper?<a class="headerlink" href="#wie-deinstalliere-ich-klipper" title="Permanent link">&para;</a></h2>
 <p>On the firmware end, nothing special needs to happen. Just follow the flashing directions for the new firmware.</p>
 <p>On the raspberry pi end, an uninstall script is available in <a href="https://github.com/Klipper3d/klipper/blob/master/scripts/klipper-uninstall.sh">scripts/klipper-uninstall.sh</a>. For example:</p>
 <div class="highlight"><pre><span></span><code>sudo ~/klipper/scripts/klipper-uninstall.sh

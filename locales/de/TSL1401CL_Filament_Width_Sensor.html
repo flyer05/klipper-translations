@@ -1274,8 +1274,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note:
+  <a href="#hinweis" class="md-nav__link">
+    Hinweis:
   </a>
   
 </li>
@@ -1298,11 +1298,11 @@
 
 
 <h1 id="tsl1401cl-filamentbreitensensor">TSL1401CL Filamentbreitensensor<a class="headerlink" href="#tsl1401cl-filamentbreitensensor" title="Permanent link">&para;</a></h1>
-<p>This document describes Filament Width Sensor host module. Hardware used for developing this host module is based on TSL1401CL linear sensor array but it can work with any sensor array that has analog output. You can find designs at <a href="https://www.thingiverse.com/search?q=filament%20width%20sensor">Thingiverse</a>.</p>
-<p>To use a sensor array as a filament width sensor, read <a href="Config_Reference.html#tsl1401cl_filament_width_sensor">Config Reference</a> and <a href="G-Codes.html#hall_filament_width_sensor">G-Code documentation</a>.</p>
+<p>Dieses Dokument beschreibt das Hostmodul Filament Width Sensor. Die für die Entwicklung dieses Hostmoduls verwendete Hardware basiert auf dem linearen Sensorarray TSL1401CL, kann aber mit jedem Sensorarray mit Analogausgang verwendet werden. Sie können Entwürfe auf <a href="https://www.thingiverse.com/search?q=filament%20width%20sensor">Thingiverse</a> finden.</p>
+<p>Um ein Sensor-Array als Filament Breitensensor zu verwenden, lesen Sie <a href="Config_Reference.html#tsl1401cl_filament_width_sensor">Config Reference</a> und <a href="G-Codes.html#hall_filament_width_sensor">G-Code documentation</a>.</p>
 <h2 id="wie-funktioniert-das">Wie funktioniert das?<a class="headerlink" href="#wie-funktioniert-das" title="Permanent link">&para;</a></h2>
 <p>Der Sensor erzeugt ein analoges Ausgangssignal basierend auf der berechneten Filamentbreite. Die Ausgangsspannung entspricht immer der ermittelten Filamentbreite (z. B. 1,65 V, 1,70 V, 3,0 V). Das Host-Modul überwacht Spannungsänderungen und passt den Extrusionsmultiplikator an.</p>
-<h2 id="note">Note:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+<h2 id="hinweis">Hinweis:<a class="headerlink" href="#hinweis" title="Permanent link">&para;</a></h2>
 <p>Die Sensormessungen werden standardmäßig in 10-mm-Abständen durchgeführt. Bei Bedarf können Sie diese Einstellung jedoch ändern, indem Sie den Parameter <strong><em>MEASUREMENT_INTERVAL_MM</em></strong> in der Datei <strong>filament_width_sensor.py</strong> bearbeiten.</p>
 
               
