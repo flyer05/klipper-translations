@@ -1439,15 +1439,16 @@
 <li>If you have already added <code>[input_shaper]</code> section to the printer.cfg, execute <code>SET_INPUT_SHAPER SHAPER_FREQ_X=0 SHAPER_FREQ_Y=0</code> command. If you get "Unknown command" error, you can safely ignore it at this point and continue with the measurements.</li>
 <li>Execute the command: <code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code> Basically, we try to make ringing more pronounced by setting different large values for acceleration. This command will increase the acceleration every 5 mm starting from 1500 mm/sec^2: 1500 mm/sec^2, 2000 mm/sec^2, 2500 mm/sec^2 and so forth up until 7000 mm/sec^2 at the last band.</li>
 <li>Print the test model sliced with the suggested parameters.</li>
+<li>You can stop the print earlier if the ringing is clearly visible and you see that acceleration gets too high for your printer (e.g. printer shakes too much or starts skipping steps).</li>
 <li>
-<p>You can stop the print earlier if the ringing is clearly visible and you see that acceleration gets too high for your printer (e.g. printer shakes too much or starts skipping steps).</p>
-<ol>
-<li>Use X and Y marks at the back of the model for reference. The measurements from the side with X mark should be used for X axis <em>configuration</em>, and Y mark - for Y axis configuration. Measure the distance <em>D</em> (in mm) between several oscillations on the part with X mark, near the notches, preferably skipping the first oscillation or two. To measure the distance between oscillations more easily, mark the oscillations first, then measure the distance between the marks with a ruler or calipers:|<img alt="Mark ringing" src="img/ringing-mark.jpg" />|<img alt="Measure ringing" src="img/ringing-measure.jpg" />|</li>
-<li>Count how many oscillations <em>N</em> the measured distance <em>D</em> corresponds to. If you are unsure how to count the oscillations, refer to the picture above, which shows <em>N</em> = 6 oscillations.</li>
+<p>Use X and Y marks at the back of the model for reference. The measurements from the side with X mark should be used for X axis <em>configuration</em>, and Y mark - for Y axis configuration. Measure the distance <em>D</em> (in mm) between several oscillations on the part with X mark, near the notches, preferably skipping the first oscillation or two. To measure the distance between oscillations more easily, mark the oscillations first, then measure the distance between the marks with a ruler or calipers:</p>
+<p>|<img alt="Mark ringing" src="img/ringing-mark.jpg" />|<img alt="Measure ringing" src="img/ringing-measure.jpg" />|</p>
+</li>
+<li>
+<p>Count how many oscillations <em>N</em> the measured distance <em>D</em> corresponds to. If you are unsure how to count the oscillations, refer to the picture above, which shows <em>N</em> = 6 oscillations.</p>
+</li>
 <li>Compute the ringing frequency of X axis as <em>V</em> &middot; <em>N</em> / <em>D</em> (Hz), where <em>V</em> is the velocity for outer perimeters (mm/sec). For the example above, we marked 6 oscillations, and the test was printed at 100 mm/sec velocity, so the frequency is 100 * 6 / 12.14 ≈ 49.4 Hz.</li>
 <li>Do (8) - (10) for Y mark as well.</li>
-</ol>
-</li>
 </ol>
 <p>Note that ringing on the test print should follow the pattern of the curved notches, as in the picture above. If it doesn't, then this defect is not really a ringing and has a different origin - either mechanical, or an extruder issue. It should be fixed first before enabling and tuning input shapers.</p>
 <p>If the measurements are not reliable because, say, the distance between the oscillations is not stable, it might mean that the printer has several resonance frequencies on the same axis. One may try to follow the tuning process described in <a href="#unreliable-measurements-of-ringing-frequencies">Unreliable measurements of ringing frequencies</a> section instead and still get something out of the input shaping technique.</p>
