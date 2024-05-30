@@ -1339,8 +1339,8 @@
 
 
 <h1 id="rotation-distance">Rotation distance<a class="headerlink" href="#rotation-distance" title="Permanent link">&para;</a></h1>
-<p>Ovladače krokových motorů v Klipperu vyžadují parametr <code>rotation_distance</code> v každé sekci konfigurace <a href="Config_Reference.html#stepper">stepper config section</a>. <code>rotation_distance</code> je vzdálenost, kterou osa urazí jedním úplným otočením krokového motoru. Tento dokument popisuje, jak lze tuto hodnotu nakonfigurovat.</p>
-<h2 id="ziskani-hodnoty-rotation_distance-z-steps_per_mm-nebo-step_distance">Získání hodnoty <code>rotation_distance</code> z <code>steps_per_mm</code> (nebo <code>step_distance</code>)<a class="headerlink" href="#ziskani-hodnoty-rotation_distance-z-steps_per_mm-nebo-step_distance" title="Permanent link">&para;</a></h2>
+<p>Ovladače krokových motorů v Klipperu vyžadují parametr <code>rotation_distance</code> v každé sekci <a href="Config_Reference.html#stepper">stepper config</a>. Parametr <code>rotation_distance</code> je vzdálenost, o kterou se osa posune při jedné plné otáčce krokového motoru. Tento dokument popisuje, jak lze tuto hodnotu konfigurovat.</p>
+<h2 id="ziskani-hodnoty-rotation_distance-z-steps_per_mm-nebo-step_distance">Získání hodnoty rotation_distance z steps_per_mm (nebo step_distance)<a class="headerlink" href="#ziskani-hodnoty-rotation_distance-z-steps_per_mm-nebo-step_distance" title="Permanent link">&para;</a></h2>
 <p>The designers of your 3d printer originally calculated <code>steps_per_mm</code> from a rotation distance. If you know the steps_per_mm then it is possible to use this general formula to obtain that original rotation distance:</p>
 <div class="highlight"><pre><span></span><code>rotation_distance = &lt;full_steps_per_rotation&gt; * &lt;microsteps&gt; / &lt;steps_per_mm&gt;
 </code></pre></div>

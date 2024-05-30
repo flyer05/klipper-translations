@@ -1274,15 +1274,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compiling-python-code" class="md-nav__link">
-    Compiling python code
+  <a href="#kompilace-kodu-pythonu" class="md-nav__link">
+    Kompilace kódu Pythonu
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
-    Versioning
+  <a href="#verze" class="md-nav__link">
+    Verze
   </a>
   
 </li>
@@ -1312,12 +1312,12 @@
 
 
 <h1 id="packaging-klipper">Packaging Klipper<a class="headerlink" href="#packaging-klipper" title="Permanent link">&para;</a></h1>
-<p>Klipper je do jisté míry anomálií v balení mezi pythonovými programy, protože nepoužívá setuptools k sestavení a instalaci. Několik poznámek o tom, jak ho nejlépe zabalit, je následujících:</p>
+<p>Klipper je mezi programy v Pythonu poněkud anomální, protože nepoužívá k sestavení a instalaci nástroje setuptools. Několik poznámek k tomu, jak jej nejlépe sestavit, je následujících:</p>
 <h2 id="moduly-v-jazyce-c">Moduly v jazyce C<a class="headerlink" href="#moduly-v-jazyce-c" title="Permanent link">&para;</a></h2>
 <p>Klipper uses a C module to handle some kinematics calculations more quickly. This module needs to be compiled at packaging time to avoid introducing a runtime dependency on a compiler. To compile the C module, run <code>python2 klippy/chelper/__init__.py</code>.</p>
-<h2 id="compiling-python-code">Compiling python code<a class="headerlink" href="#compiling-python-code" title="Permanent link">&para;</a></h2>
+<h2 id="kompilace-kodu-pythonu">Kompilace kódu Pythonu<a class="headerlink" href="#kompilace-kodu-pythonu" title="Permanent link">&para;</a></h2>
 <p>Many distributions have a policy of compiling all python code before packaging to improve startup time. You can do this by running <code>python2 -m compileall klippy</code>.</p>
-<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
+<h2 id="verze">Verze<a class="headerlink" href="#verze" title="Permanent link">&para;</a></h2>
 <p>If you are building a package of Klipper from git, it is usual practice not to ship a .git directory, so the versioning must be handled without git. To do this, use the script shipped in <code>scripts/make_version.py</code> which should be run as follows: <code>python2 scripts/make_version.py YOURDISTRONAME &gt; klippy/.version</code>.</p>
 <h2 id="sample-packaging-script">Sample packaging script<a class="headerlink" href="#sample-packaging-script" title="Permanent link">&para;</a></h2>
 <p>klipper-git is packaged for Arch Linux, and has a PKGBUILD (package build script) available at <a href="https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=klipper-git">Arch User Repository</a>.</p>

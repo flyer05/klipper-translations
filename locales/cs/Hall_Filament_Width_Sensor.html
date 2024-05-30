@@ -1274,8 +1274,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#template-for-menu-variables" class="md-nav__link">
-    Template for menu variables
+  <a href="#sablona-pro-upravu-menu" class="md-nav__link">
+    Šablona pro úpravu menu
   </a>
   
 </li>
@@ -1324,7 +1324,7 @@
 <p>To use Hall filament width sensor, read <a href="Config_Reference.html#hall_filament_width_sensor">Config Reference</a> and <a href="G-Codes.html#hall_filament_width_sensor">G-Code documentation</a>.</p>
 <h2 id="jak-to-funguje">Jak to funguje?<a class="headerlink" href="#jak-to-funguje" title="Permanent link">&para;</a></h2>
 <p>Sensor generates two analog output based on calculated filament width. Sum of output voltage always equals to detected filament width. Host module monitors voltage changes and adjusts extrusion multiplier. I use the aux2 connector on a ramps-like board with the analog11 and analog12 pins. You can use different pins and different boards.</p>
-<h2 id="template-for-menu-variables">Template for menu variables<a class="headerlink" href="#template-for-menu-variables" title="Permanent link">&para;</a></h2>
+<h2 id="sablona-pro-upravu-menu">Šablona pro úpravu menu<a class="headerlink" href="#sablona-pro-upravu-menu" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>[menu __main __filament __width_current]
 type: command
 enable: {&#39;hall_filament_width_sensor&#39; in printer}

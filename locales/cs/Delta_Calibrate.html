@@ -1267,8 +1267,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#automatic-vs-manual-probing" class="md-nav__link">
-    Automatic vs manual probing
+  <a href="#automaticka-vs-manualni-sonda" class="md-nav__link">
+    Automatická vs. manuální sonda
   </a>
   
 </li>
@@ -1325,10 +1325,10 @@
 
 
 <h1 id="delta-calibration">Delta calibration<a class="headerlink" href="#delta-calibration" title="Permanent link">&para;</a></h1>
-<p>Tento dokument popisuje systém automatické kalibrace Klipperu pro tiskárny typu "delta"</p>
+<p>Tento dokument popisuje systém automatické kalibrace Klipperu pro tiskárny typu "delta".</p>
 <p>Kalibrace delta tiskárny zahrnuje určení pozic koncových spínačů ve věžích, úhly věží, poloměr delta a délky ramen delta. Tyto nastavení ovlivňují pohyb tiskárny u delta tiskárny. Každý z těchto parametrů má nezjevný a nelineární vliv a je obtížné je kalibrovat ručně. Naopak, softwarový kalibrační kód může poskytnout vynikající výsledky během několika málo minut. Není nutný žádný speciální sondovací hardware.</p>
 <p>Ultimately, the delta calibration is dependent on the precision of the tower endstop switches. If one is using Trinamic stepper motor drivers then consider enabling <a href="Endstop_Phase.html">endstop phase</a> detection to improve the accuracy of those switches.</p>
-<h2 id="automatic-vs-manual-probing">Automatic vs manual probing<a class="headerlink" href="#automatic-vs-manual-probing" title="Permanent link">&para;</a></h2>
+<h2 id="automaticka-vs-manualni-sonda">Automatická vs. manuální sonda<a class="headerlink" href="#automaticka-vs-manualni-sonda" title="Permanent link">&para;</a></h2>
 <p>Klipper supports calibrating the delta parameters via a manual probing method or via an automatic Z probe.</p>
 <p>A number of delta printer kits come with automatic Z probes that are not sufficiently accurate (specifically, small differences in arm length can cause effector tilt which can skew an automatic probe). If using an automatic probe then first <a href="Probe_Calibrate.html">calibrate the probe</a> and then check for a <a href="Probe_Calibrate.html#location-bias-check">probe location bias</a>. If the automatic probe has a bias of more than 25 microns (.025mm) then use manual probing instead. Manual probing only takes a few minutes and it eliminates error introduced by the probe.</p>
 <p>If using a probe that is mounted on the side of the hotend (that is, it has an X or Y offset) then note that performing delta calibration will invalidate the results of probe calibration. These types of probes are rarely suitable for use on a delta (because minor effector tilt will result in a probe location bias). If using the probe anyway, then be sure to rerun probe calibration after any delta calibration.</p>

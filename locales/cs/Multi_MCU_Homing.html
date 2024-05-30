@@ -13,7 +13,7 @@
     
     
       
-        <title>Vícečipové Mikrokontroléry pro Domácí Použití a Sondování - Klipper documentation</title>
+        <title>Vícenásobné navádění a sondování prostřednictvím mikrokontroléru - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vicecipove-mikrokontrolery-pro-domaci-pouziti-a-sondovani" class="md-skip">
+        <a href="#vicenasobne-navadeni-a-sondovani-prostrednictvim-mikrokontroleru" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vícečipové Mikrokontroléry pro Domácí Použití a Sondování
+              Vícenásobné navádění a sondování prostřednictvím mikrokontroléru
             
           </span>
         </div>
@@ -1275,7 +1275,7 @@
 </a>
 
 
-<h1 id="vicecipove-mikrokontrolery-pro-domaci-pouziti-a-sondovani">Vícečipové Mikrokontroléry pro Domácí Použití a Sondování<a class="headerlink" href="#vicecipove-mikrokontrolery-pro-domaci-pouziti-a-sondovani" title="Permanent link">&para;</a></h1>
+<h1 id="vicenasobne-navadeni-a-sondovani-prostrednictvim-mikrokontroleru">Vícenásobné navádění a sondování prostřednictvím mikrokontroléru<a class="headerlink" href="#vicenasobne-navadeni-a-sondovani-prostrednictvim-mikrokontroleru" title="Permanent link">&para;</a></h1>
 <p>Klipper podporuje mechanismus homingu s koncovým spínačem připojeným k jednomu mikrokontroléru, zatímco krokové motory jsou připojeny k jinému mikrokontroléru. Tato podpora je označována jako "multi-mcu homing". Tato funkce se také používá, když je snímač Z na jiném mikrokontroléru než krokové motory Z.</p>
 <p>This feature can be useful to simplify wiring, as it may be more convenient to attach an endstop or probe to a closer micro-controller. However, using this feature may result in "overshoot" of the stepper motors during homing and probing operations.</p>
 <p>The overshoot occurs due to possible message transmission delays between the micro-controller monitoring the endstop and the micro-controllers moving the stepper motors. The Klipper code is designed to limit this delay to no more than 25ms. (When multi-mcu homing is activated, the micro-controllers send periodic status messages and check that corresponding status messages are received within 25ms.)</p>

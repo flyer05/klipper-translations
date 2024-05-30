@@ -1399,7 +1399,7 @@
 
 
 <h1 id="protokol">Protokol<a class="headerlink" href="#protokol" title="Permanent link">&para;</a></h1>
-<p>Protokol pro zprávy Klipper se používá pro komunikaci na nízké úrovni mezi hostitelským softwarem Klipper a mikrokontrolérovým softwarem Klipper. Na vysoké úrovni lze protokol představit jako sérii řetězců příkazů a odpovědí, které jsou komprimovány, odeslány a poté zpracovány na přijímací straně. Příklad série příkazů v nepřekladném lidském formátu by mohl vypadat takto:</p>
+<p>Protokol zpráv Klipper se používá pro nízkoúrovňovou komunikaci mezi hostitelským softwarem Klipper a softwarem mikrokontroléru Klipper. Na vysoké úrovni si lze protokol představit jako sérii řetězců příkazů a odpovědí, které jsou komprimovány, přenášeny a poté zpracovány na přijímající straně. Příklad série příkazů v nekomprimovaném formátu čitelném pro člověka může vypadat takto:</p>
 <div class="highlight"><pre><span></span><code>set_digital_out pin=PA3 value=1
 set_digital_out pin=PA7 value=1
 schedule_digital_out oid=8 clock=4000000 value=0
@@ -1407,7 +1407,7 @@ queue_step oid=7 interval=7458 count=10 add=331
 queue_step oid=7 interval=11717 count=4 add=1281
 </code></pre></div>
 
-<p>See the <a href="MCU_Commands.html">mcu commands</a> document for information on available commands. See the <a href="Debugging.html">debugging</a> document for information on how to translate a G-Code file into its corresponding human-readable micro-controller commands.</p>
+<p>Informace o dostupných příkazech najdete v dokumentu <a href="MCU_Commands.html">mcu commands</a>. Informace o překladu souboru G-Code do odpovídajících příkazů mikrokontroléru čitelných pro člověka naleznete v dokumentu <a href="Debugging.html">debugging</a>.</p>
 <p>This page provides a high-level description of the Klipper messaging protocol itself. It describes how messages are declared, encoded in binary format (the "compression" scheme), and transmitted.</p>
 <p>The goal of the protocol is to enable an error-free communication channel between the host and micro-controller that is low-latency, low-bandwidth, and low-complexity for the micro-controller.</p>
 <h2 id="micro-controller-interface">Micro-controller Interface<a class="headerlink" href="#micro-controller-interface" title="Permanent link">&para;</a></h2>
