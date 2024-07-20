@@ -1281,8 +1281,8 @@
 <p>Dette "overshoot" sker hvis der opstår forsinkelser i transmissionen mellem de 2 mcu'er der håndterer sensorer og stepper motorer. Klippers kode er designet til at begrænse denne forsinkelse til ikke mere end 25ms. (Når fler-mcu funktionen er aktiveret sendes der periodiske status beskeder mellem mcu'er for at holde øje med at forsinkelsen ikke overstiger 25ms..)</p>
 <p>For eksempel, hvis homing sker ved 10mm/s, så er det muligt at se et "overshoot" på op til 0.250mm (10mm/s*0,025s = 0,250mm). Det anbefales at planlægge for denne forsinkelse ved konfigurationen, for eksempel ved at sætte homing hastighederne ned.</p>
 <p>Stepper motor "overshoot" bør ikke påvirke præcisionen betydeligt. Klippers kode vil registrere dette "overshoot" og tage højde for det i beregningerne. Dog er det vigtigt at hardwaren designes på en sådan måde, at et "overshoot" ikke kan skade printeren eller dens dele.</p>
-<p>In order to use this "multi-mcu homing" capability the hardware must have predictably low latency between the host computer and all of the micro-controllers. Typically the round-trip time must be consistently less than 10ms. High latency (even for short periods) is likely to result in homing failures.</p>
-<p>Should high latency result in a failure (or if some other communication issue is detected) then Klipper will raise a "Communication timeout during homing" error.</p>
+<p>For at kunne bruge denne "multi-mcu homing" funktion skal hardwaren have en sikker lav latency mellem værtscomputeren og alle mcu'er. Typisk skal send/modtag udføres på mindre end 10ms. Høj latency (selv i korte perioder) vil betyde stor sandsynlighed for at "homing" fejler.</p>
+<p>Hvis høj latency forårsager en fejl (eller hvis andre kommunikationsproblemer opstår) vil Klipper vise en "Communication timeout during homing" fejl.</p>
 <p>Bemærk at en akse med flere steppere (for eksempel <code>stepper_z</code>og <code>stepper_z1</code>) skal være på samme mcu. Så hvis endestoppet er tilsluttet én mcu, og <code>stepper_z</code> er på en anden, skal <code>stepper_z1</code> være tilsluttet samme mcu som <code>stepper_z</code>.</p>
 
               

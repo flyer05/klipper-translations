@@ -13,7 +13,7 @@
     
     
       
-        <title>Packaging Klipper - Klipper documentation</title>
+        <title>Klipper paketleniyor - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#packaging-klipper" class="md-skip">
+        <a href="#klipper-paketleniyor" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Packaging Klipper
+              Klipper paketleniyor
             
           </span>
         </div>
@@ -1267,29 +1267,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#c-modules" class="md-nav__link">
-    C modules
+  <a href="#c-modulleri" class="md-nav__link">
+    C modülleri
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#compiling-python-code" class="md-nav__link">
-    Compiling python code
+  <a href="#python-kodu-derleniyor" class="md-nav__link">
+    Python kodu derleniyor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#versioning" class="md-nav__link">
-    Versioning
+  <a href="#versiyon-ayarlanyor" class="md-nav__link">
+    Versiyon ayarlanıyor
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-packaging-script" class="md-nav__link">
-    Sample packaging script
+  <a href="#ornek-pakerleme-betigi" class="md-nav__link">
+    Örnek pakerleme betiği
   </a>
   
 </li>
@@ -1311,16 +1311,16 @@
 </a>
 
 
-<h1 id="packaging-klipper">Packaging Klipper<a class="headerlink" href="#packaging-klipper" title="Permanent link">&para;</a></h1>
+<h1 id="klipper-paketleniyor">Klipper paketleniyor<a class="headerlink" href="#klipper-paketleniyor" title="Permanent link">&para;</a></h1>
 <p>Klipper, kurulum ve derleme için setuptools gibi araçları kullanmadığından, Python programları arasında paketleme açısından bir tür anormallik gösterir. Klipper'ı en iyi şekilde paketlemek için bazı notlar şunlardır:</p>
-<h2 id="c-modules">C modules<a class="headerlink" href="#c-modules" title="Permanent link">&para;</a></h2>
-<p>Klipper uses a C module to handle some kinematics calculations more quickly. This module needs to be compiled at packaging time to avoid introducing a runtime dependency on a compiler. To compile the C module, run <code>python2 klippy/chelper/__init__.py</code>.</p>
-<h2 id="compiling-python-code">Compiling python code<a class="headerlink" href="#compiling-python-code" title="Permanent link">&para;</a></h2>
-<p>Many distributions have a policy of compiling all python code before packaging to improve startup time. You can do this by running <code>python2 -m compileall klippy</code>.</p>
-<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
-<p>If you are building a package of Klipper from git, it is usual practice not to ship a .git directory, so the versioning must be handled without git. To do this, use the script shipped in <code>scripts/make_version.py</code> which should be run as follows: <code>python2 scripts/make_version.py YOURDISTRONAME &gt; klippy/.version</code>.</p>
-<h2 id="sample-packaging-script">Sample packaging script<a class="headerlink" href="#sample-packaging-script" title="Permanent link">&para;</a></h2>
-<p>klipper-git is packaged for Arch Linux, and has a PKGBUILD (package build script) available at <a href="https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=klipper-git">Arch User Repository</a>.</p>
+<h2 id="c-modulleri">C modülleri<a class="headerlink" href="#c-modulleri" title="Permanent link">&para;</a></h2>
+<p>Klipper, bazı kinematik hesaplamaları daha hızlı gerçekleştirmek için bir C modülü kullanır. Derleyiciye çalışma zamanı bağımlılığının getirilmesini önlemek için bu modülün paketleme zamanında derlenmesi gerekir. C modülünü derlemek için 'python2 klippy/chelper/<strong>init</strong>.py' komutunu çalıştırın.</p>
+<h2 id="python-kodu-derleniyor">Python kodu derleniyor<a class="headerlink" href="#python-kodu-derleniyor" title="Permanent link">&para;</a></h2>
+<p>Çoğu dağıtım, başlatma süresini kısaltmak için tüm Python kodlarını paketlemeden önce derleme politikasına sahiptir. Bunu 'python2 -m compileall klippy' komutunu çalıştırarak yapabilirsiniz.</p>
+<h2 id="versiyon-ayarlanyor">Versiyon ayarlanıyor<a class="headerlink" href="#versiyon-ayarlanyor" title="Permanent link">&para;</a></h2>
+<p>Klipper paketini git ile oluşturuyorsanız sürüm oluşturma işleminin git olmadan yapılması gerekir. Bunu yapmak için, 'scripts/make_version.py' dosyasını şu betiği kullanarak çalıştırın: 'python2 scripts/make_version.py YOURDISTRONAME &gt; klippy/.version'.</p>
+<h2 id="ornek-pakerleme-betigi">Örnek pakerleme betiği<a class="headerlink" href="#ornek-pakerleme-betigi" title="Permanent link">&para;</a></h2>
+<p>Klipper-git Arch Linux için paketlendi. PKGBUILD (yapı betiği), <a href="https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=klipper-git">Arch User Repository</a>'de bulunabilir.</p>
 
               
             </article>

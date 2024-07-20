@@ -1267,8 +1267,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#calibrando-os-deslocamentos-x-e-y-da-sonda" class="md-nav__link">
-    Calibrando os deslocamentos X e Y da sonda
+  <a href="#calibrando-os-deslocamentos-de-eixo-x-e-y-da-sonda" class="md-nav__link">
+    Calibrando os deslocamentos de Eixo X e Y da sonda
   </a>
   
 </li>
@@ -1320,23 +1320,23 @@
 
 <h1 id="probe-calibration">Probe calibration<a class="headerlink" href="#probe-calibration" title="Permanent link">&para;</a></h1>
 <p>This document describes the method for calibrating the X, Y, and Z offsets of an "automatic z probe" in Klipper. This is useful for users that have a <code>[probe]</code> or <code>[bltouch]</code> section in their config file.</p>
-<h2 id="calibrando-os-deslocamentos-x-e-y-da-sonda">Calibrando os deslocamentos X e Y da sonda<a class="headerlink" href="#calibrando-os-deslocamentos-x-e-y-da-sonda" title="Permanent link">&para;</a></h2>
-<p>To calibrate the X and Y offset, navigate to the OctoPrint "Control" tab, home the printer, and then use the OctoPrint jogging buttons to move the head to a position near the center of the bed.</p>
-<p>Place a piece of blue painters tape (or similar) on the bed underneath the probe. Navigate to the OctoPrint "Terminal" tab and issue a PROBE command:</p>
+<h2 id="calibrando-os-deslocamentos-de-eixo-x-e-y-da-sonda">Calibrando os deslocamentos de Eixo X e Y da sonda<a class="headerlink" href="#calibrando-os-deslocamentos-de-eixo-x-e-y-da-sonda" title="Permanent link">&para;</a></h2>
+<p>Para calibrar o deslocamento de eixos X e Y, navegue até a aba "Controle" (Control) do OctoPrint, coloque a impressora na posição inicial e use os botões de movimentação do OctoPrint para mover o extrusor para uma posição próxima ao centro da mesa.</p>
+<p>Coloque um pedaço de fita azul (ou similar) na mesa, embaixo da sonda (probe). Navegue até a aba "Terminal" do OctoPrint e emita um comando PROBE:</p>
 <div class="highlight"><pre><span></span><code>PROBE
 </code></pre></div>
 
-<p>Place a mark on the tape directly under where the probe is (or use a similar method to note the location on the bed).</p>
-<p>Issue a <code>GET_POSITION</code> command and record the toolhead XY location reported by that command. For example if one sees:</p>
+<p>Faça uma marca na fita diretamente abaixo de onde a sonda está (ou use outro método para anotar o local na mesa).</p>
+<p>Emita um comando <code>GET_POSITION</code> e registre a localização (XY) da cabeça do extrusor relatada por esse comando. Por exemplo:</p>
 <div class="highlight"><pre><span></span><code>Recv: // toolhead: X:46.500000 Y:27.000000 Z:15.000000 E:0.000000
 </code></pre></div>
 
-<p>then one would record a probe X position of 46.5 and probe Y position of 27.</p>
-<p>After recording the probe position, issue a series of G1 commands until the nozzle is directly above the mark on the bed. For example, one might issue:</p>
+<p>então seria registrada uma posição da sonda (Eixo X) de 46,5 e uma posição da sonda (Eixo Y) de 27.</p>
+<p>Após registrar a posição da sonda, emita uma série de comandos G1 até que o extrusor diretamente acima da marca na mesa. Por exemplo:</p>
 <div class="highlight"><pre><span></span><code>G1 F300 X57 Y30 Z15
 </code></pre></div>
 
-<p>to move the nozzle to an X position of 57 and Y of 30. Once one finds the position directly above the mark, use the <code>GET_POSITION</code> command to report that position. This is the nozzle position.</p>
+<p>para mover o extrusor para uma posição de Eixo X de 57 e uma de Eixo Y de 30. Uma vez que se encontre a posição diretamente acima da marca, use o comando <code>GET_POSITION</code> para registrar essa posição. Esta é a posição do bocal (extrusor).</p>
 <p>The x_offset is then the <code>nozzle_x_position - probe_x_position</code> and y_offset is similarly the <code>nozzle_y_position - probe_y_position</code>. Update the printer.cfg file with the given values, remove the tape/marks from the bed, and then issue a <code>RESTART</code> command so that the new values take effect.</p>
 <h2 id="calibrating-probe-z-offset">Calibrating probe Z offset<a class="headerlink" href="#calibrating-probe-z-offset" title="Permanent link">&para;</a></h2>
 <p>Providing an accurate probe z_offset is critical to obtaining high quality prints. The z_offset is the distance between the nozzle and bed when the probe triggers. The Klipper <code>PROBE_CALIBRATE</code> tool can be used to obtain this value - it will run an automatic probe to measure the probe's Z trigger position and then start a manual probe to obtain the nozzle Z height. The probe z_offset will then be calculated from these measurements.</p>
@@ -1368,7 +1368,7 @@ Recv: // probe accuracy results: maximum 2.519448, minimum 2.506948, range 0.012
 </code></pre></div>
 
 <p>Ideally the tool will report an identical maximum and minimum value. (That is, ideally the probe obtains an identical result on all ten probes.) However, it's normal for the minimum and maximum values to differ by one Z "step distance" or up to 5 microns (.005mm). A "step distance" is <code>rotation_distance/(full_steps_per_rotation*microsteps)</code>. The distance between the minimum and the maximum value is called the range. So, in the above example, since the printer uses a Z step distance of .0125, a range of 0.012500 would be considered normal.</p>
-<p>If the results of the test show a range value that is greater than 25 microns (.025mm) then the probe does not have sufficient accuracy for typical bed leveling procedures. It may be possible to tune the probe speed and/or probe start height to improve the repeatability of the probe. The <code>PROBE_ACCURACY</code> command allows one to run tests with different parameters to see their impact - see the <a href="G-Codes.html#probe_accuracy">G-Codes document</a> for further details. If the probe generally obtains repeatable results but has an occasional outlier, then it may be possible to account for that by using multiple samples on each probe - read the description of the probe <code>samples</code> config parameters in the <a href="Config_Reference.html#probe">config reference</a> for more details.</p>
+<p>Se os resultados do teste mostrarem um valor de intervalo maior que 25 mícrons (0,025 mm), a sonda (probe) não tem precisão suficiente para procedimentos típicos de nivelamento da mesa. Pode ser possível ajustar a velocidade da sonda e/ou a altura inicial da sonda para melhorar a repetibilidade da sonda. O comando <code>PROBE_ACCURACY</code> permite executar testes com parâmetros diferentes para ver seu impacto - consulte o <a href="G-Codes.html#probe_accuracy">G-Codes document</a> para obter mais detalhes. Se a sonda geralmente obtém resultados repetíveis, mas tem um problema ocasional, pode ser possível contabilizar isso usando várias amostras em cada sonda - leia a descrição dos parâmetros de configuração <code>samples</code> da sonda na <a href="Config_Reference.html#probe">config reference</a> para mais detalhes.</p>
 <p>If new probe speed, samples count, or other settings are needed, then update the printer.cfg file and issue a <code>RESTART</code> command. If so, it is a good idea to <a href="#calibrating-probe-z-offset">calibrate the z_offset</a> again. If repeatable results can not be obtained then don't use the probe for bed leveling. Klipper has several manual probing tools that can be used instead - see the <a href="Bed_Level.html">Bed Level document</a> for further details.</p>
 <h2 id="location-bias-check">Location Bias Check<a class="headerlink" href="#location-bias-check" title="Permanent link">&para;</a></h2>
 <p>Some probes can have a systemic bias that corrupts the results of the probe at certain toolhead locations. For example, if the probe mount tilts slightly when moving along the Y axis then it could result in the probe reporting biased results at different Y positions.</p>

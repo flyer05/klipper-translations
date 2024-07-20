@@ -1643,7 +1643,7 @@ adaptive_margin: 5
 <p>After a BED_MESH_CALIBRATE has been performed, it is possible to save the current mesh state into a named profile. This makes it possible to load a mesh without re-probing the bed. After a profile has been saved using <code>BED_MESH_PROFILE SAVE=&lt;name&gt;</code> the <code>SAVE_CONFIG</code> gcode may be executed to write the profile to printer.cfg.</p>
 <p>Profile können durch Ausführen von <code>BED_MESH_PROFILE LOAD=&lt;name&gt;</code> geladen werden.</p>
 <p>It should be noted that each time a BED_MESH_CALIBRATE occurs, the current state is automatically saved to the <em>default</em> profile. The <em>default</em> profile can be removed as follows:</p>
-<p><code>BED_MESH_PROFILE REMOVE=default</code></p>
+<p>BETT_MESH_PROFIL ENTFERNEN=standard</p>
 <p>Any other saved profile can be removed in the same fashion, replacing <em>default</em> with the named profile you wish to remove.</p>
 <h4 id="laden-des-standardprofils">Laden des Standardprofils<a class="headerlink" href="#laden-des-standardprofils" title="Permanent link">&para;</a></h4>
 <p>Previous versions of <code>bed_mesh</code> always loaded the profile named <em>default</em> on startup if it was present. This behavior has been removed in favor of allowing the user to determine when a profile is loaded. If a user wishes to load the <code>default</code> profile it is recommended to add <code>BED_MESH_PROFILE LOAD=default</code> to either their <code>START_PRINT</code> macro or their slicer's "Start G-Code" configuration, whichever is applicable.</p>
@@ -1680,7 +1680,7 @@ adaptive_margin: 5
 <p>The "Tool Adjusted" points refer to the nozzle location for each point, and the "Probe" points refer to the probe location. Note that when manually probing the "Probe" points will refer to both the tool and nozzle locations.</p>
 <h3 id="clear-mesh-state">Clear Mesh State<a class="headerlink" href="#clear-mesh-state" title="Permanent link">&para;</a></h3>
 <p><code>BED_MESH_CLEAR</code></p>
-<p>This gcode may be used to clear the internal mesh state.</p>
+<p>Dieser G-code kann verwendet werden, um den internen Mesh-Zustand zu löschen.</p>
 <h3 id="xy-offsets-anwenden">X/Y Offsets anwenden<a class="headerlink" href="#xy-offsets-anwenden" title="Permanent link">&para;</a></h3>
 <p><code>BED_MESH_OFFSET [X=&lt;value&gt;] [Y=&lt;value&gt;] [ZFADE=&lt;value&gt;]</code></p>
 <p>This is useful for printers with multiple independent extruders, as an offset is necessary to produce correct Z adjustment after a tool change. Offsets should be specified relative to the primary extruder. That is, a positive X offset should be specified if the secondary extruder is mounted to the right of the primary extruder, a positive Y offset should be specified if the secondary extruder is mounted "behind" the primary extruder, and a positive ZFADE offset should be specified if the secondary extruder's nozzle is above the primary extruder's.</p>

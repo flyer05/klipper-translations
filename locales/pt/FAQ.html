@@ -1267,43 +1267,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-can-i-donate-to-the-project" class="md-nav__link">
-    How can I donate to the project?
+  <a href="#como-posso-doar-para-o-projeto" class="md-nav__link">
+    Como posso doar para o projeto?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-do-i-calculate-the-rotation_distance-config-parameter" class="md-nav__link">
-    How do I calculate the rotation_distance config parameter?
+  <a href="#como-calculo-o-parametro-de-configuracao-rotation_distance" class="md-nav__link">
+    Como calculo o parâmetro de configuração rotation_distance?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#wheres-my-serial-port" class="md-nav__link">
-    Where's my serial port?
+  <a href="#onde-esta-minha-porta-serial" class="md-nav__link">
+    Onde está minha porta serial?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-the-micro-controller-restarts-the-device-changes-to-devttyusb1" class="md-nav__link">
-    When the micro-controller restarts the device changes to /dev/ttyUSB1
+  <a href="#quando-o-microcontrolador-reinicia-o-dispositivo-muda-para-devttyusb1" class="md-nav__link">
+    Quando o microcontrolador reinicia, o dispositivo muda para /dev/ttyUSB1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-make-flash-command-doesnt-work" class="md-nav__link">
-    The "make flash" command doesn't work
+  <a href="#o-comando-make-flash-nao-funciona" class="md-nav__link">
+    O comando "make flash" não funciona
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-do-i-change-the-serial-baud-rate" class="md-nav__link">
-    How do I change the serial baud rate?
+  <a href="#como-altero-a-taxa-de-transmissao-serial" class="md-nav__link">
+    Como altero a taxa de transmissão serial?
   </a>
   
 </li>
@@ -1452,43 +1452,43 @@
 
 
 <h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
-<h2 id="how-can-i-donate-to-the-project">How can I donate to the project?<a class="headerlink" href="#how-can-i-donate-to-the-project" title="Permanent link">&para;</a></h2>
+<h2 id="como-posso-doar-para-o-projeto">Como posso doar para o projeto?<a class="headerlink" href="#como-posso-doar-para-o-projeto" title="Permanent link">&para;</a></h2>
 <p>Thank you for your support. See the <a href="Sponsors.html">Sponsors page</a> for information.</p>
-<h2 id="how-do-i-calculate-the-rotation_distance-config-parameter">How do I calculate the rotation_distance config parameter?<a class="headerlink" href="#how-do-i-calculate-the-rotation_distance-config-parameter" title="Permanent link">&para;</a></h2>
-<p>See the <a href="Rotation_Distance.html">rotation distance document</a>.</p>
-<h2 id="wheres-my-serial-port">Where's my serial port?<a class="headerlink" href="#wheres-my-serial-port" title="Permanent link">&para;</a></h2>
-<p>The general way to find a USB serial port is to run <code>ls /dev/serial/by-id/*</code> from an ssh terminal on the host machine. It will likely produce output similar to the following:</p>
+<h2 id="como-calculo-o-parametro-de-configuracao-rotation_distance">Como calculo o parâmetro de configuração rotation_distance?<a class="headerlink" href="#como-calculo-o-parametro-de-configuracao-rotation_distance" title="Permanent link">&para;</a></h2>
+<p>Consulte o <a href="Rotation_Distance.html">documento de distância de rotação</a>.</p>
+<h2 id="onde-esta-minha-porta-serial">Onde está minha porta serial?<a class="headerlink" href="#onde-esta-minha-porta-serial" title="Permanent link">&para;</a></h2>
+<p>A maneira geral de encontrar uma porta serial USB é executar <code>ls /dev/serial/by-id/*</code> a partir de um terminal ssh na máquina host. Provavelmente produzirá um resultado semelhante ao seguinte:</p>
 <div class="highlight"><pre><span></span><code>/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
 </code></pre></div>
 
-<p>The name found in the above command is stable and it is possible to use it in the config file and while flashing the micro-controller code. For example, a flash command might look similar to:</p>
+<p>O nome encontrado no comando acima é estável e é possível utilizá-lo no arquivo de configuração e durante a atualização do código do microcontrolador. Por exemplo, um comando flash pode ser semelhante a:</p>
 <div class="highlight"><pre><span></span><code>sudo service klipper stop
 make flash FLASH_DEVICE=/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
 sudo service klipper start
 </code></pre></div>
 
-<p>and the updated config might look like:</p>
+<p>e a configuração atualizada pode ser semelhante a:</p>
 <div class="highlight"><pre><span></span><code>[mcu]
 serial: /dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
 </code></pre></div>
 
-<p>Be sure to copy-and-paste the name from the "ls" command that you ran above as the name will be different for each printer.</p>
-<p>If you are using multiple micro-controllers and they do not have unique ids (common on boards with a CH340 USB chip) then follow the directions above using the command <code>ls /dev/serial/by-path/*</code> instead.</p>
-<h2 id="when-the-micro-controller-restarts-the-device-changes-to-devttyusb1">When the micro-controller restarts the device changes to /dev/ttyUSB1<a class="headerlink" href="#when-the-micro-controller-restarts-the-device-changes-to-devttyusb1" title="Permanent link">&para;</a></h2>
-<p>Follow the directions in the "<a href="#wheres-my-serial-port">Where's my serial port?</a>" section to prevent this from occurring.</p>
-<h2 id="the-make-flash-command-doesnt-work">The "make flash" command doesn't work<a class="headerlink" href="#the-make-flash-command-doesnt-work" title="Permanent link">&para;</a></h2>
-<p>The code attempts to flash the device using the most common method for each platform. Unfortunately, there is a lot of variance in flashing methods, so the "make flash" command may not work on all boards.</p>
-<p>If you're having an intermittent failure or you do have a standard setup, then double check that Klipper isn't running when flashing (sudo service klipper stop), make sure OctoPrint isn't trying to connect directly to the device (open the Connection tab in the web page and click Disconnect if the Serial Port is set to the device), and make sure FLASH_DEVICE is set correctly for your board (see the <a href="#wheres-my-serial-port">question above</a>).</p>
-<p>However, if "make flash" just doesn't work for your board, then you will need to manually flash. See if there is a config file in the <a href="https://github.com/Klipper3d/klipper/blob/master/config">config directory</a> with specific instructions for flashing the device. Also, check the board manufacturer's documentation to see if it describes how to flash the device. Finally, it may be possible to manually flash the device using tools such as "avrdude" or "bossac" - see the <a href="Bootloaders.html">bootloader document</a> for additional information.</p>
-<h2 id="how-do-i-change-the-serial-baud-rate">How do I change the serial baud rate?<a class="headerlink" href="#how-do-i-change-the-serial-baud-rate" title="Permanent link">&para;</a></h2>
-<p>The recommended baud rate for Klipper is 250000. This baud rate works well on all micro-controller boards that Klipper supports. If you've found an online guide recommending a different baud rate, then ignore that part of the guide and continue with the default value of 250000.</p>
-<p>If you want to change the baud rate anyway, then the new rate will need to be configured in the micro-controller (during <strong>make menuconfig</strong>) and that updated code will need to be compiled and flashed to the micro-controller. The Klipper printer.cfg file will also need to be updated to match that baud rate (see the <a href="Config_Reference.html#mcu">config reference</a> for details). For example:</p>
+<p>Certifique-se de copiar e colar o nome do comando “ls” executado acima, pois o nome será diferente para cada impressora.</p>
+<p>Se você estiver usando vários microcontroladores e eles não tiverem ids exclusivos (comuns em placas com chip USB CH340), siga as instruções acima usando o comando <code>ls /dev/serial/by-path/*</code>.</p>
+<h2 id="quando-o-microcontrolador-reinicia-o-dispositivo-muda-para-devttyusb1">Quando o microcontrolador reinicia, o dispositivo muda para /dev/ttyUSB1<a class="headerlink" href="#quando-o-microcontrolador-reinicia-o-dispositivo-muda-para-devttyusb1" title="Permanent link">&para;</a></h2>
+<p>Siga as instruções na seção "<a href="#wheres-my-serial-port">Onde está minha porta serial?</a>" para evitar que isso ocorra.</p>
+<h2 id="o-comando-make-flash-nao-funciona">O comando "make flash" não funciona<a class="headerlink" href="#o-comando-make-flash-nao-funciona" title="Permanent link">&para;</a></h2>
+<p>O código tenta atualizar o dispositivo usando o método mais comum para cada plataforma. Infelizmente, há muita variação nos métodos de flash, então o comando “make flash” pode não funcionar em todas as placas.</p>
+<p>Se você estiver tendo uma falha intermitente ou tiver uma configuração padrão, verifique novamente se o Klipper não está funcionando durante o flash (sudo service klipper stop), certifique-se de que o OctoPrint não esteja tentando se conectar diretamente ao dispositivo (abra o Guia Conexão na página da web e clique em Desconectar se a porta serial estiver configurada para o dispositivo) e certifique-se de que FLASH_DEVICE esteja configurado corretamente para sua placa (veja a <a href="#wheres-my-serial-port">pergunta acima</a>).</p>
+<p>No entanto, se "fazer flash" simplesmente não funcionar para sua placa, você precisará fazer o flash manualmente. Veja se existe um arquivo de configuração no <a href="https://github.com/Klipper3d/klipper/blob/master/config">diretório config</a> com instruções específicas para atualizar o dispositivo. Além disso, verifique a documentação do fabricante da placa para ver se ela descreve como atualizar o dispositivo. Finalmente, pode ser possível atualizar manualmente o dispositivo usando ferramentas como "avrdude" ou "bossac" - consulte o <a href="Bootloaders.html">documento do bootloader</a> para obter informações adicionais.</p>
+<h2 id="como-altero-a-taxa-de-transmissao-serial">Como altero a taxa de transmissão serial?<a class="headerlink" href="#como-altero-a-taxa-de-transmissao-serial" title="Permanent link">&para;</a></h2>
+<p>A taxa de transmissão recomendada para o Klipper é 250.000. Essa taxa de transmissão funciona bem em todas as placas microcontroladoras suportadas pelo Klipper. Se você encontrou um guia on-line recomendando uma taxa de transmissão diferente, ignore essa parte do guia e continue com o valor padrão de 250.000.</p>
+<p>Se você quiser alterar a taxa de transmissão de qualquer maneira, a nova taxa precisará ser configurada no microcontrolador (durante <strong>make menuconfig</strong>) e esse código atualizado precisará ser compilado e atualizado para o microcontrolador. O arquivo Klipper Printer.cfg também precisará ser atualizado para corresponder a essa taxa de transmissão (veja a <a href="Config_Reference.html#mcu">referência de configuração</a> para detalhes). Por exemplo:</p>
 <div class="highlight"><pre><span></span><code>[mcu]
 baud: 250000
 </code></pre></div>
 
-<p>The baud rate shown on the OctoPrint web page has no impact on the internal Klipper micro-controller baud rate. Always set the OctoPrint baud rate to 250000 when using Klipper.</p>
-<p>The Klipper micro-controller baud rate is not related to the baud rate of the micro-controller's bootloader. See the <a href="Bootloaders.html">bootloader document</a> for additional information on bootloaders.</p>
+<p>A taxa de transmissão mostrada na página da web do OctoPrint não tem impacto na taxa de transmissão interna do microcontrolador Klipper. Sempre defina a taxa de transmissão do OctoPrint para 250.000 ao usar o Klipper.</p>
+<p>A taxa de transmissão do microcontrolador Klipper não está relacionada à taxa de transmissão do bootloader do microcontrolador. Consulte o <a href="Bootloaders.html">documento bootloader</a> para obter informações adicionais sobre bootloaders.</p>
 <h2 id="can-i-run-klipper-on-something-other-than-a-raspberry-pi-3">Can I run Klipper on something other than a Raspberry Pi 3?<a class="headerlink" href="#can-i-run-klipper-on-something-other-than-a-raspberry-pi-3" title="Permanent link">&para;</a></h2>
 <p>The recommended hardware is a Raspberry Pi 2, Raspberry Pi 3, or Raspberry Pi 4.</p>
 <p>Klipper will run on a Raspberry Pi 1 and on the Raspberry Pi Zero, but these boards don't have enough processing power to run OctoPrint well. It is common for print stalls to occur on these slower machines when printing directly from OctoPrint. (The printer may move faster than OctoPrint can send movement commands.) If you wish to run on one one of these slower boards anyway, consider using the "virtual_sdcard" feature when printing (see <a href="Config_Reference.html#virtual_sdcard">config reference</a> for details).</p>

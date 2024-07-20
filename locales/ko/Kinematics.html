@@ -1344,8 +1344,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pressure-advance" class="md-nav__link">
-    Pressure advance
+  <a href="#_8" class="md-nav__link">
+    프레셔 어드밴스
   </a>
   
 </li>
@@ -1459,7 +1459,7 @@ stepper_z_position = cartesian_z_position
 <div class="highlight"><pre><span></span><code>stepper_position = requested_e_position
 </code></pre></div>
 
-<h3 id="pressure-advance">Pressure advance<a class="headerlink" href="#pressure-advance" title="Permanent link">&para;</a></h3>
+<h3 id="_8">프레셔 어드밴스<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>실험을 통해 기본 익스트루더 공식 이상으로 익스트루더의 모델링을 개선할 수 있음이 나타났습니다. 이상적인 경우 익스트루더 이동이 진행됨에 따라 각 지점에 동일한 부피의 필라멘트가 쌓여야 하며 이동 후 압출되는 부피가 없어야 합니다. 불행히도, 기본 익스트루더 공식으로 인해 이동이 시작될 때 익스트루더를 빠져나가는 필라멘트가 너무 적고 압출 종료 후에 과도한 필라멘트가 압출된다는 사실을 발견하는 것이 일반적입니다. 이것을 흔히 "ooze"라고 합니다.</p>
 <p><img alt="ooze" src="img/ooze.svg.png" /></p>
 <p>"pressure advance" 시스템은 익스트루더에 대해 다른 모델을 사용하여 이를 설명하려고 시도합니다. 익스트루더로 공급되는 필라멘트의 각 mm^3가 익스트루더에서 즉시 나오는 mm^3의 양을 초래할 것이라고 순진하게 믿는 대신 압력을 기반으로 한 모델을 사용합니다. 필라멘트가 익스트루더로 밀릴 때 압력이 증가하고 (<a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke의 법칙</a>에서와 같이) 압출에 필요한 압력은 노즐 오리피스를 통한 유량에 의해 지배됩니다. (<a href="https://en.wikipedia.org/wiki/Poiseuille_law">Poiseuille의 법칙</a> 에서와 같이). 핵심 아이디어는 필라멘트, 압력 및 유속 간의 관계를 선형 계수를 사용하여 모델링할 수 있다는 것입니다:</p>

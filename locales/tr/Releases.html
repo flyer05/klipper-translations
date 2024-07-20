@@ -1380,7 +1380,7 @@
 <li>It is now possible to configure LEDs to update during long running G-Code commands using LED "template" support.</li>
 <li>Several micro-controller improvements. New support for stm32h743, stm32h750, stm32l412, stm32g0b1, same70, same51, and same54 chips. Support for i2c reads on atsamd and stm32f0. Hardware pwm support on stm32. Linux mcu signal based event dispatch. New rp2040 support for "make flash", i2c, and rp2040-e5 USB errata.</li>
 <li>New modules added: angle, dac084S085, exclude_object, led, mpu9250, pca9632, smart_effector, z_thermal_adjust. New deltesian kinematics added. New dump_mcu tool added.</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Çeşitli hata düzeltmleri ve kod sadeleştirmeleri.</li>
 </ul>
 <h2 id="klipper-0100">Klipper 0.10.0<a class="headerlink" href="#klipper-0100" title="Permanent link">&para;</a></h2>
 <p>Available on 20210929. Major changes in this release:</p>
@@ -1397,7 +1397,7 @@
 <li>Support for the rp2040 micro-controller (Raspberry Pi Pico boards).</li>
 <li>The "make menuconfig" system now utilizes kconfiglib.</li>
 <li>Many additional modules added: ds18b20, duplicate_pin_override, filament_motion_sensor, palette2, motion_report, pca9533, pulse_counter, save_variables, sdcard_loop, temperature_host, temperature_mcu</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Çeşitli hata düzeltmleri ve kod sadeleştirmeleri.</li>
 </ul>
 <h2 id="klipper-090">Klipper 0.9.0<a class="headerlink" href="#klipper-090" title="Permanent link">&para;</a></h2>
 <p>Available on 20201020. Major changes in this release:</p>
@@ -1407,13 +1407,13 @@
 <li>New "webhooks" API server. This provides a programmable JSON interface to Klipper.</li>
 <li>The LCD display and menu are now configurable using the Jinja2 template language.</li>
 <li>The TMC2208 stepper motor drivers can now be used in "standalone" mode with Klipper.</li>
-<li>Improved BL-Touch v3 support.</li>
+<li>Geliştirilmiş BL-Touch v3 desteği.</li>
 <li>Improved USB identification. Klipper now has its own USB identification code and micro-controllers can now report their unique serial numbers during USB identification.</li>
-<li>New kinematic support for "Rotary Delta" and "CoreXZ" printers.</li>
+<li>"Delta" ve "CoreXZ" yazıcılar için yeni kinematik destek.</li>
 <li>Micro-controller improvements: support for stm32f070, support for stm32f207, support for GPIO pins on "Linux MCU", stm32 "HID bootloader" support, Chitu bootloader support, MKS Robin bootloader support.</li>
 <li>Improved handling of Python "garbage collection" events.</li>
 <li>Many additional modules added: adc_scaled, adxl345, bme280, display_status, extruder_stepper, fan_generic, hall_filament_width_sensor, htu21d, homing_heaters, input_shaper, lm75, print_stats, resonance_tester, shaper_calibrate, query_adc, graph_accelerometer, graph_extruder, graph_motion, graph_shaper, graph_temp_sensor, whconsole</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Çeşitli hata düzeltmleri ve kod sadeleştirmeleri.</li>
 </ul>
 <h3 id="klipper-091">Klipper 0.9.1<a class="headerlink" href="#klipper-091" title="Permanent link">&para;</a></h3>
 <p>Available on 20201028. Release containing only bug fixes.</p>
@@ -1422,8 +1422,8 @@
 <ul>
 <li>New G-Code command template support. G-Code in the config file is now evaluated with the Jinja2 template language.</li>
 <li>Improvements to Trinamic stepper drivers:<ul>
-<li>New support for TMC2209 and TMC5160 drivers.</li>
-<li>Improved DUMP_TMC, SET_TMC_CURRENT, and INIT_TMC G-Code commands.</li>
+<li>TMC2209 ve TMC5160 sürücüler için yeni destek.</li>
+<li>İyileştirilmiş DUMP_TMC, SET_TMC_CURRENT, ve INIT_TMC G-Code komutları.</li>
 <li>Improved support for TMC UART handling with an analog mux.</li>
 </ul>
 </li>
@@ -1437,8 +1437,8 @@
 <li>Many Klipper micro-controller improvements:<ul>
 <li>Klipper ported to: SAM3X8C, SAM4S8C, SAMD51, STM32F042, STM32F4</li>
 <li>New USB CDC driver implementations on SAM3X, SAM4, STM32F4.</li>
-<li>Enhanced support for flashing Klipper over USB.</li>
-<li>Software SPI support.</li>
+<li>Klipper'ın USB üzerinden yüklenebilmesi için geliştirilmiş destek.</li>
+<li>SPI yazılım desteği.</li>
 <li>Greatly improved temperature filtering on the LPC176x.</li>
 <li>Early output pin settings can be configured in the micro-controller.</li>
 </ul>
@@ -1451,7 +1451,7 @@
 <li>The config file can now include other config files.</li>
 <li>Many additional modules added: board_pins, controller_fan, delayed_gcode, dotstar, filament_switch_sensor, firmware_retraction, gcode_arcs, gcode_button, heater_generic, manual_stepper, mcp4018, mcp4728, neopixel, pause_resume, respond, temperature_sensor tsl1401cl_filament_width_sensor, tuning_tower</li>
 <li>Many additional commands added: RESTORE_GCODE_STATE, SAVE_GCODE_STATE, SET_GCODE_VARIABLE, SET_HEATER_TEMPERATURE, SET_IDLE_TIMEOUT, SET_TEMPERATURE_FAN_TARGET</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Çeşitli hata düzeltmleri ve kod sadeleştirmeleri.</li>
 </ul>
 <h2 id="klipper-070">Klipper 0.7.0<a class="headerlink" href="#klipper-070" title="Permanent link">&para;</a></h2>
 <p>Available on 20181220. Major changes in this release:</p>
