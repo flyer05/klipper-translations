@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -408,10 +408,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Installation.html" class="md-nav__link">
         Installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1219,6 +1266,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1274,19 +1335,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-commands" class="md-nav__link">
-    Additional Commands
+  <a href="#dodatkowe-polecenia" class="md-nav__link">
+    Dodatkowe polecenia
   </a>
   
-    <nav class="md-nav" aria-label="Additional Commands">
+    <nav class="md-nav" aria-label="Dodatkowe polecenia">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#adxl345" class="md-nav__link">
-    [adxl345]
+    ADXL345
   </a>
   
-    <nav class="md-nav" aria-label="[adxl345]">
+    <nav class="md-nav" aria-label="ADXL345">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1304,8 +1365,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#akcelerometer_czytanie_debugowe" class="md-nav__link">
-    AKCELEROMETER_CZYTANIE_DEBUGOWE
+  <a href="#odczyt-danych-debugowych-akcelerometru" class="md-nav__link">
+    Odczyt danych debugowych akcelerometru
   </a>
   
 </li>
@@ -1323,16 +1384,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#angle" class="md-nav__link">
-    [angle]
+  <a href="#kat" class="md-nav__link">
+    kąt
   </a>
   
-    <nav class="md-nav" aria-label="[angle]">
+    <nav class="md-nav" aria-label="kąt">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#angle_calibrate" class="md-nav__link">
-    ANGLE_CALIBRATE
+  <a href="#kalibracja-kata" class="md-nav__link">
+    Kalibracja kąta
   </a>
   
 </li>
@@ -2904,23 +2965,23 @@
 <p>Więcej szczegółów dotyczących powyższych poleceń znajduje się w <a href="http://reprap.org/wiki/G-code">dokumentacji RepRap G-Code</a>.</p>
 <p>Klipper's goal is to support the G-Code commands produced by common 3rd party software (eg, OctoPrint, Printrun, Slic3r, Cura, etc.) in their standard configurations. It is not a goal to support every possible G-Code command. Instead, Klipper prefers human readable <a href="#additional-commands">"extended G-Code commands"</a>. Similarly, the G-Code terminal output is only intended to be human readable - see the <a href="API_Server.html">API Server document</a> if controlling Klipper from external software.</p>
 <p>Jeżeli ktoś potrzebuje mniej popularnej komendy G-Code, to może być możliwe zaimplementowanie jej za pomocą własnej sekcji <a href="Config_Reference.html#gcode_macro">gcode_macro config</a>. Na przykład, można użyć tego do implementacji: <code>G12</code>, <code>G29</code>, <code>G30</code>, <code>G31</code>, <code>M42</code>, <code>M80</code>, <code>M81</code>, <code>T1</code>, itd.</p>
-<h2 id="additional-commands">Additional Commands<a class="headerlink" href="#additional-commands" title="Permanent link">&para;</a></h2>
+<h2 id="dodatkowe-polecenia">Dodatkowe polecenia<a class="headerlink" href="#dodatkowe-polecenia" title="Permanent link">&para;</a></h2>
 <p>Klipper używa "rozszerzonych" poleceń G-Code do ogólnej konfiguracji i statusu. Wszystkie te rozszerzone komendy mają podobny format - rozpoczynają się od nazwy komendy, po której może następować jeden lub więcej parametrów. Na przykład: <code>SET_SERVO SERVO=myservo ANGLE=5.3</code>. W tym dokumencie polecenia i parametry są wyświetlane wielkimi literami, ale nie jest rozróżniana wielkość liter. (Tak więc "SET_SERVO" i "set_servo" uruchamiają to samo polecenie).</p>
 <p>Przetłumaczono z <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (wersja darmowa)</p>
 <p>This section is organized by Klipper module name, which generally follows the section names specified in the <a href="Config_Reference.html">printer configuration file</a>. Note that some modules are automatically loaded.</p>
-<h3 id="adxl345">[adxl345]<a class="headerlink" href="#adxl345" title="Permanent link">&para;</a></h3>
+<h3 id="adxl345">ADXL345<a class="headerlink" href="#adxl345" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when an <a href="Config_Reference.html#adxl345">adxl345 config section</a> is enabled.</p>
 <h4 id="accelerometer_measure">ACCELEROMETER_MEASURE<a class="headerlink" href="#accelerometer_measure" title="Permanent link">&para;</a></h4>
 <p><code>ACCELEROMETER_MEASURE [CHIP=&lt;config_name&gt;] [NAME=&lt;value&gt;]</code>: Zaczyna pomiary akcelerometrem na podanych liczbach sampli na sekundę. jezeli "CHIP" nie jest podany, to wraca do domyślnych ustawień: "adxl345". Komenda dziala w w trybie rozpocznij-zatrzymaj: kiedy wykonana pierwszy raz, zaczyna pomiar, kolejna egzekucja zatrzymuje akcelerometr. wyniki pomiaru są zapisane do pliku o nazwie "/tmp/adxl345-<chip>-<name>.csv" gdzie "<chip>" to nazwa czipa akcelerometra ("my_chip_name" z "[adxl345 my_chip_name]") i "<name>" to jest opcjonalny parametr NAME. Jeżeli NAME nie jest użyty to jest używany domyślny czas w formacie "YYYYMMDD_HHMMSS". Jeżeli akcelerometr nie ma nazwy w swojej konfiguracji, to połowa tego imienia nie jest wygenerowana.</p>
 <h4 id="accelerometer_query">ACCELEROMETER_QUERY<a class="headerlink" href="#accelerometer_query" title="Permanent link">&para;</a></h4>
 <p><code>ACCELEROMETER_QUERY [CHIP=&lt;config_name&gt;] [RATE=&lt;value&gt;]</code>: Pyta akcelerometr o obecną wartość. Jeżeli CHIP nie jest podany to używa domyślnego: "adxl345". Jeżeli RATE nie jest podany, to domyślna wartość jest użyta. Ta komenda jest użyteczna do testowania połączenia do akcelerometra ADXL345: jedna z zwróconych wartości powinno byc przyśpieszenie swobodnego opadania. (+/- troche zakłóceń czipa).</p>
-<h4 id="akcelerometer_czytanie_debugowe">AKCELEROMETER_CZYTANIE_DEBUGOWE<a class="headerlink" href="#akcelerometer_czytanie_debugowe" title="Permanent link">&para;</a></h4>
-<p><code>ACCELEROMETER_DEBUG_READ [CHIP=&lt;config_name&gt;] REG=&lt;register&gt;</code>: queries ADXL345 register "register" (e.g. 44 or 0x2C). Może się przydać przy debugowaniu.</p>
+<h4 id="odczyt-danych-debugowych-akcelerometru">Odczyt danych debugowych akcelerometru<a class="headerlink" href="#odczyt-danych-debugowych-akcelerometru" title="Permanent link">&para;</a></h4>
+<p><code>ACCELEROMETER_DEBUG_READ [CHIP=&lt;config_name&gt;] REG=&lt;register&gt;</code>: Odczytuje rejestr czipu ADXL345 o nazwie "register" (np. 44 lub 0x2C). Może się przydać przy debugowaniu.</p>
 <h4 id="accelerometer_debug_write">ACCELEROMETER_DEBUG_WRITE<a class="headerlink" href="#accelerometer_debug_write" title="Permanent link">&para;</a></h4>
 <p><code>ACCELEROMETER_DEBUG_WRITE [CHIP=&lt;config_name&gt;] REG=&lt;register&gt; VAL=&lt;value&gt;</code>: Wpisuje Surową "value" w rejestr "register".  "value" i "register" może być w systemie dziesiętnym albo szesnastkowym. Uzywać ostrożnie, i odnoś sie do ADXL345 Arkuszu danych jako referencja.</p>
-<h3 id="angle">[angle]<a class="headerlink" href="#angle" title="Permanent link">&para;</a></h3>
+<h3 id="kat">kąt<a class="headerlink" href="#kat" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when an <a href="Config_Reference.html#angle">angle config section</a> is enabled.</p>
-<h4 id="angle_calibrate">ANGLE_CALIBRATE<a class="headerlink" href="#angle_calibrate" title="Permanent link">&para;</a></h4>
+<h4 id="kalibracja-kata">Kalibracja kąta<a class="headerlink" href="#kalibracja-kata" title="Permanent link">&para;</a></h4>
 <p><code>ANGLE_CALIBRATE CHIP=&lt;chip_name&gt;</code>: Perform angle calibration on the given sensor (there must be an <code>[angle chip_name]</code> config section that has specified a <code>stepper</code> parameter). IMPORTANT - this tool will command the stepper motor to move without checking the normal kinematic boundary limits. Ideally the motor should be disconnected from any printer carriage before performing calibration. If the stepper can not be disconnected from the printer, make sure the carriage is near the center of its rail before starting calibration. (The stepper motor may move forwards or backwards two full rotations during this test.) After completing this test use the <code>SAVE_CONFIG</code> command to save the calibration data to the config file. In order to use this tool the Python "numpy" package must be installed (see the <a href="Measuring_Resonances.html#software-installation">measuring resonance document</a> for more information).</p>
 <h4 id="angle_debug_read">ANGLE_DEBUG_READ<a class="headerlink" href="#angle_debug_read" title="Permanent link">&para;</a></h4>
 <p><code>ANGLE_DEBUG_READ CHIP=&lt;config_name&gt; REG=&lt;register&gt;</code>: Queries sensor register "register" (e.g. 44 or 0x2C). Can be useful for debugging purposes. This is only available for tle5012b chips.</p>
@@ -2983,7 +3044,7 @@ section</a> is enabled.</p>
 <li>Wyświetlenie komunikatu: <code>M117 &lt;message&gt;</code>.</li>
 <li>Ustaw procent kompilacji: <code>M73 P&lt;percent&gt;</code></li>
 </ul>
-<p>Also provided is the following extended G-Code command:</p>
+<p>Dostępna jest również rozszerzona komenda G-Code:</p>
 <ul>
 <li><code>SET_DISPLAY_TEXT MSG=&lt;message&gt;</code>: Performs the equivalent of M117, setting the supplied <code>MSG</code> as the current display message. If <code>MSG</code> is omitted the display will be cleared.</li>
 </ul>

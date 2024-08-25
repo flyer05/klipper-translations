@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -408,10 +408,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Installation.html" class="md-nav__link">
         Installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1219,6 +1266,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1274,11 +1335,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-instructions" class="md-nav__link">
-    Installation instructions
+  <a href="#kurulum-talimatlar" class="md-nav__link">
+    Kurulum talimatları
   </a>
   
-    <nav class="md-nav" aria-label="Installation instructions">
+    <nav class="md-nav" aria-label="Kurulum talimatları">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1369,11 +1430,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#software-installation" class="md-nav__link">
-    Software installation
+  <a href="#yazlm-kurulumu" class="md-nav__link">
+    Yazılım kurulumu
   </a>
   
-    <nav class="md-nav" aria-label="Software installation">
+    <nav class="md-nav" aria-label="Yazılım kurulumu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1579,7 +1640,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="installation-instructions">Installation instructions<a class="headerlink" href="#installation-instructions" title="Permanent link">&para;</a></h2>
+<h2 id="kurulum-talimatlar">Kurulum talimatları<a class="headerlink" href="#kurulum-talimatlar" title="Permanent link">&para;</a></h2>
 <h3 id="wiring">Wiring<a class="headerlink" href="#wiring" title="Permanent link">&para;</a></h3>
 <p>An ethernet cable with shielded twisted pairs (cat5e or better) is recommended for signal integrity over a long distance. If you still experience signal integrity issues (SPI/I2C errors):</p>
 <ul>
@@ -1825,7 +1886,7 @@ GND+SCL
 <p><img alt="ADXL345 on SmartEffector" src="img/adxl345-mount.jpg" /></p>
 <p>Note that on a bed slinger printer one must design 2 mounts: one for the toolhead and one for the bed, and run the measurements twice. See the corresponding <a href="#bed-slinger-printers">section</a> for more details.</p>
 <p><strong>Attention:</strong> make sure the accelerometer and any screws that hold it in place do not touch any metal parts of the printer. Basically, the mount must be designed such as to ensure the electrical isolation of the accelerometer from the printer frame. Failing to ensure that can create a ground loop in the system that may damage the electronics.</p>
-<h3 id="software-installation">Software installation<a class="headerlink" href="#software-installation" title="Permanent link">&para;</a></h3>
+<h3 id="yazlm-kurulumu">Yazılım kurulumu<a class="headerlink" href="#yazlm-kurulumu" title="Permanent link">&para;</a></h3>
 <p>Note that resonance measurements and shaper auto-calibration require additional software dependencies not installed by default. First, run on your Raspberry Pi the following commands:</p>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install python3-numpy python3-matplotlib libatlas-base-dev libopenblas-dev
@@ -1962,7 +2023,7 @@ probe_points:
 <p>Restart Klipper via the <code>RESTART</code> command.</p>
 <h2 id="measuring-the-resonances">Measuring the resonances<a class="headerlink" href="#measuring-the-resonances" title="Permanent link">&para;</a></h2>
 <h3 id="checking-the-setup">Checking the setup<a class="headerlink" href="#checking-the-setup" title="Permanent link">&para;</a></h3>
-<p>Now you can test a connection.</p>
+<p>Bağlantıyı şimdi test edebilirsin.</p>
 <ul>
 <li>For "non bed-slingers" (e.g. one accelerometer), in Octoprint, enter <code>ACCELEROMETER_QUERY</code></li>
 <li>For "bed-slingers" (e.g. more than one accelerometer), enter <code>ACCELEROMETER_QUERY CHIP=&lt;chip&gt;</code> where <code>&lt;chip&gt;</code> is the name of the chip as-entered, e.g. <code>CHIP=bed</code> (see: <a href="#bed-slinger-printers">bed-slinger</a>) for all installed accelerometer chips.</li>
@@ -1975,7 +2036,7 @@ probe_points:
 <p><strong>If you are using a MPU-9250 compatible accelerometer and it shows up as <code>mpu-unknown</code>, use with caution! They are probably refurbished chips!</strong></p>
 <p>Next, try running <code>MEASURE_AXES_NOISE</code> in Octoprint, you should get some baseline numbers for the noise of accelerometer on the axes (should be somewhere in the range of ~1-100). Too high axes noise (e.g. 1000 and more) can be indicative of the sensor issues, problems with its power, or too noisy imbalanced fans on a 3D printer.</p>
 <h3 id="measuring-the-resonances_1">Measuring the resonances<a class="headerlink" href="#measuring-the-resonances_1" title="Permanent link">&para;</a></h3>
-<p>Now you can run some real-life tests. Run the following command:</p>
+<p>Bazı gerçek hayat testlerini şimdi çalıştırabilirsin. Şu kodu çalıştır:</p>
 <div class="highlight"><pre><span></span><code>TEST_RESONANCES AXIS=X
 </code></pre></div>
 
@@ -1987,7 +2048,7 @@ accel_per_hz: 50  # default is 75
 probe_points: ...
 </code></pre></div>
 
-<p>If it works for X axis, run for Y axis as well:</p>
+<p>X ekseninde çalışıyorsa, Y ekseninde de çalıştırmak için:</p>
 <div class="highlight"><pre><span></span><code>TEST_RESONANCES AXIS=Y
 </code></pre></div>
 

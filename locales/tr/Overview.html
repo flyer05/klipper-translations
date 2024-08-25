@@ -13,7 +13,7 @@
     
     
       
-        <title>Overview - Klipper documentation</title>
+        <title>İlk Bakış - Klipper documentation</title>
       
     
     
@@ -46,8 +46,8 @@
   
 
 
-  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-138371409-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-VEN1PGNQL4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-VEN1PGNQL4",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEN1PGNQL4"></script>
 
 
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#ilk-baks" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              İlk Bakış
             
           </span>
         </div>
@@ -408,10 +408,57 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../Installation.html" class="md-nav__link">
         Installation
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OctoPrint.html" class="md-nav__link">
+        OctoPrint for Klipper
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1219,6 +1266,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1288,8 +1349,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#device-specific-documents" class="md-nav__link">
-    Device Specific Documents
+  <a href="#cihaza-ozgu-belgeler" class="md-nav__link">
+    Cihaza Özgü Belgeler
   </a>
   
 </li>
@@ -1311,7 +1372,7 @@
 </a>
 
 
-<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<h1 id="ilk-baks">İlk Bakış<a class="headerlink" href="#ilk-baks" title="Permanent link">&para;</a></h1>
 <p>Klipper dökümantasyonuna hoş geldiniz. Eğer Klipper'de yeni iseniz , <a href="Features.html">özellikler</a> ve <a href="Installation.html">kurulum</a> ile başlayabilirsiniz.</p>
 <h2 id="genel-baks">Genel Bakış<a class="headerlink" href="#genel-baks" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1367,21 +1428,21 @@
 <li><a href="Debugging.html">Hata Ayıklama</a>: Klipper'ın nasıl test edileceği ve hata ayıklanacağı hakkında bilgi.</li>
 <li><a href="Benchmarks.html">Benchmarklar</a>: Klipper kıyaslama yöntemi hakkında bilgi.</li>
 <li><a href="CONTRIBUTING.html">Katkıda Bulunmak</a>: Klipper'a iyileştirmelerin nasıl gönderileceği hakkında bilgi.</li>
-<li><a href="Packaging.html">Packaging</a>: Information on building OS packages.</li>
+<li><a href="Packaging.html">Paketleme</a>: İS paketleri oluşturma üzerine bilgilendirme.</li>
 </ul>
-<h2 id="device-specific-documents">Device Specific Documents<a class="headerlink" href="#device-specific-documents" title="Permanent link">&para;</a></h2>
+<h2 id="cihaza-ozgu-belgeler">Cihaza Özgü Belgeler<a class="headerlink" href="#cihaza-ozgu-belgeler" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="Example_Configs.html">Example configs</a>: Information on adding an example config file to Klipper.</li>
-<li><a href="SDCard_Updates.html">SDCard Updates</a>: Flash a micro-controller by copying a binary to an sdcard in the micro-controller.</li>
-<li><a href="RPi_microcontroller.html">Raspberry Pi as Micro-controller</a>: Details for controlling devices wired to the GPIO pins of a Raspberry Pi.</li>
+<li><a href="Example_Configs.html">Örnek yapılandırmalar</a>: Klipper'a örnek bir yapılandırma dosyası ekleme üzerine bilgilendirme.</li>
+<li><a href="SDCard_Updates.html">SDCard Güncellemeleri</a>: Bir mikro-denetleyiciyi, sdcard içine bir ikili dosya (binary) kopyalayarak flashlama.</li>
+<li><a href="RPi_microcontroller.html">Mikro denetleyici olarak Raspberry Pi</a>: Bir Raspberry Pi üzerindeki GPIO pinlerine bağlı cihazları kontrol etmek için ayrıntılar.</li>
 <li><a href="Beaglebone.html">Beaglebone</a>: Details for running Klipper on the Beaglebone PRU.</li>
-<li><a href="Bootloaders.html">Bootloaders</a>: Developer information on micro-controller flashing.</li>
+<li><a href="Bootloaders.html">Önyükleyiciler</a>: Mikro denetleyici flashlama hakkında geliştirici bilgilendirmesi.</li>
 <li><a href="Bootloader_Entry.html">Bootloader Entry</a>: Requesting the bootloader.</li>
-<li><a href="CANBUS.html">CAN bus</a>: Information on using CAN bus with Klipper.<ul>
+<li><a href="CANBUS.html">CAN veri yolu</a>: Klipper ile CAN veri yolu kullanımı üzerine bilgilendirme.<ul>
 <li><a href="CANBUS_Troubleshooting.html">CAN bus troubleshooting</a>: Tips for troubleshooting CAN bus.</li>
 </ul>
 </li>
-<li><a href="TSL1401CL_Filament_Width_Sensor.html">TSL1401CL filament width sensor</a></li>
+<li><a href="TSL1401CL_Filament_Width_Sensor.html">TSL1401CL filament genişlik sensörü</a></li>
 <li><a href="Hall_Filament_Width_Sensor.html">Hall filament width sensor</a></li>
 </ul>
 
