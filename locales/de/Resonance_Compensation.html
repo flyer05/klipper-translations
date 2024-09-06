@@ -1495,7 +1495,7 @@
 <p>First, measure the <strong>ringing frequency</strong>.</p>
 <ol>
 <li>If <code>square_corner_velocity</code> parameter was changed, revert it back to 5.0. It is not advised to increase it when using input shaper because it can cause more smoothing in parts - it is better to use higher acceleration value instead.</li>
-<li>Disable the <code>miminum_cruise_ratio</code> feature by issuing the following command: <code>SET_VELOCITY_LIMIT MINIMUM_CRUISE_RATIO=0</code></li>
+<li>Disable the <code>minimum_cruise_ratio</code> feature by issuing the following command: <code>SET_VELOCITY_LIMIT MINIMUM_CRUISE_RATIO=0</code></li>
 <li>Pressure Advance deaktivieren: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code></li>
 <li>If you have already added <code>[input_shaper]</code> section to the printer.cfg, execute <code>SET_INPUT_SHAPER SHAPER_FREQ_X=0 SHAPER_FREQ_Y=0</code> command. If you get "Unknown command" error, you can safely ignore it at this point and continue with the measurements.</li>
 <li>Execute the command: <code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code> Basically, we try to make ringing more pronounced by setting different large values for acceleration. This command will increase the acceleration every 5 mm starting from 1500 mm/sec^2: 1500 mm/sec^2, 2000 mm/sec^2, 2500 mm/sec^2 and so forth up until 7000 mm/sec^2 at the last band.</li>
