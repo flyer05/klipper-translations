@@ -2182,8 +2182,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pwm_cycle_time" class="md-nav__link">
-    [pwm_cycle_time]
+  <a href="#pwm" class="md-nav__link">
+    Цикл PWM
   </a>
   
 </li>
@@ -2607,7 +2607,7 @@
 
 
 <h1 id="configuration-reference">Configuration reference<a class="headerlink" href="#configuration-reference" title="Permanent link">&para;</a></h1>
-<p>This document is a reference for options available in the Klipper config file.</p>
+<p>Этот документ является справочником по опциям, доступным в файле конфигурации Klipper.</p>
 <p>Описания в этом документе отформатированы таким образом, чтобы их можно было вырезать и вставить в конфигурационный файл принтера. См. <a href="Installation.html">installation document</a> для получения информации о настройке Klipper и выборе начального конфигурационного файла.</p>
 <h2 id="_1">Конфигурация микроконтроллера<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">Формат имен контактов микроконтроллера<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -5242,7 +5242,7 @@ pin:
 #   See the &quot;output_pin&quot; section for the definition of these parameters.
 </code></pre></div>
 
-<h3 id="pwm_cycle_time">[pwm_cycle_time]<a class="headerlink" href="#pwm_cycle_time" title="Permanent link">&para;</a></h3>
+<h3 id="pwm">Цикл PWM<a class="headerlink" href="#pwm" title="Permanent link">&para;</a></h3>
 <p>Run-time configurable output pins with dynamic pwm cycle timing (one may define any number of sections with an "pwm_cycle_time" prefix). Pins configured here will be setup as output pins and one may modify them at run-time using "SET_PIN PIN=my_pin VALUE=.1 CYCLE_TIME=0.100" type extended <a href="G-Codes.html#pwm_cycle_time">g-code commands</a>.</p>
 <div class="highlight"><pre><span></span><code>[pwm_cycle_time my_pin]
 pin:

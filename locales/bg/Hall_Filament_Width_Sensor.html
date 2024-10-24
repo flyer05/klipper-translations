@@ -1335,29 +1335,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#template-for-menu-variables" class="md-nav__link">
-    Template for menu variables
+  <a href="#_3" class="md-nav__link">
+    Шаблон за променливи в менюто
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calibration-procedure" class="md-nav__link">
-    Calibration procedure
+  <a href="#_4" class="md-nav__link">
+    Процедура за калибриране
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-enable-sensor" class="md-nav__link">
-    How to enable sensor
+  <a href="#_5" class="md-nav__link">
+    Как да активирате сензора
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
+  <a href="#_6" class="md-nav__link">
+    Регистриране
   </a>
   
 </li>
@@ -1380,12 +1380,12 @@
 
 
 <h1 id="_1">Сензор за ширина на нишката на Хол<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>This document describes Filament Width Sensor host module. Hardware used for developing this host module is based on two Hall linear sensors (ss49e for example). Sensors in the body are located on opposite sides. Principle of operation: two hall sensors work in differential mode, temperature drift same for sensor. Special temperature compensation not needed.</p>
-<p>You can find designs at <a href="https://www.thingiverse.com/thing:4138933">Thingiverse</a>, an assembly video is also available on <a href="https://www.youtube.com/watch?v=TDO9tME8vp4">Youtube</a></p>
-<p>To use Hall filament width sensor, read <a href="Config_Reference.html#hall_filament_width_sensor">Config Reference</a> and <a href="G-Codes.html#hall_filament_width_sensor">G-Code documentation</a>.</p>
+<p>Този документ описва хост модула на сензора за ширина на нишката. Хардуерът, използван за разработването на този хост модул, се основава на два линейни сензора на Хол (например ss49e). Сензорите в тялото са разположени на противоположни страни. Принцип на работа: два сензора на Хол работят в диференциален режим, температурата се променя по един и същ начин за сензора. Не е необходима специална температурна компенсация.</p>
+<p>Проектите можете да намерите в <a href="https://www.thingiverse.com/thing:4138933">Thingiverse</a>, а видеоклип за сглобяване е достъпен в <a href="https://www.youtube.com/watch?v=TDO9tME8vp4">Youtube</a>.</p>
+<p>За да използвате сензора на Хол за широчина на влакното, прочетете <a href="Config_Reference.html#hall_filament_width_sensor">Config Reference</a> и <a href="G-Codes.html#hall_filament_width_sensor">G-Code documentation</a>.</p>
 <h2 id="_2">Как работи?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Sensor generates two analog output based on calculated filament width. Sum of output voltage always equals to detected filament width. Host module monitors voltage changes and adjusts extrusion multiplier. I use the aux2 connector on a ramps-like board with the analog11 and analog12 pins. You can use different pins and different boards.</p>
-<h2 id="template-for-menu-variables">Template for menu variables<a class="headerlink" href="#template-for-menu-variables" title="Permanent link">&para;</a></h2>
+<p>Сензорът генерира два аналогови изхода въз основа на изчислената ширина на нишката. Сумата на изходното напрежение винаги е равна на откритата ширина на нишката. Приемащият модул следи промените в напрежението и регулира множителя на екструдиране. Използвам конектора aux2 на платка, подобна на рампа, с изводите analog11 и analog12. Можете да използвате различни щифтове и различни платки.</p>
+<h2 id="_3">Шаблон за променливи в менюто<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>[menu __main __filament __width_current]
 type: command
 enable: {&#39;hall_filament_width_sensor&#39; in printer}
@@ -1399,20 +1399,20 @@ name: Raw: {&#39;%4.0F&#39; % printer.hall_filament_width_sensor.Raw}
 index: 1
 </code></pre></div>
 
-<h2 id="calibration-procedure">Calibration procedure<a class="headerlink" href="#calibration-procedure" title="Permanent link">&para;</a></h2>
-<p>To get raw sensor value you can use menu item or <strong>QUERY_RAW_FILAMENT_WIDTH</strong> command in terminal.</p>
+<h2 id="_4">Процедура за калибриране<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>За да получите суровата стойност на сензора, можете да използвате елемент от менюто или командата <strong>QUERY_RAW_FILAMENT_WIDTH</strong> в терминала.</p>
 <ol>
-<li>Insert first calibration rod (1.5 mm size) get first raw sensor value</li>
-<li>Insert second calibration rod (2.0 mm size) get second raw sensor value</li>
-<li>Save raw sensor values in config parameter <code>Raw_dia1</code> and <code>Raw_dia2</code></li>
+<li>Поставете първата пръчка за калибриране (с размер 1,5 mm), за да получите първата необработена стойност на сензора</li>
+<li>Поставете втора пръчка за калибриране (с размер 2,0 mm), за да получите втората необработена стойност на сензора</li>
+<li>Записване на необработени стойности на сензорите в параметъра на конфигурацията <code>Raw_dia1</code> и <code>Raw_dia2</code></li>
 </ol>
-<h2 id="how-to-enable-sensor">How to enable sensor<a class="headerlink" href="#how-to-enable-sensor" title="Permanent link">&para;</a></h2>
-<p>By default, the sensor is disabled at power-on.</p>
-<p>To enable the sensor, issue <strong>ENABLE_FILAMENT_WIDTH_SENSOR</strong> command or set the <code>enable</code> parameter to <code>true</code>.</p>
-<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
-<p>By default, diameter logging is disabled at power-on.</p>
-<p>Issue <strong>ENABLE_FILAMENT_WIDTH_LOG</strong> command to start logging and issue <strong>DISABLE_FILAMENT_WIDTH_LOG</strong> command to stop logging. To enable logging at power-on, set the <code>logging</code> parameter to <code>true</code>.</p>
-<p>Filament diameter is logged on every measurement interval (10 mm by default).</p>
+<h2 id="_5">Как да активирате сензора<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>По подразбиране сензорът е деактивиран при включване на захранването.</p>
+<p>За да активирате сензора, издайте командата <strong>ENABLE_FILAMENT_WIDTH_SENSOR</strong> или задайте параметъра <code>enable</code> на <code>true</code>.</p>
+<h2 id="_6">Регистриране<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>По подразбиране регистрирането на диаметъра е деактивирано при включване на захранването.</p>
+<p>Издайте командата <strong>ENABLE_FILAMENT_WIDTH_LOG</strong>, за да стартирате регистрирането, и издайте командата <strong>DISABLE_FILAMENT_WIDTH_LOG</strong>, за да спрете регистрирането. За да разрешите воденето на дневник при включване на захранването, задайте параметъра <code>logging</code> на <code>true</code>.</p>
+<p>Диаметърът на нишката се записва на всеки интервал на измерване (10 mm по подразбиране).</p>
 
               
             </article>

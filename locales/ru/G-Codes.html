@@ -1358,8 +1358,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#accelerometer_query" class="md-nav__link">
-    ACCELEROMETER_QUERY
+  <a href="#_" class="md-nav__link">
+    ОПРОС_АКСЕЛЕРОМЕТРА
   </a>
   
 </li>
@@ -1438,11 +1438,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_" class="md-nav__link">
-    [кровать_сетка]
+  <a href="#__1" class="md-nav__link">
+    [сетка_стола]
   </a>
   
-    <nav class="md-nav" aria-label="[кровать_сетка]">
+    <nav class="md-nav" aria-label="[сетка_стола]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1513,7 +1513,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#__1" class="md-nav__link">
+  <a href="#__2" class="md-nav__link">
     [кровать_наклон]
   </a>
   
@@ -1818,8 +1818,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#query_filament_sensor" class="md-nav__link">
-    QUERY_FILAMENT_SENSOR
+  <a href="#_5" class="md-nav__link">
+    Опрос сенсора (наличия) филамента
   </a>
   
 </li>
@@ -2015,8 +2015,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#query_filament_width" class="md-nav__link">
-    QUERY_FILAMENT_WIDTH
+  <a href="#_6" class="md-nav__link">
+    Запрос ширины филамента
   </a>
   
 </li>
@@ -2401,8 +2401,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#probe_1" class="md-nav__link">
-    PROBE
+  <a href="#_7" class="md-nav__link">
+    Проба
   </a>
   
 </li>
@@ -2415,15 +2415,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#probe_accuracy" class="md-nav__link">
-    PROBE_ACCURACY
+  <a href="#_8" class="md-nav__link">
+    Точность пробы
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#probe_calibrate" class="md-nav__link">
-    PROBE_CALIBRATE
+  <a href="#_9" class="md-nav__link">
+    Калибровка пробы
   </a>
   
 </li>
@@ -2468,11 +2468,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pwm_cycle_time" class="md-nav__link">
-    [pwm_cycle_time]
+  <a href="#pwm" class="md-nav__link">
+    Цикл PWM
   </a>
   
-    <nav class="md-nav" aria-label="[pwm_cycle_time]">
+    <nav class="md-nav" aria-label="Цикл PWM">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2508,16 +2508,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#query_endstops" class="md-nav__link">
-    [query_endstops]
+  <a href="#_10" class="md-nav__link">
+    Запрос концевиков
   </a>
   
-    <nav class="md-nav" aria-label="[query_endstops]">
+    <nav class="md-nav" aria-label="Запрос концевиков">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#query_endstops_1" class="md-nav__link">
-    QUERY_ENDSTOPS
+  <a href="#_11" class="md-nav__link">
+    Запрос концевиков
   </a>
   
 </li>
@@ -2961,8 +2961,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#abort" class="md-nav__link">
-    ABORT
+  <a href="#_12" class="md-nav__link">
+    ПРЕРВАТЬ
   </a>
   
 </li>
@@ -3002,7 +3002,7 @@
 
 
 <h1 id="g-">G-коды<a class="headerlink" href="#g-" title="Permanent link">&para;</a></h1>
-<p>В этом документе описаны команды, поддерживаемые Klipper. Это команды, которые можно ввести на вкладке терминала OctoPrint.</p>
+<p>JВ этом документе описаны команды, поддерживаемые Klipper. Это команды, которые можно ввести на вкладке терминала OctoPrint.</p>
 <h2 id="g-_1">Команды G-кода<a class="headerlink" href="#g-_1" title="Permanent link">&para;</a></h2>
 <p>Klipper поддерживает следующие стандартные команды G-кода:</p>
 <ul>
@@ -3047,7 +3047,7 @@
 <p>The following commands are available when an <a href="Config_Reference.html#adxl345">adxl345 config section</a> is enabled.</p>
 <h4 id="accelerometer_measure">ACCELEROMETER_MEASURE<a class="headerlink" href="#accelerometer_measure" title="Permanent link">&para;</a></h4>
 <p><code>ACCELEROMETER_MEASURE [CHIP=&lt;config_name&gt;] [NAME=&lt;value&gt;]</code>: Starts accelerometer measurements at the requested number of samples per second. If CHIP is not specified it defaults to "adxl345". The command works in a start-stop mode: when executed for the first time, it starts the measurements, next execution stops them. The results of measurements are written to a file named <code>/tmp/adxl345-&lt;chip&gt;-&lt;name&gt;.csv</code> where <code>&lt;chip&gt;</code> is the name of the accelerometer chip (<code>my_chip_name</code> from <code>[adxl345 my_chip_name]</code>) and <code>&lt;name&gt;</code> is the optional NAME parameter. If NAME is not specified it defaults to the current time in "YYYYMMDD_HHMMSS" format. If the accelerometer does not have a name in its config section (simply <code>[adxl345]</code>) then <code>&lt;chip&gt;</code> part of the name is not generated.</p>
-<h4 id="accelerometer_query">ACCELEROMETER_QUERY<a class="headerlink" href="#accelerometer_query" title="Permanent link">&para;</a></h4>
+<h4 id="_">ОПРОС_АКСЕЛЕРОМЕТРА<a class="headerlink" href="#_" title="Permanent link">&para;</a></h4>
 <p><code>ACCELEROMETER_QUERY [CHIP=&lt;config_name&gt;] [RATE=&lt;value&gt;]</code>: queries accelerometer for the current value. If CHIP is not specified it defaults to "adxl345". If RATE is not specified, the default value is used. This command is useful to test the connection to the ADXL345 accelerometer: one of the returned values should be a free-fall acceleration (+/- some noise of the chip).</p>
 <h4 id="_1">Отладка акселерометра<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 <p><code>Отладка акселерометра [ЧИП =&lt;имя_конфигурации&gt; РЕГ=&lt;регистр&gt;</code>: запрос ADXL345 регистрация "регистр" (примеры: 44 или 0x2C). Может быть полезен для целей отладки.</p>
@@ -3066,7 +3066,7 @@
 section</a> is enabled.</p>
 <h4 id="axis_twist_compensation_calibrate">AXIS_TWIST_COMPENSATION_CALIBRATE<a class="headerlink" href="#axis_twist_compensation_calibrate" title="Permanent link">&para;</a></h4>
 <p><code>AXIS_TWIST_COMPENSATION_CALIBRATE [SAMPLE_COUNT=&lt;value&gt;]</code>: Initiates the X twist calibration wizard. <code>SAMPLE_COUNT</code> specifies the number of points along the X axis to calibrate at and defaults to 3.</p>
-<h3 id="_">[кровать_сетка]<a class="headerlink" href="#_" title="Permanent link">&para;</a></h3>
+<h3 id="__1">[сетка_стола]<a class="headerlink" href="#__1" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when the <a href="Config_Reference.html#bed_mesh">bed_mesh config section</a> is enabled (also see the <a href="Bed_Mesh.html">bed mesh guide</a>).</p>
 <h4 id="bed_mesh_calibrate">BED_MESH_CALIBRATE<a class="headerlink" href="#bed_mesh_calibrate" title="Permanent link">&para;</a></h4>
 <p><code>BED_MESH_CALIBRATE [PROFILE=&lt;name&gt;] [METHOD=manual] [HORIZONTAL_MOVE_Z=&lt;value&gt;] [&lt;probe_parameter&gt;=&lt;value&gt;] [&lt;mesh_parameter&gt;=&lt;value&gt;] [ADAPTIVE=1] [ADAPTIVE_MARGIN=&lt;value&gt;]</code>: This command probes the bed using generated points specified by the parameters in the config. After probing, a mesh is generated and z-movement is adjusted according to the mesh. The mesh will be saved into a profile specified by the <code>PROFILE</code> parameter, or <code>default</code> if unspecified. See the PROBE command for details on the optional probe parameters. If METHOD=manual is specified then the manual probing tool is activated - see the MANUAL_PROBE command above for details on the additional commands available while this tool is active. The optional <code>HORIZONTAL_MOVE_Z</code> value overrides the <code>horizontal_move_z</code> option specified in the config file. If ADAPTIVE=1 is specified then the objects defined by the Gcode file being printed will be used to define the probed area. The optional <code>ADAPTIVE_MARGIN</code> value overrides the <code>adaptive_margin</code> option specified in the config file.</p>
@@ -3084,7 +3084,7 @@ section</a> is enabled.</p>
 <p>The following commands are available when the <a href="Config_Reference.html#bed_screws">bed_screws config section</a> is enabled (also see the <a href="Manual_Level.html#adjusting-bed-leveling-screws">manual level guide</a>).</p>
 <h4 id="bed_screws_adjust">BED_SCREWS_ADJUST<a class="headerlink" href="#bed_screws_adjust" title="Permanent link">&para;</a></h4>
 <p><code>BED_SCREWS_ADJUST</code>: This command will invoke the bed screws adjustment tool. It will command the nozzle to different locations (as defined in the config file) and allow one to make adjustments to the bed screws so that the bed is a constant distance from the nozzle.</p>
-<h3 id="__1">[кровать_наклон]<a class="headerlink" href="#__1" title="Permanent link">&para;</a></h3>
+<h3 id="__2">[кровать_наклон]<a class="headerlink" href="#__2" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when the <a href="Config_Reference.html#bed_tilt">bed_tilt config section</a> is enabled.</p>
 <h4 id="bed_tilt_calibrate">BED_TILT_CALIBRATE<a class="headerlink" href="#bed_tilt_calibrate" title="Permanent link">&para;</a></h4>
 <p><code>BED_TILT_CALIBRATE [METHOD=manual] [HORIZONTAL_MOVE_Z=&lt;value&gt;] [&lt;probe_parameter&gt;=&lt;value&gt;]</code>: This command will probe the points specified in the config and then recommend updated x and y tilt adjustments. See the PROBE command for details on the optional probe parameters. If METHOD=manual is specified then the manual probing tool is activated - see the MANUAL_PROBE command above for details on the additional commands available while this tool is active. The optional <code>HORIZONTAL_MOVE_Z</code> value overrides the <code>horizontal_move_z</code> option specified in the config file.</p>
@@ -3171,7 +3171,7 @@ section</a> is enabled.</p>
 <p><code>SET_FAN_SPEED FAN=config_name SPEED=&lt;speed&gt;</code> This command sets the speed of a fan. "speed" must be between 0.0 and 1.0.</p>
 <h3 id="filament_switch_sensor">[filament_switch_sensor]<a class="headerlink" href="#filament_switch_sensor" title="Permanent link">&para;</a></h3>
 <p>The following command is available when a <a href="Config_Reference.html#filament_switch_sensor">filament_switch_sensor</a> or <a href="Config_Reference.html#filament_motion_sensor">filament_motion_sensor</a> config section is enabled.</p>
-<h4 id="query_filament_sensor">QUERY_FILAMENT_SENSOR<a class="headerlink" href="#query_filament_sensor" title="Permanent link">&para;</a></h4>
+<h4 id="_5">Опрос сенсора (наличия) филамента<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p><code>QUERY_FILAMENT_SENSOR SENSOR=&lt;sensor_name&gt;</code>: Queries the current status of the filament sensor. The data displayed on the terminal will depend on the sensor type defined in the configuration.</p>
 <h4 id="set_filament_sensor">SET_FILAMENT_SENSOR<a class="headerlink" href="#set_filament_sensor" title="Permanent link">&para;</a></h4>
 <p><code>SET_FILAMENT_SENSOR SENSOR=&lt;sensor_name&gt; ENABLE=[0|1]</code>: Sets the filament sensor on/off. If ENABLE is set to 0, the filament sensor will be disabled, if set to 1 it is enabled.</p>
@@ -3226,7 +3226,7 @@ section</a> is enabled.</p>
 <p><code>RESTORE_GCODE_STATE [NAME=&lt;state_name&gt;] [MOVE=1 [MOVE_SPEED=&lt;speed&gt;]]</code>: Restore a state previously saved via SAVE_GCODE_STATE. If "MOVE=1" is specified then a toolhead move will be issued to move back to the previous XYZ position. If "MOVE_SPEED" is specified then the toolhead move will be performed with the given speed (in mm/s); otherwise the toolhead move will use the restored g-code speed.</p>
 <h3 id="hall_filament_width_sensor">[hall_filament_width_sensor]<a class="headerlink" href="#hall_filament_width_sensor" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when the <a href="Config_Reference.html#tsl1401cl_filament_width_sensor">tsl1401cl filament width sensor config section</a> or <a href="Config_Reference.html#hall_filament_width_sensor">hall filament width sensor config section</a> is enabled (also see <a href="TSL1401CL_Filament_Width_Sensor.html">TSLl401CL Filament Width Sensor</a> and <a href="Hall_Filament_Width_Sensor.html">Hall Filament Width Sensor</a>):</p>
-<h4 id="query_filament_width">QUERY_FILAMENT_WIDTH<a class="headerlink" href="#query_filament_width" title="Permanent link">&para;</a></h4>
+<h4 id="_6">Запрос ширины филамента<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p><code>QUERY_FILAMENT_WIDTH</code>: Return the current measured filament width.</p>
 <h4 id="reset_filament_width_sensor">RESET_FILAMENT_WIDTH_SENSOR<a class="headerlink" href="#reset_filament_width_sensor" title="Permanent link">&para;</a></h4>
 <p><code>RESET_FILAMENT_WIDTH_SENSOR</code>: Clear all sensor readings. Helpful after filament change.</p>
@@ -3324,13 +3324,13 @@ section</a> is enabled.</p>
 <p><code>SET_PRINT_STATS_INFO [TOTAL_LAYER=&lt;total_layer_count&gt;] [CURRENT_LAYER= &lt;current_layer&gt;]</code>: Pass slicer info like layer act and total to Klipper. Add <code>SET_PRINT_STATS_INFO [TOTAL_LAYER=&lt;total_layer_count&gt;]</code> to your slicer start gcode section and <code>SET_PRINT_STATS_INFO [CURRENT_LAYER= &lt;current_layer&gt;]</code> at the layer change gcode section to pass layer information from your slicer to Klipper.</p>
 <h3 id="probe">[probe]<a class="headerlink" href="#probe" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when a <a href="Config_Reference.html#probe">probe config section</a> or <a href="Config_Reference.html#bltouch">bltouch config section</a> is enabled (also see the <a href="Probe_Calibrate.html">probe calibrate guide</a>).</p>
-<h4 id="probe_1">PROBE<a class="headerlink" href="#probe_1" title="Permanent link">&para;</a></h4>
+<h4 id="_7">Проба<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p><code>PROBE [PROBE_SPEED=&lt;mm/s&gt;] [LIFT_SPEED=&lt;mm/s&gt;] [SAMPLES=&lt;count&gt;] [SAMPLE_RETRACT_DIST=&lt;mm&gt;] [SAMPLES_TOLERANCE=&lt;mm&gt;] [SAMPLES_TOLERANCE_RETRIES=&lt;count&gt;] [SAMPLES_RESULT=median|average]</code>: Move the nozzle downwards until the probe triggers. If any of the optional parameters are provided they override their equivalent setting in the <a href="Config_Reference.html#probe">probe config section</a>.</p>
 <h4 id="query_probe">QUERY_PROBE<a class="headerlink" href="#query_probe" title="Permanent link">&para;</a></h4>
-<p><code>QUERY_PROBE</code>: Report the current status of the probe ("triggered" or "open").</p>
-<h4 id="probe_accuracy">PROBE_ACCURACY<a class="headerlink" href="#probe_accuracy" title="Permanent link">&para;</a></h4>
+<p>'Запрос_Пробы': Отчёт о текущем статусе пробы (задействована или открыта)</p>
+<h4 id="_8">Точность пробы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p><code>PROBE_ACCURACY [PROBE_SPEED=&lt;mm/s&gt;] [SAMPLES=&lt;count&gt;] [SAMPLE_RETRACT_DIST=&lt;mm&gt;]</code>: Calculate the maximum, minimum, average, median, and standard deviation of multiple probe samples. By default, 10 SAMPLES are taken. Otherwise the optional parameters default to their equivalent setting in the probe config section.</p>
-<h4 id="probe_calibrate">PROBE_CALIBRATE<a class="headerlink" href="#probe_calibrate" title="Permanent link">&para;</a></h4>
+<h4 id="_9">Калибровка пробы<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p><code>PROBE_CALIBRATE [SPEED=&lt;speed&gt;] [&lt;probe_parameter&gt;=&lt;value&gt;]</code>: Run a helper script useful for calibrating the probe's z_offset. See the PROBE command for details on the optional probe parameters. See the MANUAL_PROBE command for details on the SPEED parameter and the additional commands available while the tool is active. Please note, the PROBE_CALIBRATE command uses the speed variable to move in XY direction as well as Z.</p>
 <h4 id="z_offset_apply_probe">Z_OFFSET_APPLY_PROBE<a class="headerlink" href="#z_offset_apply_probe" title="Permanent link">&para;</a></h4>
 <p><code>Z_OFFSET_APPLY_PROBE</code>: Take the current Z Gcode offset (aka, babystepping), and subtract if from the probe's z_offset. This acts to take a frequently used babystepping value, and "make it permanent". Requires a <code>SAVE_CONFIG</code> to take effect.</p>
@@ -3340,7 +3340,7 @@ section</a> is enabled.</p>
 <p><code>PROBE_EDDY_CURRENT_CALIBRATE CHIP=&lt;config_name&gt;</code>: This starts a tool that calibrates the sensor resonance frequencies to corresponding Z heights. The tool will take a couple of minutes to complete. After completion, use the SAVE_CONFIG command to store the results in the printer.cfg file.</p>
 <h4 id="ldc_calibrate_drive_current">LDC_CALIBRATE_DRIVE_CURRENT<a class="headerlink" href="#ldc_calibrate_drive_current" title="Permanent link">&para;</a></h4>
 <p><code>LDC_CALIBRATE_DRIVE_CURRENT CHIP=&lt;config_name&gt;</code> This tool will calibrate the ldc1612 DRIVE_CURRENT0 register. Prior to using this tool, move the sensor so that it is near the center of the bed and about 20mm above the bed surface. Run this command to determine an appropriate DRIVE_CURRENT for the sensor. After running this command use the SAVE_CONFIG command to store that new setting in the printer.cfg config file.</p>
-<h3 id="pwm_cycle_time">[pwm_cycle_time]<a class="headerlink" href="#pwm_cycle_time" title="Permanent link">&para;</a></h3>
+<h3 id="pwm">Цикл PWM<a class="headerlink" href="#pwm" title="Permanent link">&para;</a></h3>
 <p>The following command is available when a <a href="Config_Reference.html#pwm_cycle_time">pwm_cycle_time config section</a> is enabled.</p>
 <h4 id="set_pin_1">SET_PIN<a class="headerlink" href="#set_pin_1" title="Permanent link">&para;</a></h4>
 <p><code>SET_PIN PIN=config_name VALUE=&lt;value&gt; [CYCLE_TIME=&lt;cycle_time&gt;]</code>: This command works similarly to <a href="#output_pin">output_pin</a> SET_PIN commands. The command here supports setting an explicit cycle time using the CYCLE_TIME parameter (specified in seconds). Note that the CYCLE_TIME parameter is not stored between SET_PIN commands (any SET_PIN command without an explicit CYCLE_TIME parameter will use the <code>cycle_time</code> specified in the pwm_cycle_time config section).</p>
@@ -3348,12 +3348,12 @@ section</a> is enabled.</p>
 <p>The query_adc module is automatically loaded.</p>
 <h4 id="query_adc_1">QUERY_ADC<a class="headerlink" href="#query_adc_1" title="Permanent link">&para;</a></h4>
 <p><code>QUERY_ADC [NAME=&lt;config_name&gt;] [PULLUP=&lt;value&gt;]</code>: Report the last analog value received for a configured analog pin. If NAME is not provided, the list of available adc names are reported. If PULLUP is provided (as a value in Ohms), the raw analog value along with the equivalent resistance given that pullup is reported.</p>
-<h3 id="query_endstops">[query_endstops]<a class="headerlink" href="#query_endstops" title="Permanent link">&para;</a></h3>
+<h3 id="_10">Запрос концевиков<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>The query_endstops module is automatically loaded. The following standard G-Code commands are currently available, but using them is not recommended:</p>
 <ul>
 <li>Get Endstop Status: <code>M119</code> (Use QUERY_ENDSTOPS instead.)</li>
 </ul>
-<h4 id="query_endstops_1">QUERY_ENDSTOPS<a class="headerlink" href="#query_endstops_1" title="Permanent link">&para;</a></h4>
+<h4 id="_11">Запрос концевиков<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p><code>QUERY_ENDSTOPS</code>: Probe the axis endstops and report if they are "triggered" or in an "open" state. This command is typically used to verify that an endstop is working correctly.</p>
 <h3 id="resonance_tester">[resonance_tester]<a class="headerlink" href="#resonance_tester" title="Permanent link">&para;</a></h3>
 <p>The following commands are available when a <a href="Config_Reference.html#resonance_tester">resonance_tester config section</a> is enabled (also see the <a href="Measuring_Resonances.html">measuring resonances guide</a>).</p>
@@ -3477,8 +3477,8 @@ section</a> is enabled.</p>
 <p><code>TEMPERATURE_PROBE_NEXT</code>: After calibration has started this command is run to take the next sample. It is automatically scheduled to run when the delta specified by <code>STEP</code> has been reached, however its also possible to manually run this command to force a new sample. This command is only available during calibration.</p>
 <h4 id="temperature_probe_complete">TEMPERATURE_PROBE_COMPLETE:<a class="headerlink" href="#temperature_probe_complete" title="Permanent link">&para;</a></h4>
 <p><code>TEMPERATURE_PROBE_COMPLETE</code>: Can be used to end calibration and save the current result before the <code>TARGET</code> temperature is reached. This command is only available during calibration.</p>
-<h4 id="abort">ABORT<a class="headerlink" href="#abort" title="Permanent link">&para;</a></h4>
-<p><code>ABORT</code>: Aborts the calibration process, discarding the current results. This command is only available during drift calibration.</p>
+<h4 id="_12">ПРЕРВАТЬ<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>'ПРЕРВАТЬ': Прерывание калибровочного процесса, откат текущих результатов. Эта команда доступна только во время калибровки дрейфа</p>
 <h3 id="temperature_probe_enable">TEMPERATURE_PROBE_ENABLE<a class="headerlink" href="#temperature_probe_enable" title="Permanent link">&para;</a></h3>
 <p><code>TEMPERATURE_PROBE_ENABLE ENABLE=[0|1]</code>: Sets temperature drift compensation on or off. If ENABLE is set to 0, drift compensation will be disabled, if set to 1 it is enabled.</p>
 
