@@ -13,7 +13,7 @@
     
     
       
-        <title>Example configurations - Klipper documentation</title>
+        <title>Примерни конфигурации - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#example-configurations" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Example configurations
+              Примерни конфигурации
             
           </span>
         </div>
@@ -1328,8 +1328,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#guidelines" class="md-nav__link">
-    Guidelines
+  <a href="#_2" class="md-nav__link">
+    Насоки
   </a>
   
 </li>
@@ -1351,46 +1351,46 @@
 </a>
 
 
-<h1 id="example-configurations">Example configurations<a class="headerlink" href="#example-configurations" title="Permanent link">&para;</a></h1>
-<p>This document contains guidelines for contributing an example Klipper configuration to the Klipper github repository (located in the <a href="https://github.com/Klipper3d/klipper/blob/master/config/">config directory</a>).</p>
-<p>Note that the <a href="https://community.klipper3d.org">Klipper Community Discourse server</a> is also a useful resource for finding and sharing config files.</p>
-<h2 id="guidelines">Guidelines<a class="headerlink" href="#guidelines" title="Permanent link">&para;</a></h2>
+<h1 id="_1">Примерни конфигурации<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Този документ съдържа указания за добавяне на примерна конфигурация на Klipper към хранилището на Klipper в github (намира се в директорията <a href="https://github.com/Klipper3d/klipper/blob/master/config/">config</a>).</p>
+<p>Имайте предвид, че сървърът <a href="https://community.klipper3d.org">Klipper Community Discourse server</a> също е полезен ресурс за намиране и споделяне на конфигурационни файлове.</p>
+<h2 id="_2">Насоки<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Select the appropriate config filename prefix:<ol>
-<li>The <code>printer</code> prefix is used for stock printers sold by a mainstream manufacturer.</li>
-<li>The <code>generic</code> prefix is used for a 3d printer board that may be used in many different types of printers.</li>
-<li>The <code>kit</code> prefix is for 3d printers that are assembled according to a widely used specification. These "kit" printers are generally distinct from normal "printers" in that they are not sold by a manufacturer.</li>
-<li>The <code>sample</code> prefix is used for config "snippets" that one may copy-and-paste into the main config file.</li>
-<li>The <code>example</code> prefix is used to describe printer kinematics. This type of config is typically only added along with code for a new type of printer kinematics.</li>
+<li>Изберете подходящия префикс на името на файла с конфигурацията:<ol>
+<li>Префиксът <code>printer</code> се използва за серийни принтери, продавани от основен производител.</li>
+<li>Префиксът <code>generic</code> се използва за платка за 3D принтер, която може да се използва в много различни видове принтери.</li>
+<li>Префиксът <code>комплект</code> е за 3D принтери, които са сглобени в съответствие с широко използвана спецификация. Тези "комплектни" принтери обикновено се различават от обикновените "принтери" по това, че не се продават от производител.</li>
+<li>Префиксът <code>sample</code> се използва за "фрагменти" от конфигурацията, които могат да се копират и поставят в основния конфигурационен файл.</li>
+<li>Префиксът <code>example</code> се използва за описание на кинематиката на принтера. Този тип конфигурация обикновено се добавя само заедно с кода за нов тип кинематика на принтера.</li>
 </ol>
 </li>
-<li>All configuration files must end in a <code>.cfg</code> suffix. The <code>printer</code> config files must end in a year followed by <code>.cfg</code> (eg, <code>-2019.cfg</code>). In this case, the year is an approximate year the given printer was sold.</li>
-<li>Do not use spaces or special characters in the config filename. The filename should contain only characters <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code>, and <code>.</code>.</li>
-<li>Klipper must be able to start <code>printer</code>, <code>generic</code>, and <code>kit</code> example config file without error. These config files should be added to the <a href="https://github.com/Klipper3d/klipper/blob/master/test/klippy/printers.test">test/klippy/printers.test</a> regression test case. Add new config files to that test case in the appropriate section and in alphabetical order within that section.</li>
-<li>The example configuration should be for the "stock" configuration of the printer. (There are too many "customized" configurations to track in the main Klipper repository.) Similarly, we only add example config files for printers, kits, and boards that have mainstream popularity (eg, there should be at least a 100 of them in active use). Consider using the <a href="https://community.klipper3d.org">Klipper Community Discourse server</a> for other configs.</li>
+<li>Всички конфигурационни файлове трябва да завършват със суфикс <code>.cfg</code>. Файловете за конфигуриране на <code>принтер</code> трябва да завършват с година, последвана от <code>.cfg</code> (например, <code>-2019.cfg</code>). В този случай годината е приблизителната година, в която е продаден даденият принтер.</li>
+<li>Не използвайте интервали или специални символи в името на конфигурационния файл. Името на файла трябва да съдържа само символите <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> и <code>.</code>.</li>
+<li>Klipper трябва да може да стартира <code>printer</code>, <code>generic</code> и <code>kit</code> примерния конфигурационен файл без грешка. Тези конфигурационни файлове трябва да бъдат добавени към тестовия случай за регресия <a href="https://github.com/Klipper3d/klipper/blob/master/test/klippy/printers.test">test/klippy/printers.test</a>. Добавете нови конфигурационни файлове към този тестови случай в съответния раздел и по азбучен ред в рамките на този раздел.</li>
+<li>Примерната конфигурация трябва да бъде за конфигурацията "склад" на принтера. (Има твърде много "персонализирани" конфигурации, които могат да бъдат проследени в основното хранилище на Klipper.) По същия начин добавяме примерни конфигурационни файлове само за принтери, комплекти и платки, които са популярни (например, трябва да има поне 100 от тях в активна употреба). Помислете за използването на сървъра <a href="https://community.klipper3d.org">Klipper Community Discourse server</a> за други конфигурации.</li>
 <li>Only specify those devices present on the given printer or board. Do not specify settings specific to your particular setup.<ol>
 <li>For <code>generic</code> config files, only those devices on the mainboard should be described. For example, it would not make sense to add a display config section to a "generic" config as there is no way to know if the board will be attached to that type of display. If the board has a specific hardware port to facilitate an optional peripheral (eg, a bltouch port) then one can add a "commented out" config section for the given device.</li>
-<li>Do not specify <code>pressure_advance</code> in an example config, as that value is specific to the filament, not the printer hardware. Similarly, do not specify <code>max_extrude_only_velocity</code> nor <code>max_extrude_only_accel</code> settings.</li>
-<li>Do not specify a config section containing a host path or host hardware. For example, do not specify <code>[virtual_sdcard]</code> nor <code>[temperature_host]</code> config sections.</li>
-<li>Only define macros that utilize functionality specific to the given printer or to define g-codes that are commonly emitted by slicers configured for the given printer.</li>
+<li>Не посочвайте <code>pressure_advance</code> в примерната конфигурация, тъй като тази стойност е специфична за нишката, а не за хардуера на принтера. По същия начин не посочвайте настройките <code>max_extrude_only_velocity</code> (максимална скорост само на екструдиране) и <code>max_extrude_only_accel</code> (максимална скорост само на екструдиране).</li>
+<li>Не посочвайте раздел от конфигурацията, съдържащ път до хост или хардуер на хост. Например, не посочвайте секциите за конфигуриране <code>[virtual_sdcard]</code> и <code>[temperature_host]</code>.</li>
+<li>Дефинирайте само макроси, които използват функционалност, специфична за дадения принтер, или за дефиниране на g-кодове, които обикновено се излъчват от нарязващите устройства, конфигурирани за дадения принтер.</li>
 </ol>
 </li>
 <li>Where possible, it is best to use the same wording, phrasing, indentation, and section ordering as the existing config files.<ol>
 <li>The top of each config file should list the type of micro-controller the user should select during "make menuconfig". It should also have a reference to "docs/Config_Reference.md".</li>
-<li>Do not copy the field documentation into the example config files. (Doing so creates a maintenance burden as an update to the documentation would then require changing it in many places.)</li>
-<li>Example config files should not contain a "SAVE_CONFIG" section. If necessary, copy the relevant fields from the SAVE_CONFIG section to the appropriate section in the main config area.</li>
-<li>Use <code>field: value</code> syntax instead of <code>field=value</code>.</li>
-<li>When adding an extruder <code>rotation_distance</code> it is preferable to specify a <code>gear_ratio</code> if the extruder has a gearing mechanism. We expect the rotation_distance in the example configs to correlate with the circumference of the hobbed gear in the extruder - it is normally in the range of 20 to 35mm. When specifying a <code>gear_ratio</code> it is preferable to specify the actual gears on the mechanism (eg, prefer <code>gear_ratio: 80:20</code> over <code>gear_ratio: 4:1</code>). See the <a href="Rotation_Distance.html#using-a-gear_ratio">rotation distance document</a> for more information.</li>
-<li>Avoid defining field values that are set to their default value. For example, one should not specify <code>min_extrude_temp: 170</code> as that is already the default value.</li>
-<li>Where possible, lines should not exceed 80 columns.</li>
-<li>Avoid adding attribution or revision messages to the config files. (For example, avoid adding lines like "this file was created by ...".) Place attribution and change history in the git commit message.</li>
+<li>Не копирайте документацията за полетата в примерните конфигурационни файлове. (Това създава затруднения при поддръжката, тъй като при актуализация на документацията ще се наложи тя да бъде променена на много места.)</li>
+<li>Файловете с примерна конфигурация не трябва да съдържат секция "SAVE_CONFIG". Ако е необходимо, копирайте съответните полета от раздела "SAVE_CONFIG" в съответния раздел в основната област на конфигурацията.</li>
+<li>Използвайте синтаксиса <code>field: value</code> вместо <code>field=value</code>.</li>
+<li>Когато добавяте <code>разстояние на въртене</code> на екструдера, за предпочитане е да посочите <code>редукторно съотношение</code>, ако екструдерът има зъбен механизъм. Очакваме разстоянието на въртене в примерните конфигурации да съответства на обиколката на зъбното колело в екструдера - обикновено то е в диапазона от 20 до 35 mm. Когато посочвате съотношение на предавките, за предпочитане е да посочите действителните предавки на механизма (например, предпочитайте <code>съотношение на предавките: 80:20</code> пред <code>съотношение на предавките: 4:1</code>). За повече информация вижте документа <a href="Rotation_Distance.html#using-a-gear_ratio">Разстояние на въртене</a>.</li>
+<li>Избягвайте да определяте стойности на полета, които са зададени като стойност по подразбиране. Например не трябва да се задава <code>min_extrude_temp: 170</code>, тъй като това вече е стойността по подразбиране.</li>
+<li>По възможност редовете не трябва да надвишават 80 колони.</li>
+<li>Избягвайте да добавяте съобщения за атрибуция или ревизия към файловете за конфигуриране. (Например избягвайте да добавяте редове като "този файл е създаден от ...") Поставете атрибуцията и историята на промените в съобщението git commit.</li>
 </ol>
 </li>
-<li>Do not use any deprecated features in the example config file.</li>
-<li>Do not disable a default safety system in an example config file. For example, a config should not specify a custom <code>max_extrude_cross_section</code>. Do not enable debugging features. For example there should not be a <code>force_move</code> config section.</li>
-<li>All known boards that Klipper supports can use the default serial baud rate of 250000. Do not recommend a different baud rate in an example config file.</li>
+<li>Не използвайте никакви остарели функции в примерния конфигурационен файл.</li>
+<li>Не деактивирайте системата за безопасност по подразбиране в примерния конфигурационен файл. Например в конфигурацията не трябва да се задава потребителски параметър <code>max_extrude_cross_section</code>. Не разрешавайте функциите за отстраняване на грешки. Например не трябва да има конфигурационен раздел <code>force_move</code>.</li>
+<li>Всички известни платки, които Klipper поддържа, могат да използват серийната скорост по подразбиране от 250000 бода. Не препоръчвайте различна скорост на предаване на данни в примерния конфигурационен файл.</li>
 </ol>
-<p>Example config files are submitted by creating a github "pull request". Please also follow the directions in the <a href="CONTRIBUTING.html">contributing document</a>.</p>
+<p>Файловете с примерни конфигурации се подават чрез създаване на заявка за изтегляне в github. Моля, следвайте и указанията в документа <a href="CONTRIBUTING.html">contributing document</a>.</p>
 
               
             </article>

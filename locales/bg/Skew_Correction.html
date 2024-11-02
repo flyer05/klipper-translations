@@ -13,7 +13,7 @@
     
     
       
-        <title>Skew correction - Klipper documentation</title>
+        <title>Корекция на наклона - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#skew-correction" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Skew correction
+              Корекция на наклона
             
           </span>
         </div>
@@ -1328,36 +1328,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#print-a-calibration-object" class="md-nav__link">
-    Print a Calibration Object
+  <a href="#_2" class="md-nav__link">
+    Отпечатване на обект за калибриране
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#take-your-measurements" class="md-nav__link">
-    Take your measurements
+  <a href="#_3" class="md-nav__link">
+    Направете своите измервания
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-your-skew" class="md-nav__link">
-    Configure your skew
+  <a href="#_4" class="md-nav__link">
+    Конфигуриране на изкривяването
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-your-correction" class="md-nav__link">
-    Verifying your correction
+  <a href="#_5" class="md-nav__link">
+    Проверка на вашата корекция
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caveats" class="md-nav__link">
-    Caveats
+  <a href="#_6" class="md-nav__link">
+    Предупреждения
   </a>
   
 </li>
@@ -1379,51 +1379,51 @@
 </a>
 
 
-<h1 id="skew-correction">Skew correction<a class="headerlink" href="#skew-correction" title="Permanent link">&para;</a></h1>
-<p>Software based skew correction can help resolve dimensional inaccuracies resulting from a printer assembly that is not perfectly square. Note that if your printer is significantly skewed it is strongly recommended to first use mechanical means to get your printer as square as possible prior to applying software based correction.</p>
-<h2 id="print-a-calibration-object">Print a Calibration Object<a class="headerlink" href="#print-a-calibration-object" title="Permanent link">&para;</a></h2>
-<p>The first step in correcting skew is to print a <a href="https://www.thingiverse.com/thing:2563185/files">calibration object</a> along the plane you want to correct. There is also a <a href="https://www.thingiverse.com/thing:2972743">calibration object</a> that includes all planes in one model. You want the object oriented so that corner A is toward the origin of the plane.</p>
-<p>Make sure that no skew correction is applied during this print. You may do this by either removing the <code>[skew_correction]</code> module from printer.cfg or by issuing a <code>SET_SKEW CLEAR=1</code> gcode.</p>
-<h2 id="take-your-measurements">Take your measurements<a class="headerlink" href="#take-your-measurements" title="Permanent link">&para;</a></h2>
-<p>The <code>[skew_correction]</code> module requires 3 measurements for each plane you want to correct; the length from Corner A to Corner C, the length from Corner B to Corner D, and the length from Corner A to Corner D. When measuring length AD do not include the flats on the corners that some test objects provide.</p>
+<h1 id="_1">Корекция на наклона<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Софтуерно базираната корекция на изкривяването може да помогне за отстраняване на неточностите в размерите, произтичащи от сглобка на принтер, която не е идеално квадратна. Имайте предвид, че ако принтерът ви е значително изкривен, силно се препоръчва първо да използвате механични средства, за да направите принтера си възможно най-квадратен, преди да приложите софтуерна корекция.</p>
+<h2 id="_2">Отпечатване на обект за калибриране<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Първата стъпка в коригирането на наклона е да отпечатате <a href="https://www.thingiverse.com/thing:2563185/files">обект за калибриране</a> по дължината на равнината, която искате да коригирате. Съществува и <a href="https://www.thingiverse.com/thing:2972743">обект за калибриране</a>, който включва всички равнини в един модел. Искате обектът да е ориентиран така, че ъгъл А да е към началото на равнината.</p>
+<p>Уверете се, че по време на това отпечатване не е приложена корекция на изкривяването. Можете да направите това или като премахнете модула <code>[skew_correction]</code> от printer.cfg, или като издадете gcode <code>SET_SKEW CLEAR=1</code>.</p>
+<h2 id="_3">Направете своите измервания<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Модулът <code>[skew_correction]</code> изисква 3 измервания за всяка равнина, която искате да коригирате; дължината от ъгъл A до ъгъл C, дължината от ъгъл B до ъгъл D и дължината от ъгъл A до ъгъл D. Когато измервате дължината, AD не включва плоските ъгли, които някои тестови обекти предоставят.</p>
 <p><img alt="skew_lengths" src="img/skew_lengths.png" /></p>
-<h2 id="configure-your-skew">Configure your skew<a class="headerlink" href="#configure-your-skew" title="Permanent link">&para;</a></h2>
-<p>Make sure <code>[skew_correction]</code> is in printer.cfg. You may now use the <code>SET_SKEW</code> gcode to configure skew_correcton. For example, if your measured lengths along XY are as follows:</p>
+<h2 id="_4">Конфигуриране на изкривяването<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Уверете се, че <code>[skew_correction]</code> е в printer.cfg. Сега можете да използвате gcode <code>SET_SKEW</code>, за да конфигурирате skew_correcton. Например, ако измерените дължини по XY са следните:</p>
 <div class="highlight"><pre><span></span><code>Length AC = 140.4
 Length BD = 142.8
 Length AD = 99.8
 </code></pre></div>
 
-<p><code>SET_SKEW</code> can be used to configure skew correction for the XY plane.</p>
+<p><code>SET_SKEW</code> може да се използва за конфигуриране на корекция на изкривяването за равнината XY.</p>
 <div class="highlight"><pre><span></span><code>SET_SKEW XY=140.4,142.8,99.8
 </code></pre></div>
 
-<p>You may also add measurements for XZ and YZ to the gcode:</p>
+<p>Можете също така да добавите измервания за XZ и YZ към gcode:</p>
 <div class="highlight"><pre><span></span><code>SET_SKEW XY=140.4,142.8,99.8 XZ=141.6,141.4,99.8 YZ=142.4,140.5,99.5
 </code></pre></div>
 
-<p>The <code>[skew_correction]</code> module also supports profile management in a manner similar to <code>[bed_mesh]</code>. After setting skew using the <code>SET_SKEW</code> gcode, you may use the <code>SKEW_PROFILE</code> gcode to save it:</p>
+<p>Модулът <code>[skew_correction]</code> поддържа и управление на профили по начин, подобен на този на <code>[bed_mesh]</code>. След като зададете изкривяването с помощта на гкода <code>SET_SKEW</code>, можете да използвате гкода <code>SKEW_PROFILE</code>, за да го запазите:</p>
 <div class="highlight"><pre><span></span><code>SKEW_PROFILE SAVE=my_skew_profile
 </code></pre></div>
 
-<p>After this command you will be prompted to issue a <code>SAVE_CONFIG</code> gcode to save the profile to persistent storage. If no profile is named <code>my_skew_profile</code> then a new profile will be created. If the named profile exists it will be overwritten.</p>
-<p>Once you have a saved profile, you may load it:</p>
+<p>След тази команда ще бъдете подканени да издадете gcode <code>SAVE_CONFIG</code>, за да запазите профила в постоянна памет. Ако няма профил с име <code>my_skew_profile</code>, ще бъде създаден нов профил. Ако именуваният профил съществува, той ще бъде презаписан.</p>
+<p>След като сте запазили профил, можете да го заредите:</p>
 <div class="highlight"><pre><span></span><code>SKEW_PROFILE LOAD=my_skew_profile
 </code></pre></div>
 
-<p>It is also possible to remove an old or out of date profile:</p>
+<p>Възможно е също така да премахнете стар или неактуален профил:</p>
 <div class="highlight"><pre><span></span><code>SKEW_PROFILE REMOVE=my_skew_profile
 </code></pre></div>
 
-<p>After removing a profile you will be prompted to issue a <code>SAVE_CONFIG</code> to make this change persist.</p>
-<h2 id="verifying-your-correction">Verifying your correction<a class="headerlink" href="#verifying-your-correction" title="Permanent link">&para;</a></h2>
-<p>After skew_correction has been configured you may reprint the calibration part with correction enabled. Use the following gcode to check your skew on each plane. The results should be lower than those reported via <code>GET_CURRENT_SKEW</code>.</p>
+<p>След като премахнете профил, ще бъдете подканени да издадете <code>SAVE_CONFIG</code>, за да запазите тази промяна.</p>
+<h2 id="_5">Проверка на вашата корекция<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>След конфигурирането на корекция на изкривяването можете да отпечатате отново частта за калибриране с активирана корекция. Използвайте следния gcode, за да проверите наклона на всяка равнина. Резултатите трябва да са по-ниски от тези, отчетени чрез <code>GET_CURRENT_SKEW</code>.</p>
 <div class="highlight"><pre><span></span><code>CALC_MEASURED_SKEW AC=&lt;ac_length&gt; BD=&lt;bd_length&gt; AD=&lt;ad_length&gt;
 </code></pre></div>
 
-<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
-<p>Due to the nature of skew correction it is recommended to configure skew in your start gcode, after homing and any kind of movement that travels near the edge of the print area such as a purge or nozzle wipe. You may use use the <code>SET_SKEW</code> or <code>SKEW_PROFILE</code> gcodes to accomplish this. It is also recommended to issue a <code>SET_SKEW CLEAR=1</code> in your end gcode.</p>
-<p>Keep in mind that it is possible for <code>[skew_correction]</code> to generate a correction that moves the tool beyond the printer's boundaries on the X and/or Y axes. It is recommended to arrange parts away from the edges when using <code>[skew_correction]</code>.</p>
+<h2 id="_6">Предупреждения<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Поради естеството на корекцията на наклона е препоръчително да конфигурирате наклона в началния gcode, след навиване и всякакъв вид движение, което се движи близо до ръба на зоната за печат, като например прочистване или избърсване на дюзата. За тази цел можете да използвате гкодовете <code>SET_SKEW</code> или <code>SKEW_PROFILE</code>. Препоръчително е също така да зададете <code>SET_SKEW CLEAR=1</code> в крайния си gcode.</p>
+<p>Имайте предвид, че е възможно <code>[skew_correction]</code> да генерира корекция, която премества инструмента извън границите на принтера по осите X и/или Y. Препоръчително е при използване на <code>[skew_correction]</code> да подреждате детайлите далеч от ръбовете.</p>
 
               
             </article>

@@ -1342,8 +1342,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-the-micro-controller-code" class="md-nav__link">
-    Building the micro-controller code
+  <a href="#erstellung-des-mikrocontroller-codes" class="md-nav__link">
+    Erstellung des Mikrocontroller Codes
   </a>
   
 </li>
@@ -1413,14 +1413,14 @@ sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/
 sudo systemctl enable klipper-mcu.service
 </code></pre></div>
 
-<h2 id="building-the-micro-controller-code">Building the micro-controller code<a class="headerlink" href="#building-the-micro-controller-code" title="Permanent link">&para;</a></h2>
+<h2 id="erstellung-des-mikrocontroller-codes">Erstellung des Mikrocontroller Codes<a class="headerlink" href="#erstellung-des-mikrocontroller-codes" title="Permanent link">&para;</a></h2>
 <p>Um den Code des Klipper Mikrocontrollers zu kompilieren, müssen Sie ihn zunächst für den "Linux-Prozess" konfigurieren:</p>
 <div class="highlight"><pre><span></span><code>cd ~/klipper/
 make menuconfig
 </code></pre></div>
 
 <p>Stellen Sie im Menü "Microcontroller Architecture" auf "Linux process", speichern und beenden Sie das Programm.</p>
-<p>To build and install the new micro-controller code, run:</p>
+<p>Um den neuen Mikrocontroller-Code zu erzeugen und zu installieren, führen Sie aus:</p>
 <div class="highlight"><pre><span></span><code>sudo service klipper stop
 make flash
 sudo service klipper start

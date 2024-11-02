@@ -1356,15 +1356,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-and-flashing-the-micro-controller" class="md-nav__link">
-    Building and flashing the micro-controller
+  <a href="#_1" class="md-nav__link">
+    Изграждане и мигане на микроконтролера
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-klipper" class="md-nav__link">
-    Configuring Klipper
+  <a href="#klipper" class="md-nav__link">
+    Конфигуриране на Klipper
   </a>
   
 </li>
@@ -1406,7 +1406,7 @@
 <h2 id="installing-via-kiauh">Installing via KIAUH<a class="headerlink" href="#installing-via-kiauh" title="Permanent link">&para;</a></h2>
 <p>Normally you would start with a base image for your SBC, RPiOS Lite for example, or in the case of a x86 Linux device, Ubuntu Server. Please note that Desktop variants are not recommended due to certain helper programs that can stop some Klipper functions working and even mask access to some print boards.</p>
 <p>KIAUH can be used to install Klipper and its associated programs on a variety of Linux based systems that run a form of Debian. More information can be found at <a href="https://github.com/dw-0/kiauh">https://github.com/dw-0/kiauh</a></p>
-<h2 id="building-and-flashing-the-micro-controller">Building and flashing the micro-controller<a class="headerlink" href="#building-and-flashing-the-micro-controller" title="Permanent link">&para;</a></h2>
+<h2 id="_1">Изграждане и мигане на микроконтролера<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>To compile the micro-controller code, start by running these commands on your host device:</p>
 <div class="highlight"><pre><span></span><code>cd ~/klipper/
 make menuconfig
@@ -1421,7 +1421,7 @@ make menuconfig
 <div class="highlight"><pre><span></span><code>ls /dev/serial/by-id/*
 </code></pre></div>
 
-<p>It should report something similar to the following:</p>
+<p>Тя трябва да отчете нещо подобно на следното:</p>
 <div class="highlight"><pre><span></span><code>/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
 </code></pre></div>
 
@@ -1442,7 +1442,7 @@ sudo service klipper start
 </code></pre></div>
 
 <p>It is important to note that RP2040 chips may need to be put into Boot mode before this operation.</p>
-<h2 id="configuring-klipper">Configuring Klipper<a class="headerlink" href="#configuring-klipper" title="Permanent link">&para;</a></h2>
+<h2 id="klipper">Конфигуриране на Klipper<a class="headerlink" href="#klipper" title="Permanent link">&para;</a></h2>
 <p>The next step is to copy the <a href="#obtain-a-klipper-configuration-file">printer configuration file</a> to the host.</p>
 <p>Arguably the easiest way to set the Klipper configuration file is using the built in editors in Mainsail or Fluidd. These will allow the user to open the configuration examples and save them to be printer.cfg.</p>
 <p>Another option is to use a desktop editor that supports editing files over the "scp" and/or "sftp" protocols. There are freely available tools that support this (eg, Notepad++, WinSCP, and Cyberduck). Load the printer config file in the editor and then save it as a file named "printer.cfg" in the home directory of the pi user (ie, /home/pi/printer.cfg).</p>
@@ -1455,7 +1455,7 @@ nano ~/printer.cfg
 <div class="highlight"><pre><span></span><code>ls /dev/serial/by-id/*
 </code></pre></div>
 
-<p>It should report something similar to the following:</p>
+<p>Тя трябва да отчете нещо подобно на следното:</p>
 <div class="highlight"><pre><span></span><code>/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0
 </code></pre></div>
 

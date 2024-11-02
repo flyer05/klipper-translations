@@ -1328,8 +1328,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-use-rpi-as-a-secondary-mcu" class="md-nav__link">
-    Why use RPi as a secondary MCU?
+  <a href="#rpi-mcu" class="md-nav__link">
+    Защо да използвате RPi като вторичен MCU?
   </a>
   
 </li>
@@ -1401,9 +1401,9 @@
 
 
 <h1 id="rpi-microcontroller">RPi microcontroller<a class="headerlink" href="#rpi-microcontroller" title="Permanent link">&para;</a></h1>
-<p>This document describes the process of running Klipper on a RPi and use the same RPi as secondary mcu.</p>
-<h2 id="why-use-rpi-as-a-secondary-mcu">Why use RPi as a secondary MCU?<a class="headerlink" href="#why-use-rpi-as-a-secondary-mcu" title="Permanent link">&para;</a></h2>
-<p>Often the MCUs dedicated to controlling 3D printers have a limited and pre-configured number of exposed pins to manage the main printing functions (thermal resistors, extruders, steppers ...). Using the RPi where Klipper is installed as a secondary MCU gives the possibility to directly use the GPIOs and the buses (i2c, spi) of the RPi inside klipper without using Octoprint plugins (if used) or external programs giving the ability to control everything within the print GCODE.</p>
+<p>Този документ описва процеса на стартиране на Klipper на RPi и използване на същия RPi като вторичен mcu.</p>
+<h2 id="rpi-mcu">Защо да използвате RPi като вторичен MCU?<a class="headerlink" href="#rpi-mcu" title="Permanent link">&para;</a></h2>
+<p>Често MCU устройствата, предназначени за управление на 3D принтери, имат ограничен и предварително конфигуриран брой изводи за управление на основните функции за печат (термични резистори, екструдери, степери...). Използването на RPi, в който е инсталиран Klipper, като вторичен MCU дава възможност за директно използване на GPIO и шините (i2c, spi) на RPi в Klipper, без да се използват плъгини на Octoprint (ако се използват) или външни програми, което дава възможност за управление на всичко в рамките на GCODE за печат.</p>
 <p><strong>Warning</strong>: If your platform is a <em>Beaglebone</em> and you have correctly followed the installation steps, the linux mcu is already installed and configured for your system.</p>
 <h2 id="install-the-rc-script">Install the rc script<a class="headerlink" href="#install-the-rc-script" title="Permanent link">&para;</a></h2>
 <p>If you want to use the host as a secondary MCU the klipper_mcu process must run before the klippy process.</p>

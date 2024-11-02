@@ -1328,8 +1328,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#acceleration" class="md-nav__link">
-    Acceleration
+  <a href="#_1" class="md-nav__link">
+    Ускорение
   </a>
   
 </li>
@@ -1342,11 +1342,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#look-ahead" class="md-nav__link">
-    Look-ahead
+  <a href="#_2" class="md-nav__link">
+    Поглед напред
   </a>
   
-    <nav class="md-nav" aria-label="Look-ahead">
+    <nav class="md-nav" aria-label="Поглед напред">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1434,8 +1434,8 @@
 
 
 <h1 id="kinematics">Kinematics<a class="headerlink" href="#kinematics" title="Permanent link">&para;</a></h1>
-<p>This document provides an overview of how Klipper implements robot motion (its <a href="https://en.wikipedia.org/wiki/Kinematics">kinematics</a>). The contents may be of interest to both developers interested in working on the Klipper software as well as users interested in better understanding the mechanics of their machines.</p>
-<h2 id="acceleration">Acceleration<a class="headerlink" href="#acceleration" title="Permanent link">&para;</a></h2>
+<p>Този документ съдържа преглед на начина, по който Klipper реализира движението на робота (неговата <a href="https://en.wikipedia.org/wiki/Kinematics">кинематика</a>). Съдържанието може да представлява интерес както за разработчици, които се интересуват от работа по софтуера Klipper, така и за потребители, които се интересуват от по-добро разбиране на механиката на своите машини.</p>
+<h2 id="_1">Ускорение<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Klipper implements a constant acceleration scheme whenever the print head changes velocity - the velocity is gradually changed to the new speed instead of suddenly jerking to it. Klipper always enforces acceleration between the tool head and the print. The filament leaving the extruder can be quite fragile - rapid jerks and/or extruder flow changes lead to poor quality and poor bed adhesion. Even when not extruding, if the print head is at the same level as the print then rapid jerking of the head can cause disruption of recently deposited filament. Limiting speed changes of the print head (relative to the print) reduces risks of disrupting the print.</p>
 <p>It is also important to limit acceleration so that the stepper motors do not skip or put excessive stress on the machine. Klipper limits the torque on each stepper by virtue of limiting the acceleration of the print head. Enforcing acceleration at the print head naturally also limits the torque of the steppers that move the print head (the inverse is not always true).</p>
 <p>Klipper implements constant acceleration. The key formula for constant acceleration is:</p>
@@ -1448,7 +1448,7 @@
 <p>It's called a "trapezoid generator" because a velocity diagram of the move looks like a trapezoid.</p>
 <p>The cruising speed is always greater than or equal to both the start speed and the end speed. The acceleration phase may be of zero duration (if the start speed is equal to the cruising speed), the cruising phase may be of zero duration (if the move immediately starts decelerating after acceleration), and/or the deceleration phase may be of zero duration (if the end speed is equal to the cruising speed).</p>
 <p><img alt="trapezoids" src="img/trapezoids.svg.png" /></p>
-<h2 id="look-ahead">Look-ahead<a class="headerlink" href="#look-ahead" title="Permanent link">&para;</a></h2>
+<h2 id="_2">Поглед напред<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>The "look-ahead" system is used to determine cornering speeds between moves.</p>
 <p>Consider the following two moves contained on an XY plane:</p>
 <p><img alt="corner" src="img/corner.svg.png" /></p>

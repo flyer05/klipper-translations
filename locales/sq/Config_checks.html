@@ -1328,43 +1328,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#verify-temperature" class="md-nav__link">
-    Verify temperature
+  <a href="#kontrollo-temperaturen" class="md-nav__link">
+    Kontrollo temperaturën
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-m112" class="md-nav__link">
-    Verify M112
+  <a href="#kontrollo-m112" class="md-nav__link">
+    Kontrollo M112
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-heaters" class="md-nav__link">
-    Verify heaters
+  <a href="#kontrollo-elementet-e-nxehtesise" class="md-nav__link">
+    Kontrollo elementët e nxehtësisë
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-stepper-motor-enable-pin" class="md-nav__link">
-    Verify stepper motor enable pin
+  <a href="#verifikoni-kontakt-in-e-aktivizimit-te-motorit-hap-pas-hapi" class="md-nav__link">
+    Verifikoni kontakt-in e aktivizimit të motorit hap-pas-hapi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-endstops" class="md-nav__link">
-    Verify endstops
+  <a href="#kontrollo-kontaktet-limitues-fundore" class="md-nav__link">
+    Kontrollo kontaktet limitues fundorë
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-stepper-motors" class="md-nav__link">
-    Verify stepper motors
+  <a href="#kontrollo-motoret-stepper-motors" class="md-nav__link">
+    Kontrollo motorët (stepper motors)
   </a>
   
 </li>
@@ -1408,22 +1408,22 @@
 
 
 <h1 id="configuration-checks">Configuration checks<a class="headerlink" href="#configuration-checks" title="Permanent link">&para;</a></h1>
-<p>This document provides a list of steps to help confirm the pin settings in the Klipper printer.cfg file. It is a good idea to run through these steps after following the steps in the <a href="Installation.html">installation document</a>.</p>
-<p>During this guide, it may be necessary to make changes to the Klipper config file. Be sure to issue a RESTART command after every change to the config file to ensure that the change takes effect (type "restart" in the Octoprint terminal tab and then click "Send"). It's also a good idea to issue a STATUS command after every RESTART to verify that the config file is successfully loaded.</p>
-<h2 id="verify-temperature">Verify temperature<a class="headerlink" href="#verify-temperature" title="Permanent link">&para;</a></h2>
+<p>Ky dokument ofron një listë hapash për të ndihmuar në konfirmimin e cilësimeve të kontakteve në dokumentin e Kliperit të emërtuar si printer.cfg. Është e këshillueshme ti ndiqni këto hapa pas hapave të listuar në <a href="Installation.html">installation document</a>.</p>
+<p>Gjatë këtij udhëzuesi, mund të jetë e nevojshme të bëhen ndryshime në konfigurimet e Klipper-it. Sigurohuni që të jepni komandën RESTART pas çdo ndryshimi në konfigurimet për të siguruar që ndryshimet aplikohen (shkruani "restart" në skedën e terminalit të Octoprint dhe pastaj klikoni "Send"). Gjithashtu, është ide e mirë të jepni komandën STATUS pas çdo RESTART për të verifikuar që skedari i konfigurimit është ngarkuar me sukses.</p>
+<h2 id="kontrollo-temperaturen">Kontrollo temperaturën<a class="headerlink" href="#kontrollo-temperaturen" title="Permanent link">&para;</a></h2>
 <p>Start by verifying that temperatures are being properly reported. Navigate to the temperature graph section in the user interface. Verify that the temperature of the nozzle and bed (if applicable) are present and not increasing. If it is increasing, remove power from the printer. If the temperatures are not accurate, review the "sensor_type" and "sensor_pin" settings for the nozzle and/or bed.</p>
-<h2 id="verify-m112">Verify M112<a class="headerlink" href="#verify-m112" title="Permanent link">&para;</a></h2>
+<h2 id="kontrollo-m112">Kontrollo M112<a class="headerlink" href="#kontrollo-m112" title="Permanent link">&para;</a></h2>
 <p>Navigate to the command console and issue an M112 command in the terminal box. This command requests Klipper to go into a "shutdown" state. It will cause an error to show, which can be cleared with a FIRMWARE_RESTART command in the command console. Octoprint will also require a reconnect. Then navigate to the temperature graph section and verify that temperatures continue to update and the temperatures are not increasing. If temperatures are increasing, remove power from the printer.</p>
-<h2 id="verify-heaters">Verify heaters<a class="headerlink" href="#verify-heaters" title="Permanent link">&para;</a></h2>
+<h2 id="kontrollo-elementet-e-nxehtesise">Kontrollo elementët e nxehtësisë<a class="headerlink" href="#kontrollo-elementet-e-nxehtesise" title="Permanent link">&para;</a></h2>
 <p>Navigate to the temperature graph section and type in 50 followed by enter in the extruder/tool temperature box. The extruder temperature in the graph should start to increase (within about 30 seconds or so). Then go to the extruder temperature drop-down box and select "Off". After several minutes the temperature should start to return to its initial room temperature value. If the temperature does not increase then verify the "heater_pin" setting in the config.</p>
-<p>If the printer has a heated bed then perform the above test again with the bed.</p>
-<h2 id="verify-stepper-motor-enable-pin">Verify stepper motor enable pin<a class="headerlink" href="#verify-stepper-motor-enable-pin" title="Permanent link">&para;</a></h2>
+<p>Nëse printeri ka një platformë që nxehet, atëherë kryeni përsëri testin e mësipërm me platformën.</p>
+<h2 id="verifikoni-kontakt-in-e-aktivizimit-te-motorit-hap-pas-hapi">Verifikoni kontakt-in e aktivizimit të motorit hap-pas-hapi<a class="headerlink" href="#verifikoni-kontakt-in-e-aktivizimit-te-motorit-hap-pas-hapi" title="Permanent link">&para;</a></h2>
 <p>Verify that all of the printer axes can manually move freely (the stepper motors are disabled). If not, issue an M84 command to disable the motors. If any of the axes still can not move freely, then verify the stepper "enable_pin" configuration for the given axis. On most commodity stepper motor drivers, the motor enable pin is "active low" and therefore the enable pin should have a "!" before the pin (for example, "enable_pin: !PA1").</p>
-<h2 id="verify-endstops">Verify endstops<a class="headerlink" href="#verify-endstops" title="Permanent link">&para;</a></h2>
+<h2 id="kontrollo-kontaktet-limitues-fundore">Kontrollo kontaktet limitues fundorë<a class="headerlink" href="#kontrollo-kontaktet-limitues-fundore" title="Permanent link">&para;</a></h2>
 <p>Manually move all the printer axes so that none of them are in contact with an endstop. Send a QUERY_ENDSTOPS command via the command console. It should respond with the current state of all of the configured endstops and they should all report a state of "open". For each of the endstops, rerun the QUERY_ENDSTOPS command while manually triggering the endstop. The QUERY_ENDSTOPS command should report the endstop as "TRIGGERED".</p>
 <p>If the endstop appears inverted (it reports "open" when triggered and vice-versa) then add a "!" to the pin definition (for example, "endstop_pin: ^PA2"), or remove the "!" if there is already one present.</p>
-<p>If the endstop does not change at all then it generally indicates that the endstop is connected to a different pin. However, it may also require a change to the pullup setting of the pin (the '^' at the start of the endstop_pin name - most printers will use a pullup resistor and the '^' should be present).</p>
-<h2 id="verify-stepper-motors">Verify stepper motors<a class="headerlink" href="#verify-stepper-motors" title="Permanent link">&para;</a></h2>
+<p>Nëse ndërprerësi fundor nuk ndryshon fare, zakonisht tregon që ai është i lidhur me një kontakt tjetër. Megjithatë, mund të dhe rasti që duhet një ndryshim ne cilësimet e kontaktit për ta aktivizuar (simboli '^' në fillim të emrit endstop_pin – shumica e printerëve përdorin një rezistor dhe simboli '^' duhet të jetë i pranishëm).</p>
+<h2 id="kontrollo-motoret-stepper-motors">Kontrollo motorët (stepper motors)<a class="headerlink" href="#kontrollo-motoret-stepper-motors" title="Permanent link">&para;</a></h2>
 <p>Use the STEPPER_BUZZ command to verify the connectivity of each stepper motor. Start by manually positioning the given axis to a midway point and then run <code>STEPPER_BUZZ STEPPER=stepper_x</code> in the command console. The STEPPER_BUZZ command will cause the given stepper to move one millimeter in a positive direction and then it will return to its starting position. (If the endstop is defined at position_endstop=0 then at the start of each movement the stepper will move away from the endstop.) It will perform this oscillation ten times.</p>
 <p>If the stepper does not move at all, then verify the "enable_pin" and "step_pin" settings for the stepper. If the stepper motor moves but does not return to its original position then verify the "dir_pin" setting. If the stepper motor oscillates in an incorrect direction, then it generally indicates that the "dir_pin" for the axis needs to be inverted. This is done by adding a '!' to the "dir_pin" in the printer config file (or removing it if one is already there). If the motor moves significantly more or significantly less than one millimeter then verify the "rotation_distance" setting.</p>
 <p>Run the above test for each stepper motor defined in the config file. (Set the STEPPER parameter of the STEPPER_BUZZ command to the name of the config section that is to be tested.) If there is no filament in the extruder then one can use STEPPER_BUZZ to verify the extruder motor connectivity (use STEPPER=extruder). Otherwise, it's best to test the extruder motor separately (see the next section).</p>

@@ -1352,8 +1352,8 @@
 
 
 <h1 id="configuration-changes">Configuration Changes<a class="headerlink" href="#configuration-changes" title="Permanent link">&para;</a></h1>
-<p>This document covers recent software changes to the config file that are not backwards compatible. It is a good idea to review this document when upgrading the Klipper software.</p>
-<p>All dates in this document are approximate.</p>
+<p>Този документ обхваща последните софтуерни промени в конфигурационния файл, които не са обратно съвместими. Добре е да прегледате този документ, когато обновявате софтуера Klipper.</p>
+<p>Всички дати в този документ са приблизителни.</p>
 <h2 id="changes">Changes<a class="headerlink" href="#changes" title="Permanent link">&para;</a></h2>
 <p>20240415: The <code>on_error_gcode</code> parameter in the <code>[virtual_sdcard]</code> config section now has a default. If this parameter is not specified it now defaults to <code>TURN_OFF_HEATERS</code>. If the previous behavior is desired (take no default action on an error during a virtual_sdcard print) then define <code>on_error_gcode</code> with an empty value.</p>
 <p>20240313: The <code>max_accel_to_decel</code> parameter in the <code>[printer]</code> config section has been deprecated. The <code>ACCEL_TO_DECEL</code> parameter of the <code>SET_VELOCITY_LIMIT</code> command has been deprecated. The <code>printer.toolhead.max_accel_to_decel</code> status has been removed. Use the <a href="Config_Reference.html#printer">minimum_cruise_ratio parameter</a> instead. The deprecated features will be removed in the near future, and using them in the interim may result in subtly different behavior.</p>
@@ -1420,7 +1420,7 @@ document</a> for examples.</p>
 <p>20201112: The time reported by <code>print_stats.print_duration</code> has changed. The duration prior to the first detected extrusion is now excluded.</p>
 <p>20201029: The neopixel <code>color_order_GRB</code> config option has been removed. If necessary, update the config to set the new <code>color_order</code> option to RGB, GRB, RGBW, or GRBW.</p>
 <p>20201029: The serial option in the mcu config section no longer defaults to /dev/ttyS0. In the rare situation where /dev/ttyS0 is the desired serial port, it must be specified explicitly.</p>
-<p>20201020: Klipper v0.9.0 released.</p>
+<p>20201020: Klipper v0.9.0</p>
 <p>20200902: The RTD resistance-to-temperature calculation for MAX31865 converters has been corrected to not read low. If you are using such a device, you should recalibrate your print temperature and PID settings.</p>
 <p>20200816: The gcode macro <code>printer.gcode</code> object has been renamed to <code>printer.gcode_move</code>. Several undocumented variables in <code>printer.toolhead</code> and <code>printer.gcode</code> have been removed. See docs/Command_Templates.md for a list of available template variables.</p>
 <p>20200816: The gcode macro "action_" system has changed. Replace any calls to <code>printer.gcode.action_emergency_stop()</code> with <code>action_emergency_stop()</code>, <code>printer.gcode.action_respond_info()</code> with <code>action_respond_info()</code>, and <code>printer.gcode.action_respond_error()</code> with <code>action_raise_error()</code>.</p>
