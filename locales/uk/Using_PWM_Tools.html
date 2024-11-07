@@ -13,7 +13,7 @@
     
     
       
-        <title>Using PWM tools - Klipper documentation</title>
+        <title>Використання інструментів PWM - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-pwm-tools" class="md-skip">
+        <a href="#pwm" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using PWM tools
+              Використання інструментів PWM
             
           </span>
         </div>
@@ -1328,29 +1328,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
-    How does it work?
+  <a href="#_1" class="md-nav__link">
+    Як це працює?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-limitations" class="md-nav__link">
-    Current Limitations
+  <a href="#_2" class="md-nav__link">
+    Поточні обмеження
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#_3" class="md-nav__link">
+    Команди
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#laserweb-configuration" class="md-nav__link">
-    Laserweb Configuration
+  <a href="#-" class="md-nav__link">
+    Конфігурація веб-сайтів
   </a>
   
 </li>
@@ -1372,42 +1372,42 @@
 </a>
 
 
-<h1 id="using-pwm-tools">Using PWM tools<a class="headerlink" href="#using-pwm-tools" title="Permanent link">&para;</a></h1>
-<p>This document describes how to setup a PWM-controlled laser or spindle using <code>output_pin</code> and some macros.</p>
-<h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
-<p>With re-purposing the printhead's fan pwm output, you can control lasers or spindles. This is useful if you use switchable print heads, for example the E3D toolchanger or a DIY solution. Usually, cam-tools such as LaserWeb can be configured to use <code>M3-M5</code> commands, which stand for <em>spindle speed CW</em> (<code>M3 S[0-255]</code>), <em>spindle speed CCW</em> (<code>M4 S[0-255]</code>) and <em>spindle stop</em> (<code>M5</code>).</p>
-<p><strong>Warning:</strong> When driving a laser, keep all security precautions that you can think of! Diode lasers are usually inverted. This means, that when the MCU restarts, the laser will be <em>fully on</em> for the time it takes the MCU to start up again. For good measure, it is recommended to <em>always</em> wear appropriate laser-goggles of the right wavelength if the laser is powered; and to disconnect the laser when it is not needed. Also, you should configure a safety timeout, so that when your host or MCU encounters an error, the tool will stop.</p>
-<p>For an example configuration, see <a href="/config/sample-pwm-tool.cfg">config/sample-pwm-tool.cfg</a>.</p>
-<h2 id="current-limitations">Current Limitations<a class="headerlink" href="#current-limitations" title="Permanent link">&para;</a></h2>
-<p>There is a limitation of how frequent PWM updates may occur. While being very precise, a PWM update may only occur every 0.1 seconds, rendering it almost useless for raster engraving. However, there exists an <a href="https://github.com/Cirromulus/klipper/tree/laser_tool">experimental branch</a> with its own tradeoffs. In long term, it is planned to add this functionality to main-line klipper.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<p><code>M3/M4 S&lt;value&gt;</code> : Set PWM duty-cycle. Values between 0 and 255. <code>M5</code> : Stop PWM output to shutdown value.</p>
-<h2 id="laserweb-configuration">Laserweb Configuration<a class="headerlink" href="#laserweb-configuration" title="Permanent link">&para;</a></h2>
-<p>If you use Laserweb, a working configuration would be:</p>
+<h1 id="pwm">Використання інструментів PWM<a class="headerlink" href="#pwm" title="Permanent link">&para;</a></h1>
+<p>Цей документ описує, як налаштувати PWM-керований лазер або шпиндель за допомогою <code>виход_pin</code> і деякі макроси.</p>
+<h2 id="_1">Як це працює?<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Ви можете керувати лазерами або шпиндельками. Це корисно, якщо ви використовуєте комутаційні головки друку, наприклад, інструмент обміну E3D або рішення DIY. Як правило, кам-інструменти, такі як LaserWeb можна налаштувати для використання <code>M3-M5</code> команди, які стоять для <em>spindle швидкість CW</em> (<code>M3 S[0-255]</code>), <em>spindle швидкість CCW</em> (<code>M4 S[0-255]</code>) і <em>spindle stop</em> (`M5[377X].</p>
+<p><strong>Навігація:</strong> Коли водіння лазера, зберігайте всі запобіжні заходи безпеки, які ви можете подумати про! Неперевершені діодні лазери. Це означає, що при перезапускі МКУ лазер буде <em>fully on</em> на час, коли МКУ знову забирає. Для хорошого виміру рекомендується <em>always</em> носити відповідні лазерні окуляри правої довжини хвилі, якщо лазер працює; і від'єднати лазер, коли він не потрібен. Крім того, ви повинні налаштувати час служби безпеки, щоб коли ваш хост або MCU зіткнувся з помилкою, інструмент зупиниться.</p>
+<p>Наприклад конфігурація, див. <a href="/config/sample-pwm-tool.cfg">config/sample-pwm-tool.cfg</a>.</p>
+<h2 id="_2">Поточні обмеження<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Існує обмеження, як часті оновлення PWM. В той час як дуже точний, оновлення PWM може відбуватися лише кожні 0,1 секунд, що дає йому практично без використання для гравірування растрових променів. Тим не менш, існує <a href="https://github.com/Cirromulus/klipper/tree/laser_tool">експериментальне відділення</a> з власними торговими точками. У довгостроковій перспективі планується додати цю функціональність до основного клиппера.</p>
+<h2 id="_3">Команди<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>M3/M4 S&lt;value&gt;</code> : Комплект PWM-цикл. Цінності між 0 і 255. <code>M5</code> : Stop PWM вихід для відключення значення.</p>
+<h2 id="-">Конфігурація веб-сайтів<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>Якщо ви використовуєте лазерний веб-сайт, робоча конфігурація буде:</p>
 <pre><code>GCODE START:
-    M5            ; Disable Laser
-    G21           ; Set units to mm
-    G90           ; Absolute positioning
-    G0 Z0 F7000   ; Set Non-Cutting speed
+M5 ; Відключений лазер
+G21 ; Комплектуючі до мм
+G90 ; Абсолютне позиціонування
+G0 Z0 F7000 ; Настроювання швидкості
 
 GCODE END:
-    M5            ; Disable Laser
-    G91           ; relative
-    G0 Z+20 F4000 ;
-    G90           ; absolute
+M5 ; Відключений лазер
+G91 ; відносний
+G0 Z+20 F4000 ;
+G90 ; абсолютний
 
 GCODE HOMING:
-    M5            ; Disable Laser
-    G28           ; Home all axis
+M5 ; Відключений лазер
+G28 ; Головна вісь
 
-TOOL ON:
-    M3 $INTENSITY
+ОНОВЛЕННЯ:
+M3 $інтенсивність
 
-TOOL OFF:
-    M5            ; Disable Laser
+ЗАМОВИТИ:
+M5 ; Відключений лазер
 
-LASER INTENSITY:
-    S
+ЛАЗЕРНА ІНТЕНСІЯ:
+Р
 </code></pre>
 
               

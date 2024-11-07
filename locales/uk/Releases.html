@@ -1328,25 +1328,25 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#klipper-0110" class="md-nav__link">
-    Klipper 0.11.0
+  <a href="#0110" class="md-nav__link">
+    Клиппер 0.11.0
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-0100" class="md-nav__link">
-    Klipper 0.10.0
+  <a href="#0100" class="md-nav__link">
+    Клиппер 0.10.0
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-090" class="md-nav__link">
-    Klipper 0.9.0
+  <a href="#090" class="md-nav__link">
+    Клиппер 0.9.0
   </a>
   
-    <nav class="md-nav" aria-label="Klipper 0.9.0">
+    <nav class="md-nav" aria-label="Клиппер 0.9.0">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1376,36 +1376,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-060" class="md-nav__link">
-    Klipper 0.6.0
+  <a href="#060" class="md-nav__link">
+    Клиппер 0.6.0
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-050" class="md-nav__link">
-    Klipper 0.5.0
+  <a href="#050" class="md-nav__link">
+    Клиппер 0.5.0
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-040" class="md-nav__link">
-    Klipper 0.4.0
+  <a href="#040" class="md-nav__link">
+    Клиппер 0.4.0
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-030" class="md-nav__link">
-    Klipper 0.3.0
+  <a href="#030" class="md-nav__link">
+    Клиппер 0.3.0
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#klipper-020" class="md-nav__link">
-    Klipper 0.2.0
+  <a href="#020" class="md-nav__link">
+    Клиппер 0.2.0
   </a>
   
 </li>
@@ -1428,194 +1428,194 @@
 
 
 <h1 id="_1">Релізи<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>History of Klipper releases. Please see <a href="Installation.html">installation</a> for information on installing Klipper.</p>
-<h2 id="klipper-0110">Klipper 0.11.0<a class="headerlink" href="#klipper-0110" title="Permanent link">&para;</a></h2>
-<p>Available on 20221128. Major changes in this release:</p>
+<p>Історія релізів кліппера. Будь ласка, див. <a href="Installation.html">installation</a> для отримання інформації про встановлення Клиппера.</p>
+<h2 id="0110">Клиппер 0.11.0<a class="headerlink" href="#0110" title="Permanent link">&para;</a></h2>
+<p>В наявності 20221128. Основні зміни цього релізу:</p>
 <ul>
-<li>Trinamic stepper motor driver "step on both edges" optimization.</li>
-<li>Support for Python3. The Klipper host code will run with either Python2 or Python3.</li>
-<li>Enhanced CAN bus support. Support for CAN bus on rp2040, stm32g0, stm32h7, same51, and same54 chips. Support for "USB to CAN bus bridge" mode.</li>
-<li>Support for CanBoot bootloader.</li>
-<li>Support for mpu9250 and mpu6050 accelerometers.</li>
-<li>Improved error handling for max31856, max31855, max31865, and max6675 temperature sensors.</li>
-<li>It is now possible to configure LEDs to update during long running G-Code commands using LED "template" support.</li>
-<li>Several micro-controller improvements. New support for stm32h743, stm32h750, stm32l412, stm32g0b1, same70, same51, and same54 chips. Support for i2c reads on atsamd and stm32f0. Hardware pwm support on stm32. Linux mcu signal based event dispatch. New rp2040 support for "make flash", i2c, and rp2040-e5 USB errata.</li>
-<li>New modules added: angle, dac084S085, exclude_object, led, mpu9250, pca9632, smart_effector, z_thermal_adjust. New deltesian kinematics added. New dump_mcu tool added.</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Trinamic stepper моторний драйвер "покроковий на обох краях" оптимізація.</li>
+<li>Підтримка Python3. Код хосту Klipper працюватиме з Python2 або Python3.</li>
+<li>Розширена підтримка автобусів CAN. Підтримка автобуса CAN на rp2040, stm32g0, stm32h7, же51, а також54 чіпс. Підтримка режиму "USB до CAN".</li>
+<li>Підтримка завантажувача CanBoot.</li>
+<li>Підтримка акселерометрів mpu9250 та mpu6050.</li>
+<li>Поліпшення обробки помилок для макс31856, макс31855, макс31865 та датчиків температури макс6675.</li>
+<li>Тепер можна налаштувати світлодіоди для оновлення під час тривалої роботи команд G-Code за допомогою світлодіода "template" підтримки.</li>
+<li>Кілька покращення мікроконтролерів. Нова підтримка стм32х743, стм32х750, стм32л412, стм32г0б1, же70, однаково51, а також54 чіпси. Підтримка i2c читати на atsamd і stm32f0. Устаткування для підтримки ромму на стм32. Передача сигналу на основі Linux mcu. Нова підтримка rp2040 для "зробити спалах", i2c, і rp2040-e5 USB errata.</li>
+<li>Додано нові модулі: кут, dac084S085, remove_object, led, mpu9250, pca9632, smart_effector, z_thermal_adjust. Додана нова дельтесія. Додано новий інструмент для сміття.</li>
+<li>Кілька виправлення помилок і очищення коду.</li>
 </ul>
-<h2 id="klipper-0100">Klipper 0.10.0<a class="headerlink" href="#klipper-0100" title="Permanent link">&para;</a></h2>
-<p>Available on 20210929. Major changes in this release:</p>
+<h2 id="0100">Клиппер 0.10.0<a class="headerlink" href="#0100" title="Permanent link">&para;</a></h2>
+<p>Доступно на 20210929. Основні зміни цього релізу:</p>
 <ul>
-<li>Support for "Multi-MCU Homing". It is now possible for a stepper motor and its endstop to be wired to separate micro-controllers. This simplifies wiring of Z probes on "toolhead boards".</li>
-<li>Klipper now has a <a href="https://discord.klipper3d.org">Community Discord Server</a> and a <a href="https://community.klipper3d.org">Community Discourse Server</a>.</li>
-<li>The <a href="https://www.klipper3d.org">Klipper website</a> now uses the "mkdocs" infrastructure. There is also a <a href="https://github.com/Klipper3d/klipper-translations">Klipper Translations</a> project.</li>
-<li>Automated support for flashing firmware via sdcard on many boards.</li>
-<li>New kinematic support for "Hybrid CoreXY" and "Hybrid CoreXZ" printers.</li>
-<li>Klipper now uses <code>rotation_distance</code> to configure stepper motor travel distances.</li>
-<li>The main Klipper host code can now directly communicate with micro-controllers using CAN bus.</li>
-<li>New "motion analysis" system. Klipper's internal motion updates and sensor results can be tracked and logged for analysis.</li>
-<li>Trinamic stepper motor drivers are now continuously monitored for error conditions.</li>
-<li>Support for the rp2040 micro-controller (Raspberry Pi Pico boards).</li>
-<li>The "make menuconfig" system now utilizes kconfiglib.</li>
-<li>Many additional modules added: ds18b20, duplicate_pin_override, filament_motion_sensor, palette2, motion_report, pca9533, pulse_counter, save_variables, sdcard_loop, temperature_host, temperature_mcu</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Підтримка "Мульти-МКУ Хімінг". Тепер можливо для крокової двигуна і її торцевої поверхні, щоб бути провідовані до окремих мікроконтролерів. Це спрощує сережку зондів Z на «тулкові дошки».</li>
+<li>Klipper тепер має <a href="https://discord.klipper3d.org">Community Discord Server</a> і <a href="https://community.klipper3d.org">Community Discourse Server</a>.</li>
+<li>Веб-сайт <a href="https://www.klipper3d.org">Klipper</a> тепер використовує інфраструктуру "mkdocs". Є також проект <a href="https://github.com/Klipper3d/klipper-translations">Klipper Translations</a>.</li>
+<li>Автоматична підтримка флеш-пам'яті через sdcard на багатьох дошках.</li>
+<li>Новий кінематичний супровід принтерів "Hybrid CoreXY" та "Hybrid CoreXZ".</li>
+<li>Klipper тепер використовує <code>rotation_distance</code>, щоб налаштувати кроковий двигун відстані.</li>
+<li>Основний код хіпппера тепер може безпосередньо спілкуватися з мікроконтролерами за допомогою автобуса CAN.</li>
+<li>Нова система "моделювання" Внутрішнє оновлення руху кліппера і результати датчиків можна відслідковувати і записувати для аналізу.</li>
+<li>Драйвери від Trinamic stepper тепер постійно контролюються за похибками.</li>
+<li>Підтримка мікроконтролера rp2040.</li>
+<li>Система "make" тепер використовує kconfiglib.</li>
+<li>Багато додаткових модулів додано: ds18b20, дублікати_pin_override, filament_motion_sensor, палітра2, рух_report, pca9533, пульс_counter, save_variables, sdcard_loop, температура_host, температура_mcu</li>
+<li>Кілька виправлення помилок і очищення коду.</li>
 </ul>
-<h2 id="klipper-090">Klipper 0.9.0<a class="headerlink" href="#klipper-090" title="Permanent link">&para;</a></h2>
-<p>Available on 20201020. Major changes in this release:</p>
+<h2 id="090">Клиппер 0.9.0<a class="headerlink" href="#090" title="Permanent link">&para;</a></h2>
+<p>Доступно на 20201020. Основні зміни цього релізу:</p>
 <ul>
-<li>Support for "Input Shaping" - a mechanism to counteract printer resonance. It can reduce or eliminate "ringing" in prints.</li>
-<li>New "Smooth Pressure Advance" system. This implements "Pressure Advance" without introducing instantaneous velocity changes. It is also now possible to tune pressure advance using a "Tuning Tower" method.</li>
-<li>New "webhooks" API server. This provides a programmable JSON interface to Klipper.</li>
-<li>The LCD display and menu are now configurable using the Jinja2 template language.</li>
-<li>The TMC2208 stepper motor drivers can now be used in "standalone" mode with Klipper.</li>
-<li>Improved BL-Touch v3 support.</li>
-<li>Improved USB identification. Klipper now has its own USB identification code and micro-controllers can now report their unique serial numbers during USB identification.</li>
-<li>New kinematic support for "Rotary Delta" and "CoreXZ" printers.</li>
-<li>Micro-controller improvements: support for stm32f070, support for stm32f207, support for GPIO pins on "Linux MCU", stm32 "HID bootloader" support, Chitu bootloader support, MKS Robin bootloader support.</li>
-<li>Improved handling of Python "garbage collection" events.</li>
-<li>Many additional modules added: adc_scaled, adxl345, bme280, display_status, extruder_stepper, fan_generic, hall_filament_width_sensor, htu21d, homing_heaters, input_shaper, lm75, print_stats, resonance_tester, shaper_calibrate, query_adc, graph_accelerometer, graph_extruder, graph_motion, graph_shaper, graph_temp_sensor, whconsole</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Підтримка "Вступне формування" - механізм контрактного резонансу принтера. Це може зменшити або усунути «забірка» в друку.</li>
+<li>Нова система "Smooth Тиск Advance" Це реалізує «Пресурний аванс» без введення миттєвих змін швидкості. Також тепер можна налаштовувати тиск заздалегідь за допомогою методу «Тунінг Вежа».</li>
+<li>Статус на сервери Ця програма забезпечує інтерфейс JSON до Klipper.</li>
+<li>РК-дисплей і меню тепер конфігуруються за допомогою мови шаблона Jinja2.</li>
+<li>Драйвери для крокових двигунів TMC2208 тепер можуть використовуватися в режимі "standalone".</li>
+<li>Покращено підтримку BL-Touch v3.</li>
+<li>Покращення ідентифікації USB. Klipper тепер має власний код ідентифікації USB і мікроконтролери тепер можуть повідомити свої унікальні серійні номери під час ідентифікації USB.</li>
+<li>Новий кінематичний супровід принтерів "Rotary Delta" та "CoreXZ".</li>
+<li>Мікро-контролерні поліпшення: підтримка стм32ф070, підтримка стм32ф207, підтримка штифтів GPIO на "Linux MCU", стм32 "HID bootloader" підтримка, підтримка ЧІТ завантажувача, підтримка MKS Robin.</li>
+<li>Покращується обробка подій на Python "збір".</li>
+<li>Додано багато додаткових модулів: adc_scaled, adxl345, bme280, дисплей_status, extruder_stepper, fan_generic, hall_filament_width_sensor, htu21d, homing_heaters, вхід_shaper, lm75, print_stats, резонанс_tester, формаr_calibrate, query_adc, граф_accelerometer, граф_extruder, графік_motion, граф_shaper, граф_temp_sensor, whconsole</li>
+<li>Кілька виправлення помилок і очищення коду.</li>
 </ul>
 <h3 id="klipper-091">Klipper 0.9.1<a class="headerlink" href="#klipper-091" title="Permanent link">&para;</a></h3>
-<p>Available on 20201028. Release containing only bug fixes.</p>
+<p>Доступно на 20201028. Випускають тільки виправлення помилок.</p>
 <h2 id="klipper-080">Klipper 0.8.0<a class="headerlink" href="#klipper-080" title="Permanent link">&para;</a></h2>
-<p>Available on 20191021. Major changes in this release:</p>
+<p>Доступно на 20191021. Основні зміни цього релізу:</p>
 <ul>
-<li>New G-Code command template support. G-Code in the config file is now evaluated with the Jinja2 template language.</li>
-<li>Improvements to Trinamic stepper drivers:<ul>
-<li>New support for TMC2209 and TMC5160 drivers.</li>
-<li>Improved DUMP_TMC, SET_TMC_CURRENT, and INIT_TMC G-Code commands.</li>
-<li>Improved support for TMC UART handling with an analog mux.</li>
+<li>Підтримка шаблонів G-Code. G-Code в файлі конфігурації тепер оцінюється з мовою шаблону Jinja2.</li>
+<li>Удосконалення драйверів Trinamic stepper:<ul>
+<li>Нова підтримка драйверів TMC2209 та TMC5160.</li>
+<li>Покращений DUMP_TMC, SET_TMC_CURRENT та INIT_TMC G-Code команди.</li>
+<li>Покращена підтримка обробки TMC UART з аналоговим мюксом.</li>
 </ul>
 </li>
-<li>Improved homing, probing, and bed leveling support:<ul>
-<li>New manual_probe, bed_screws, screws_tilt_adjust, skew_correction, safe_z_home modules added.</li>
-<li>Enhanced multi-sample probing with median, average, and retry logic.</li>
-<li>Improved documentation for BL-Touch, probe calibration, endstop calibration, delta calibration, sensorless homing, and endstop phase calibration.</li>
-<li>Improved homing support on a large Z axis.</li>
+<li>Покращується панування, пров'язка, та підтримка рівня постільної білизни:<ul>
+<li>Новий посібник_probe, ліжко_screws, гвинти_tilt_adjust, skew_correction, Safe_z_home модулі додано.</li>
+<li>Підвищений багатокамерний протез з медіанами, середнім і патологічною логікою.</li>
+<li>Удосконалено документацію для BL-Touch, калібрування зондів, калібрування торцевої поверхні, калібрування дельти, калібрування сенсорів, калібрування торцевої фази.</li>
+<li>Покращена підтримка хмелю на великій осі Z.</li>
 </ul>
 </li>
-<li>Many Klipper micro-controller improvements:<ul>
-<li>Klipper ported to: SAM3X8C, SAM4S8C, SAMD51, STM32F042, STM32F4</li>
-<li>New USB CDC driver implementations on SAM3X, SAM4, STM32F4.</li>
-<li>Enhanced support for flashing Klipper over USB.</li>
-<li>Software SPI support.</li>
-<li>Greatly improved temperature filtering on the LPC176x.</li>
-<li>Early output pin settings can be configured in the micro-controller.</li>
+<li>Багато покращення мікроконтролю Klipper:<ul>
+<li>Клиппер перевантажений до: SAM3X8C, SAM4S8C, SAMD51, STM32F042, STM32F4</li>
+<li>Нові драйвери USB CDC на SAM3X, SAM4, STM32F4.</li>
+<li>Підвищена підтримка спалаху Klipper над USB.</li>
+<li>Програмне забезпечення SPI підтримки.</li>
+<li>Відмінно поліпшують температурний фільтр на LPC176x.</li>
+<li>У мікроконтролері можна налаштувати ранні параметри вихідного шпильки.</li>
 </ul>
 </li>
-<li>New website with the Klipper documentation: <a href="http://klipper3d.org/">http://klipper3d.org/</a><ul>
-<li>Klipper now has a logo.</li>
+<li>Новий сайт з документацією Klipper: <a href="http://klipper3d.org/">http://klipper3d.org/</a><ul>
+<li>Klipper тепер має логотип.</li>
 </ul>
 </li>
-<li>Experimental support for polar and "cable winch" kinematics.</li>
-<li>The config file can now include other config files.</li>
-<li>Many additional modules added: board_pins, controller_fan, delayed_gcode, dotstar, filament_switch_sensor, firmware_retraction, gcode_arcs, gcode_button, heater_generic, manual_stepper, mcp4018, mcp4728, neopixel, pause_resume, respond, temperature_sensor tsl1401cl_filament_width_sensor, tuning_tower</li>
-<li>Many additional commands added: RESTORE_GCODE_STATE, SAVE_GCODE_STATE, SET_GCODE_VARIABLE, SET_HEATER_TEMPERATURE, SET_IDLE_TIMEOUT, SET_TEMPERATURE_FAN_TARGET</li>
-<li>Several bug fixes and code cleanups.</li>
+<li>Експериментальна підтримка полярних і "знімних лебідок" кінематики.</li>
+<li>Файл config тепер може містити інші файли config.</li>
+<li>Багато додаткових модулів додано: дошка_pins, контролер_fan, затримка_gcode, dotstar, filament_switch_sensor, прошивка_retraction, gcode_arcs, gcode_button, heater_generic, Manual_stepper, mcp4018, mcp4728, неопіксел, pause_resume, відповідь, температура_sensor tsl1401cl_filament_width_width_sensor, tuning_tower</li>
+<li>Додано багато додаткових команд: RESTORE_GCODE_STATE, SAVE_GCODE_STATE, SET_GCODE_VARIABLE, SET_HEATER_TEMPERATURE, SET_IDLE_TIMEOUT, SET_TEMPERATURE_FAN_TARGET</li>
+<li>Кілька виправлення помилок і очищення коду.</li>
 </ul>
 <h2 id="klipper-070">Klipper 0.7.0<a class="headerlink" href="#klipper-070" title="Permanent link">&para;</a></h2>
-<p>Available on 20181220. Major changes in this release:</p>
+<p>Доступно на 20181220. Основні зміни цього релізу:</p>
 <ul>
-<li>Klipper now supports "mesh" bed leveling</li>
-<li>New support for "enhanced" delta calibration (calibrates print x/y dimensions on delta printers)</li>
-<li>Support for run-time configuration of Trinamic stepper motor drivers (tmc2130, tmc2208, tmc2660)</li>
-<li>Improved temperature sensor support: MAX6675, MAX31855, MAX31856, MAX31865, custom thermistors, common pt100 style sensors</li>
-<li>Several new modules: temperature_fan, sx1509, force_move, mcp4451, z_tilt, quad_gantry_level, endstop_phase, bltouch</li>
-<li>Several new commands added: SAVE_CONFIG, SET_PRESSURE_ADVANCE, SET_GCODE_OFFSET, SET_VELOCITY_LIMIT, STEPPER_BUZZ, TURN_OFF_HEATERS, M204, custom g-code macros</li>
-<li>Expanded LCD display support:<ul>
-<li>Support for run-time menus</li>
-<li>New display icons</li>
-<li>Support for "uc1701" and "ssd1306" displays</li>
+<li>Кліппер тепер підтримує "меш" вирівнювання ліжка</li>
+<li>Нова підтримка калібрування дельта "enhanced" (калібрує друк x/y розмірів на принтерах дельта)</li>
+<li>Підтримка конфігурації пускової конфігурації драйверів двигуна Trinamic stepper (tmc2130, tmc2208, tmc2660)</li>
+<li>Покращена підтримка датчиків температури: MAX6675, MAX31855, MAX31856, MAX31865, користувацькі америсти, загальні датчики стилю pt100</li>
+<li>Кілька нових модулів: температура_фан, sx1509, сила_move, mcp4451, z_tilt, quad_gantry_level, endstop_phase, bltouch</li>
+<li>Додано кілька нових команд: SAVE_CONFIG, SET_PRESSURE_ADVANCE, SET_GCODE_OFFSET, SET_VELOCITY_LIMIT, STEPPER_BUZZ, TURN_OFF_HEATERS, M204, користувальницький g-код макроси</li>
+<li>Підтримувані РК-дисплей:<ul>
+<li>Підтримка меню run-time</li>
+<li>Нові іконки відображення</li>
+<li>Підтримка "uc1701" та "sd1306"</li>
 </ul>
 </li>
-<li>Additional micro-controller support:<ul>
-<li>Klipper ported to: LPC176x (Smoothieboards), SAM4E8E (Duet2), SAMD21 (Arduino Zero), STM32F103 ("Blue pill" devices), atmega32u4</li>
-<li>New Generic USB CDC driver implemented on AVR, LPC176x, SAMD21, and STM32F103</li>
-<li>Performance improvements on ARM processors</li>
+<li>Додаткова підтримка мікроконтролерів:<ul>
+<li>Klipper відобразив: LPC176x (Smoothieboards), SAM4E8E (Duet2), SAMD21 (Arduino Zero), STM32F103 («Синій таблетка», atmega32u4</li>
+<li>Новий генератор USB CDC драйвер реалізований на AVR, LPC176x, SAMD21 і STM32F103</li>
+<li>Підвищення продуктивності на процесорах ARM</li>
 </ul>
 </li>
-<li>The kinematics code was rewritten to use an "iterative solver"</li>
-<li>New automatic test cases for the Klipper host software</li>
-<li>Many new example config files for common off-the-shelf printers</li>
-<li>Documentation updates for bootloaders, benchmarking, micro-controller porting, config checks, pin mapping, slicer settings, packaging, and more</li>
-<li>Several bug fixes and code cleanups</li>
+<li>Код кінематики переписано для використання "інеративного розчинника"</li>
+<li>Нові автоматичні тестові випадки для програмного забезпечення Klipper</li>
+<li>Багато нових прикладних конфігураційних файлів для звичайних принтерів</li>
+<li>Документація оновлень для завантажувачів, бенчмаркінгу, мікроконтролерів, конфігураційних перевірок, пін-картування, налаштування скибочка, упаковка та багато іншого</li>
+<li>Кілька виправлення помилок і очищення коду</li>
 </ul>
-<h2 id="klipper-060">Klipper 0.6.0<a class="headerlink" href="#klipper-060" title="Permanent link">&para;</a></h2>
-<p>Available on 20180331. Major changes in this release:</p>
+<h2 id="060">Клиппер 0.6.0<a class="headerlink" href="#060" title="Permanent link">&para;</a></h2>
+<p>Доступно на 20180331. Основні зміни цього релізу:</p>
 <ul>
-<li>Enhanced heater and thermistor hardware failure checks</li>
-<li>Support for Z probes</li>
-<li>Initial support for automatic parameter calibration on deltas (via a new delta_calibrate command)</li>
-<li>Initial support for bed tilt compensation (via bed_tilt_calibrate command)</li>
-<li>Initial support for "safe homing" and homing overrides</li>
-<li>Initial support for displaying status on RepRapDiscount style 2004 and 12864 displays</li>
-<li>New multi-extruder improvements:<ul>
-<li>Support for shared heaters</li>
-<li>Initial support for dual carriages</li>
+<li>Підвищений обігрівач і контролер перевірки апаратної недостатності</li>
+<li>Підтримка зон Z</li>
+<li>Початкова підтримка автоматичного калібрування параметрів на deltas (через нову команду delta_calibrate)</li>
+<li>Початкова підтримка відшкодування постільної білизни (через ліжко_tilt_calibrate team)</li>
+<li>Початкова підтримка "безпечне хемінування" і захоплення</li>
+<li>Початкова підтримка відображення статусу на RepRapDiscount стиль 2004 та 12864 дисплей</li>
+<li>Нові багатопрофільні вдосконалення:<ul>
+<li>Підтримка спільних обігрівачів</li>
+<li>Початкова підтримка подвійних перевезень</li>
 </ul>
 </li>
-<li>Support for configuring multiple steppers per axis (eg, dual Z)</li>
-<li>Support for custom digital and pwm output pins (with a new SET_PIN command)</li>
-<li>Initial support for a "virtual sdcard" that allows printing directly from Klipper (helps on machines too slow to run OctoPrint well)</li>
-<li>Support for setting different arm lengths on each tower of a delta</li>
-<li>Support for G-Code M220/M221 commands (speed factor override / extrude factor override)</li>
-<li>Several documentation updates:<ul>
-<li>Many new example config files for common off-the-shelf printers</li>
-<li>New multiple MCU config example</li>
-<li>New bltouch sensor config example</li>
-<li>New FAQ, config check, and G-Code documents</li>
+<li>Підтримка налаштування декількох кроків за віссю (наприклад, подвійний Z)</li>
+<li>Підтримка користувацьких цифрових та подвійних вихідних штифтів (з новим командуванням SET_PIN)</li>
+<li>Початкова підтримка "віртуальної sdcard", яка дозволяє друкувати безпосередньо з Klipper (допомагає на машинах занадто повільно працювати OctoPrint)</li>
+<li>Підтримка встановлення різних довжини руки на кожну вежу дельти</li>
+<li>Підтримка команд G-Code M220/M221 (швидкий фактор перенападу / зовнішній фактор)</li>
+<li>Кілька оновлень документації:<ul>
+<li>Багато нових прикладних конфігураційних файлів для звичайних принтерів</li>
+<li>Новий приклад конфігурації MCU</li>
+<li>Новий приклад налаштовування датчика bltouch</li>
+<li>Нові запитання, перевірка конфігурації та документи G-Code</li>
 </ul>
 </li>
-<li>Initial support for continuous integration testing on all github commits</li>
-<li>Several bug fixes and code cleanups</li>
+<li>Початкова підтримка тестування безперервної інтеграції на всіх github комітує</li>
+<li>Кілька виправлення помилок і очищення коду</li>
 </ul>
-<h2 id="klipper-050">Klipper 0.5.0<a class="headerlink" href="#klipper-050" title="Permanent link">&para;</a></h2>
-<p>Available on 20171025. Major changes in this release:</p>
+<h2 id="050">Клиппер 0.5.0<a class="headerlink" href="#050" title="Permanent link">&para;</a></h2>
+<p>Доступно на 20171025. Основні зміни цього релізу:</p>
 <ul>
-<li>Support for printers with multiple extruders.</li>
-<li>Initial support for running on the Beaglebone PRU. Initial support for the Replicape board.</li>
-<li>Initial support for running the micro-controller code in a real-time Linux process.</li>
-<li>Support for multiple micro-controllers. (For example, one could control an extruder with one micro-controller and the rest of the printer with another.) Software clock synchronization is implemented to coordinate actions between micro-controllers.</li>
-<li>Stepper performance improvements (20Mhz AVRs up to 189K steps per second).</li>
-<li>Support for controlling servos and support for defining nozzle cooling fans.</li>
-<li>Several bug fixes and code cleanups</li>
+<li>Підтримка принтерів з декількома екструдери.</li>
+<li>Початкова підтримка роботи на Beaglebone PRU. Початкова підтримка дошки Реплікапе.</li>
+<li>Початкова підтримка запуску коду мікроконтролера в режимі реального часу Linux.</li>
+<li>Підтримка декількох мікроконтролерів. (Приміром, можна контролювати екструдер з одним мікроконтролером і іншим способом.) Синхронізація програмного забезпечення здійснюється для узгодження дій мікроконтролерів.</li>
+<li>Покрокове підвищення продуктивності (20Mhz AVRs до 189K кроків на другий).</li>
+<li>Підтримка контролінгу servos та підтримки для очищення вентиляторів охолодження соплів.</li>
+<li>Кілька виправлення помилок і очищення коду</li>
 </ul>
-<h2 id="klipper-040">Klipper 0.4.0<a class="headerlink" href="#klipper-040" title="Permanent link">&para;</a></h2>
-<p>Available on 20170503. Major changes in this release:</p>
+<h2 id="040">Клиппер 0.4.0<a class="headerlink" href="#040" title="Permanent link">&para;</a></h2>
+<p>Доступно на 20170503. Основні зміни цього релізу:</p>
 <ul>
-<li>Improved installation on Raspberry Pi machines. Most of the install is now scripted.</li>
-<li>Support for corexy kinematics</li>
-<li>Documentation updates: New Kinematics document, new Pressure Advance tuning guide, new example config files, and more</li>
-<li>Stepper performance improvements (20Mhz AVRs over 175K steps per second, Arduino Due over 460K)</li>
-<li>Support for automatic micro-controller resets. Support for resets via toggling USB power on Raspberry Pi.</li>
-<li>The pressure advance algorithm now works with look-ahead to reduce pressure changes during cornering.</li>
-<li>Support for limiting the top speed of short zigzag moves</li>
-<li>Support for AD595 sensors</li>
-<li>Several bug fixes and code cleanups</li>
+<li>Покращена установка на верстатах Малина Пі. Більшість інсталяції тепер списується.</li>
+<li>Підтримка кінематики ядра</li>
+<li>Документація оновлень: Новий документ Кінематики, новий посібник з налаштування тиску, новий приклад конфігурації файлів та багато іншого</li>
+<li>Покрокове підвищення продуктивності (20Mhz AVR над 175K кроків на другий, Arduino Due over 460K)</li>
+<li>Підтримка автоматичних мікроконтролерних скидок. Підтримка скидок через toggling USB живлення на Raspberry Pi.</li>
+<li>Алгоритм передового тиску тепер працює з зовнішнім виглядом, щоб зменшити зміни тиску під час повороту.</li>
+<li>Підтримка обмеження швидкості руху зигзаг</li>
+<li>Підтримка датчиків AD595</li>
+<li>Кілька виправлення помилок і очищення коду</li>
 </ul>
-<h2 id="klipper-030">Klipper 0.3.0<a class="headerlink" href="#klipper-030" title="Permanent link">&para;</a></h2>
-<p>Available on 20161223. Major changes in this release:</p>
+<h2 id="030">Клиппер 0.3.0<a class="headerlink" href="#030" title="Permanent link">&para;</a></h2>
+<p>Доступно на 20161223. Основні зміни цього релізу:</p>
 <ul>
-<li>Improved documentation</li>
-<li>Support for robots with delta kinematics</li>
-<li>Support for Arduino Due micro-controller (ARM cortex-M3)</li>
-<li>Support for USB based AVR micro-controllers</li>
-<li>Support for "pressure advance" algorithm - it reduces ooze during prints.</li>
-<li>New "stepper phased based endstop" feature - enables higher precision on endstop homing.</li>
-<li>Support for "extended g-code" commands such as "help", "restart", and "status".</li>
-<li>Support for reloading the Klipper config and restarting the host software by issuing a "restart" command from the terminal.</li>
-<li>Stepper performance improvements (20Mhz AVRs up to 158K steps per second).</li>
-<li>Improved error reporting. Most errors now shown via the terminal along with help on how to resolve.</li>
-<li>Several bug fixes and code cleanups</li>
+<li>Покращена документація</li>
+<li>Підтримка роботів з дельта кінематичні</li>
+<li>Підтримка Arduino Мікроконтролер (ARM cortex-M3)</li>
+<li>Підтримка мікроконтролерів USB на основі AVR</li>
+<li>Підтримка алгоритму "Попередня робота" - він зменшує ooze під час друку.</li>
+<li>Нова функція "Степовий фазований торець" - дозволяє більш високу точність на торцевій панелі.</li>
+<li>Підтримка команд "розширених g-кодів" таких як "допомоги", "restart", "status".</li>
+<li>Підтримка перезавантаження конфігурації Klipper та перезавантаження програмного забезпечення, видаючи команду "restart" з терміналу.</li>
+<li>Покрокове підвищення продуктивності (20Mhz AVRs до 158K кроків на другий).</li>
+<li>Поліпшення звіту про помилку. Більшість помилок в даний час відображається через термінал разом з допомогою того, як вирішити.</li>
+<li>Кілька виправлення помилок і очищення коду</li>
 </ul>
-<h2 id="klipper-020">Klipper 0.2.0<a class="headerlink" href="#klipper-020" title="Permanent link">&para;</a></h2>
-<p>Initial release of Klipper. Available on 20160525. Major features available in the initial release include:</p>
+<h2 id="020">Клиппер 0.2.0<a class="headerlink" href="#020" title="Permanent link">&para;</a></h2>
+<p>Початковий реліз кліппера. Доступно на 20160525. Основні можливості, доступні в початковому випуску, включають:</p>
 <ul>
-<li>Basic support for cartesian printers (steppers, extruder, heated bed, cooling fan).</li>
-<li>Support for common g-code commands. Support for interfacing with OctoPrint.</li>
-<li>Acceleration and lookahead handling</li>
-<li>Support for AVR micro-controllers via standard serial ports</li>
+<li>Базова підтримка картоперіанських принтерів (попелиці, екструдер, підігріване ліжко, вентилятор охолодження).</li>
+<li>Підтримка спільних команд g-коду. Підтримка інтерфакції з OctoPrint.</li>
+<li>Прискорення та перегляд</li>
+<li>Підтримка мікроконтролерів AVR через стандартні серійні порти</li>
 </ul>
 
               

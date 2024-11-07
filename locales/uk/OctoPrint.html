@@ -13,7 +13,7 @@
     
     
       
-        <title>OctoPrint for Klipper - Klipper documentation</title>
+        <title>OctoPrint для кліппера - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#octoprint-for-klipper" class="md-skip">
+        <a href="#octoprint" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OctoPrint for Klipper
+              OctoPrint для кліппера
             
           </span>
         </div>
@@ -1328,22 +1328,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-with-octopi" class="md-nav__link">
-    Install with OctoPi
+  <a href="#octopi" class="md-nav__link">
+    Встановлення з OctoPi
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-with-kiauh" class="md-nav__link">
-    Installing with KIAUH
+  <a href="#_1" class="md-nav__link">
+    Установка КІАУХ
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuring-octoprint-to-use-klipper" class="md-nav__link">
-    Configuring OctoPrint to use Klipper
+  <a href="#octoprint-klipper" class="md-nav__link">
+    Налаштування OctoPrint для використання Klipper
   </a>
   
 </li>
@@ -1365,39 +1365,39 @@
 </a>
 
 
-<h1 id="octoprint-for-klipper">OctoPrint for Klipper<a class="headerlink" href="#octoprint-for-klipper" title="Permanent link">&para;</a></h1>
-<p>Klipper has a few options for its front ends, Octoprint was the first and original front end for Klipper. This document will give a brief overview of installing with this option.</p>
-<h2 id="install-with-octopi">Install with OctoPi<a class="headerlink" href="#install-with-octopi" title="Permanent link">&para;</a></h2>
-<p>Start by installing <a href="https://github.com/guysoft/OctoPi">OctoPi</a> on the Raspberry Pi computer. Use OctoPi v0.17.0 or later - see the <a href="https://github.com/guysoft/OctoPi/releases">OctoPi releases</a> for release information.</p>
-<p>One should verify that OctoPi boots and that the OctoPrint web server works. After connecting to the OctoPrint web page, follow the prompt to upgrade OctoPrint if needed.</p>
-<p>After installing OctoPi and upgrading OctoPrint, it will be necessary to ssh into the target machine to run a handful of system commands.</p>
-<p>Start by running these commands on your host device:</p>
-<p><strong>If you do not have git installed, please do so with:</strong></p>
-<div class="highlight"><pre><span></span><code>sudo apt install git
+<h1 id="octoprint">OctoPrint для кліппера<a class="headerlink" href="#octoprint" title="Permanent link">&para;</a></h1>
+<p>Klipper має кілька варіантів для своїх передніх кінців, Octoprint був першим і оригінальним переднім кінцем для Klipper. Цей документ дасть короткий огляд установки з цим варіантом.</p>
+<h2 id="octopi">Встановлення з OctoPi<a class="headerlink" href="#octopi" title="Permanent link">&para;</a></h2>
+<p>Почати установку <a href="https://github.com/guysoft/OctoPi">OctoPi</a> на Raspberry Pi комп'ютер. Використовуйте OctoPi v0.17.0 або пізніше - див. <a href="https://github.com/guysoft/OctoPi/випуски">OctoPi релізи</a> для отримання інформації.</p>
+<p>Ви можете перевірити, що завантаження OctoPi і що працює на сервері OctoPrint. Після підключення до веб-сторінки OctoPrint слідувати за запитом, щоб оновити OctoPrint, якщо це необхідно.</p>
+<p>Після установки OctoPi і оновлення OctoPrint, потрібно буде заштовхуватися в цільову машину, щоб запустити зручний системних команд.</p>
+<p>Після запуску цих команд на вашому пристрої хост:</p>
+<p><strong>Якщо ви не встановили git, будь ласка, з:</strong></p>
+<div class="highlight"><pre><span></span><code>sudo apt встановити git
 </code></pre></div>
 
-<p>then proceed:</p>
-<div class="highlight"><pre><span></span><code>cd ~
-git clone https://github.com/Klipper3d/klipper
-./klipper/scripts/install-octopi.sh
+<p>далі:</p>
+<div class="highlight"><pre><span></span><code>з
+git клон https://github.com/Klipper3d/klipper
+JavaScript licenses API Веб-сайт Go1.13.8
 </code></pre></div>
 
-<p>The above will download Klipper, install the needed system dependencies, setup Klipper to run at system startup, and start the Klipper host software. It will require an internet connection and it may take a few minutes to complete.</p>
-<h2 id="installing-with-kiauh">Installing with KIAUH<a class="headerlink" href="#installing-with-kiauh" title="Permanent link">&para;</a></h2>
-<p>KIAUH can be used to install OctoPrint on a variety of Linux based systems that run a form of Debian. More information can be found at <a href="https://github.com/dw-0/kiauh">https://github.com/dw-0/kiauh</a></p>
-<h2 id="configuring-octoprint-to-use-klipper">Configuring OctoPrint to use Klipper<a class="headerlink" href="#configuring-octoprint-to-use-klipper" title="Permanent link">&para;</a></h2>
-<p>The OctoPrint web server needs to be configured to communicate with the Klipper host software. Using a web browser, login to the OctoPrint web page and then configure the following items:</p>
-<p>Navigate to the Settings tab (the wrench icon at the top of the page). Under "Serial Connection" in "Additional serial ports" add:</p>
+<p>Завантажуйте Klipper, встановіть потрібні залежності системи, налаштуйте Klipper для запуску системи та запустіть програмне забезпечення Klipper. Задовольнить підключення до Інтернету і може зайняти декілька хвилин.</p>
+<h2 id="_1">Установка КІАУХ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>KIAUH може використовуватися для установки OctoPrint на різних Linux базових системах, які виконують форму Debian. Більше інформації можна знайти на <a href="https://github.com/dw-0/kiauh">https://github.com/dw-0/kiauh</a></p>
+<h2 id="octoprint-klipper">Налаштування OctoPrint для використання Klipper<a class="headerlink" href="#octoprint-klipper" title="Permanent link">&para;</a></h2>
+<p>Веб-сервер OctoPrint повинен бути налаштований для спілкування з програмним забезпеченням Klipper. Використання веб-браузера, логіна на веб-сторінку OctoPrint, а потім налаштовувати такі елементи:</p>
+<p>Навігація на вкладку «Налаштування». Під "Серійне підключення" в "Додаткові серійні порти" додати:</p>
 <div class="highlight"><pre><span></span><code>~/printer_data/comms/klippy.sock
 </code></pre></div>
 
-<p>Then click "Save".</p>
-<p><em>In some older setups this address may be <code>/tmp/printer</code></em></p>
-<p>Enter the Settings tab again and under "Serial Connection" change the "Serial Port" setting to the one added above.</p>
-<p>In the Settings tab, navigate to the "Behavior" sub-tab and select the "Cancel any ongoing prints but stay connected to the printer" option. Click "Save".</p>
-<p>From the main page, under the "Connection" section (at the top left of the page) make sure the "Serial Port" is set to the new additional one added and click "Connect". (If it is not in the available selection then try reloading the page.)</p>
-<p>Once connected, navigate to the "Terminal" tab and type "status" (without the quotes) into the command entry box and click "Send". The terminal window will likely report there is an error opening the config file - that means OctoPrint is successfully communicating with Klipper.</p>
-<p>Please proceed to <Installation.md> and the <em>Building and flashing the micro-controller</em> section</p>
+<p>Потім натисніть "Зберегти".</p>
+<p><em>У деяких старих налаштуваннях ця адреса може бути <code>/tmp/printer</code></em></p>
+<p>Введіть вкладку Параметри знову і під параметром "Серійне підключення" змінити параметр "Серійний порт" додано вище.</p>
+<p>У вкладці «Налаштування», навігація на субтаб «Бегавіор» і виберіть пункт «Перевірити будь-які поточні принти, але залишайтеся підключеними до принтера». Натисніть "Зберегти".</p>
+<p>З головної сторінки в розділі «Підключення» (вгорі зліва від сторінки) переконайтеся, що «Серійний порт» встановлюється на новий додатковий доданий і натисніть кнопку «Підключення». (Якщо це не в доступний вибір, то спробуйте перезавантажити сторінку.)</p>
+<p>Після підключення навігація до вкладки «Terminal» та типу «статус» (без лапок) в поле введення команди та натисніть кнопку «Зберегти». Вікно терміналу, швидше за все, повідомляється, що є помилка відкриття файлу налаштування - це означає, що OctoPrint успішно спілкується з Klipper.</p>
+<p>Будь ласка, перейдіть до <Installation.md> і розділу <em>Створення та прошивка мікроконтролера</em></p>
 
               
             </article>

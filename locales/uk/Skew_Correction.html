@@ -13,7 +13,7 @@
     
     
       
-        <title>Skew correction - Klipper documentation</title>
+        <title>Корекція гасіння - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#skew-correction" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Skew correction
+              Корекція гасіння
             
           </span>
         </div>
@@ -1328,36 +1328,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#print-a-calibration-object" class="md-nav__link">
-    Print a Calibration Object
+  <a href="#_2" class="md-nav__link">
+    Друк калібрування Об'єкт
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#take-your-measurements" class="md-nav__link">
-    Take your measurements
+  <a href="#_3" class="md-nav__link">
+    Візьміть ваші вимірювання
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-your-skew" class="md-nav__link">
-    Configure your skew
+  <a href="#_4" class="md-nav__link">
+    Налаштуйте свій шашлик
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-your-correction" class="md-nav__link">
-    Verifying your correction
+  <a href="#_5" class="md-nav__link">
+    Перевірити виправлення
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#caveats" class="md-nav__link">
-    Caveats
+  <a href="#_6" class="md-nav__link">
+    Печера
   </a>
   
 </li>
@@ -1379,51 +1379,51 @@
 </a>
 
 
-<h1 id="skew-correction">Skew correction<a class="headerlink" href="#skew-correction" title="Permanent link">&para;</a></h1>
-<p>Software based skew correction can help resolve dimensional inaccuracies resulting from a printer assembly that is not perfectly square. Note that if your printer is significantly skewed it is strongly recommended to first use mechanical means to get your printer as square as possible prior to applying software based correction.</p>
-<h2 id="print-a-calibration-object">Print a Calibration Object<a class="headerlink" href="#print-a-calibration-object" title="Permanent link">&para;</a></h2>
-<p>The first step in correcting skew is to print a <a href="https://www.thingiverse.com/thing:2563185/files">calibration object</a> along the plane you want to correct. There is also a <a href="https://www.thingiverse.com/thing:2972743">calibration object</a> that includes all planes in one model. You want the object oriented so that corner A is toward the origin of the plane.</p>
-<p>Make sure that no skew correction is applied during this print. You may do this by either removing the <code>[skew_correction]</code> module from printer.cfg or by issuing a <code>SET_SKEW CLEAR=1</code> gcode.</p>
-<h2 id="take-your-measurements">Take your measurements<a class="headerlink" href="#take-your-measurements" title="Permanent link">&para;</a></h2>
-<p>The <code>[skew_correction]</code> module requires 3 measurements for each plane you want to correct; the length from Corner A to Corner C, the length from Corner B to Corner D, and the length from Corner A to Corner D. When measuring length AD do not include the flats on the corners that some test objects provide.</p>
+<h1 id="_1">Корекція гасіння<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Програмне забезпечення на основі корекції скелета може допомогти вирішити об'ємні неточності, що призводить до складання принтера, що не є ідеальною площі. Зауважте, що якщо ваш принтер значно спрощує його, рекомендується спочатку використовувати механічні засоби, щоб отримати ваш принтер максимально можливо до застосування програмного забезпечення на основі корекції.</p>
+<h2 id="_2">Друк калібрування Об'єкт<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Першим кроком у виправленні шава є друк <a href="https://www.thingiverse.com/thing:2563185/files">об’єкт калібрування</a> по площині, яку ви хочете виправити. Є також <a href="https://www.thingiverse.com/thing:2972743">об'єкт калібрування</a>, що включає в себе всі літаки в одній моделі. Ви хочете, щоб об'єкт орієнтований таким чином, щоб кут А в сторону виходу літака.</p>
+<p>Переконайтеся, що не застосовується корекція шавлії під час цього друку. Ви можете зробити це шляхом видалення модуля <code>[skew_correction]</code> з принтера.cfg або випискою <code>SET_SKEW CLEAR=1</code> gcode.</p>
+<h2 id="_3">Візьміть ваші вимірювання<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Модуль <code>[skew_correction]</code> вимагає 3 вимірювань для кожної площини, яку ви хочете виправити; довжина від Corner A до Corner C, довжина від Corner B до Corner D, а довжина від Corner A до Corner D. При вимірюванні довжини AD не включають квартири на кутах, які забезпечують деякі тестові об'єкти.</p>
 <p><img alt="skew_lengths" src="img/skew_lengths.png" /></p>
-<h2 id="configure-your-skew">Configure your skew<a class="headerlink" href="#configure-your-skew" title="Permanent link">&para;</a></h2>
-<p>Make sure <code>[skew_correction]</code> is in printer.cfg. You may now use the <code>SET_SKEW</code> gcode to configure skew_correcton. For example, if your measured lengths along XY are as follows:</p>
-<div class="highlight"><pre><span></span><code>Length AC = 140.4
-Length BD = 142.8
-Length AD = 99.8
+<h2 id="_4">Налаштуйте свій шашлик<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Переконайтеся, що <code>[skew_correction]</code> знаходиться в принтері.cfg. Ви можете використовувати <code>SET_SKEW</code> gcode для налаштування skew_correcton. Наприклад, якщо виміряні довжини вздовж XY є наступним чином:</p>
+<div class="highlight"><pre><span></span><code>Довжина AC = 140.4
+Довжина BD = 142.8
+Довжина AD = 99.8
 </code></pre></div>
 
-<p><code>SET_SKEW</code> can be used to configure skew correction for the XY plane.</p>
+<p><code>SET_SKEW</code> може використовуватися для налаштування корекції шава для літака XY.</p>
 <div class="highlight"><pre><span></span><code>SET_SKEW XY=140.4,142.8,99.8
 </code></pre></div>
 
-<p>You may also add measurements for XZ and YZ to the gcode:</p>
+<p>Ви також можете додати вимірювання для XZ і YZ до gcode:</p>
 <div class="highlight"><pre><span></span><code>SET_SKEW XY=140.4,142.8,99.8 XZ=141.6,141.4,99.8 YZ=142.4,140.5,99.5
 </code></pre></div>
 
-<p>The <code>[skew_correction]</code> module also supports profile management in a manner similar to <code>[bed_mesh]</code>. After setting skew using the <code>SET_SKEW</code> gcode, you may use the <code>SKEW_PROFILE</code> gcode to save it:</p>
-<div class="highlight"><pre><span></span><code>SKEW_PROFILE SAVE=my_skew_profile
+<p>Модуль <code>[skew_correction]</code> також підтримує управління профілів в порядку, схожому на <code>[bed_mesh]</code>. Після встановлення шавлії за допомогою <code>SET_SKEW</code> gcode, ви можете використовувати <code>SKEW_PROFILE</code> gcode, щоб зберегти його:</p>
+<div class="highlight"><pre><span></span><code>ПЕВ_ПРОФІЛЕ SAVE=my_skew_profile
 </code></pre></div>
 
-<p>After this command you will be prompted to issue a <code>SAVE_CONFIG</code> gcode to save the profile to persistent storage. If no profile is named <code>my_skew_profile</code> then a new profile will be created. If the named profile exists it will be overwritten.</p>
-<p>Once you have a saved profile, you may load it:</p>
-<div class="highlight"><pre><span></span><code>SKEW_PROFILE LOAD=my_skew_profile
+<p>Після цього вам буде запропоновано випустити <code>SAVE_CONFIG</code> gcode для збереження профілю до стійких пам'яток. Якщо не існує профілю <code>my_skew_profile</code>, то створюється новий профіль. Якщо зазначений профіль існує, він буде перезаписати.</p>
+<p>Після того, як у вас є збережений профіль, ви можете завантажити його:</p>
+<div class="highlight"><pre><span></span><code>ПЕВ_ПРОФІЛЕ LOAD=my_skew_profile
 </code></pre></div>
 
-<p>It is also possible to remove an old or out of date profile:</p>
-<div class="highlight"><pre><span></span><code>SKEW_PROFILE REMOVE=my_skew_profile
+<p>Також можна видалити старий або з профілю дати:</p>
+<div class="highlight"><pre><span></span><code>ПЕВ_ПРОФІЛЕ REMOVE=my_skew_profile
 </code></pre></div>
 
-<p>After removing a profile you will be prompted to issue a <code>SAVE_CONFIG</code> to make this change persist.</p>
-<h2 id="verifying-your-correction">Verifying your correction<a class="headerlink" href="#verifying-your-correction" title="Permanent link">&para;</a></h2>
-<p>After skew_correction has been configured you may reprint the calibration part with correction enabled. Use the following gcode to check your skew on each plane. The results should be lower than those reported via <code>GET_CURRENT_SKEW</code>.</p>
-<div class="highlight"><pre><span></span><code>CALC_MEASURED_SKEW AC=&lt;ac_length&gt; BD=&lt;bd_length&gt; AD=&lt;ad_length&gt;
+<p>Після видалення профілю ви підкажете <code>SAVE_CONFIG</code>, щоб зробити цю зміну персистентом.</p>
+<h2 id="_5">Перевірити виправлення<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Після того, як skew_correction було налаштовано, ви можете відредагувати відділ калібрування з ввімкненим виправленням. Використовуйте наступний gcode для перевірки спинки на кожній площині. Результати повинні бути нижче, ніж дані, які повідомляються <code>GET_CURRENT_SKEW</code>.</p>
+<div class="highlight"><pre><span></span><code>CALC_MEASURED_SKEW AC=&lt;ac_довжина&gt; BD=&lt;bd_довжина&gt; AD=&lt;ad_довжина&gt;
 </code></pre></div>
 
-<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
-<p>Due to the nature of skew correction it is recommended to configure skew in your start gcode, after homing and any kind of movement that travels near the edge of the print area such as a purge or nozzle wipe. You may use use the <code>SET_SKEW</code> or <code>SKEW_PROFILE</code> gcodes to accomplish this. It is also recommended to issue a <code>SET_SKEW CLEAR=1</code> in your end gcode.</p>
-<p>Keep in mind that it is possible for <code>[skew_correction]</code> to generate a correction that moves the tool beyond the printer's boundaries on the X and/or Y axes. It is recommended to arrange parts away from the edges when using <code>[skew_correction]</code>.</p>
+<h2 id="_6">Печера<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>У зв'язку з характером корекції шава рекомендується налаштовувати шавбу у вашому старті gcode, після гоління і будь-який вид руху, який просувається біля краю площі друку, таких як хірург або насадка. Ви можете використовувати <code>SET_SKEW</code> або <code>SKEW_PROFILE</code> gcodes для виконання цього. Також рекомендується випустити <code>SET_SKEW CLEAR=1</code> в кінцевому gcode.</p>
+<p>Впевнений, що це можливо для <code>[skew_correction]</code>, щоб створити корекцію, яка переміщує інструмент за межі принтера на X і / або Y осі. Рекомендовано влаштувати частини з країв при використанні <code>[skew_correction]</code>.</p>
 
               
             </article>

@@ -1328,36 +1328,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-does-it-work" class="md-nav__link">
-    How does it work?
+  <a href="#_2" class="md-nav__link">
+    # Як це працює?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#template-for-menu-variables" class="md-nav__link">
-    Template for menu variables
+  <a href="#_3" class="md-nav__link">
+    Шаблон змінних меню
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calibration-procedure" class="md-nav__link">
-    Calibration procedure
+  <a href="#_4" class="md-nav__link">
+    Процедура калібрування
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-enable-sensor" class="md-nav__link">
-    How to enable sensor
+  <a href="#_5" class="md-nav__link">
+    Як включити датчик
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
+  <a href="#_6" class="md-nav__link">
+    Журналювання
   </a>
   
 </li>
@@ -1380,39 +1380,39 @@
 
 
 <h1 id="_1">Сенсор ширини філамента на датчику Холла<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>This document describes Filament Width Sensor host module. Hardware used for developing this host module is based on two Hall linear sensors (ss49e for example). Sensors in the body are located on opposite sides. Principle of operation: two hall sensors work in differential mode, temperature drift same for sensor. Special temperature compensation not needed.</p>
-<p>You can find designs at <a href="https://www.thingiverse.com/thing:4138933">Thingiverse</a>, an assembly video is also available on <a href="https://www.youtube.com/watch?v=TDO9tME8vp4">Youtube</a></p>
-<p>To use Hall filament width sensor, read <a href="Config_Reference.html#hall_filament_width_sensor">Config Reference</a> and <a href="G-Codes.html#hall_filament_width_sensor">G-Code documentation</a>.</p>
-<h2 id="how-does-it-work">How does it work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
-<p>Sensor generates two analog output based on calculated filament width. Sum of output voltage always equals to detected filament width. Host module monitors voltage changes and adjusts extrusion multiplier. I use the aux2 connector on a ramps-like board with the analog11 and analog12 pins. You can use different pins and different boards.</p>
-<h2 id="template-for-menu-variables">Template for menu variables<a class="headerlink" href="#template-for-menu-variables" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>[menu __main __filament __width_current]
-type: command
-enable: {&#39;hall_filament_width_sensor&#39; in printer}
-name: Dia: {&#39;%.2F&#39; % printer.hall_filament_width_sensor.Diameter}
-index: 0
+<p>Цей документ описує модуль датчика нитки. Обладнання, що використовується для розробки цього модуля хосту на основі двох лінійних датчиків холу (s49e наприклад). Датчики в тілі розташовані по протилежних сторонах. Принцип роботи: два датчики залу працюють в диференціальному режимі, температурний дрейф однаковий для датчика. Особлива температура не потрібна.</p>
+<p>Ви можете знайти зразки на <a href="https://www.thingiverse.com/thing:4138933">Thingiverse</a>, відео з збірки також доступний на <a href="https://www.youtube.com/watch?v=TDO9tME8vp4">Youtube</a></p>
+<p>Для використання датчика ширини залів, читання <a href="Config_Reference.html#hall_filament_width_sensor">Config Reference</a> і <a href="G-Codes.html#hall_filament_width_sensor">G-Code документація</a>.</p>
+<h2 id="_2"># Як це працює?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Датчик генерує дві аналогові виходи на основі розрахункової ширини нитки. Сума вихідної напруги завжди дорівнює виявленню ширини нитки. Модуль Хост відстежує зміни напруги і регулює екструзійне багатоплище. Я користуюсь роз'ємом aux2 на схожій дошці ramps з аналогом11 і аналоговими12 шпильками. Ви можете використовувати різні шпильки і різні дошки.</p>
+<h2 id="_3">Шаблон змінних меню<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>__main __filament __width_current]
+Тип: команда
+Увімкніть: {&#39;hall_filament_width_sensor&#39; в принтері}
+name: Dia: {&#39;%.2F&#39; % принтер.hall_filament_width_sensor.Diameter}
+індекс: 0
 
-[menu __main __filament __raw_width_current]
-type: command
-enable: {&#39;hall_filament_width_sensor&#39; in printer}
-name: Raw: {&#39;%4.0F&#39; % printer.hall_filament_width_sensor.Raw}
-index: 1
+__main __filament __raw_width_current]
+Тип: команда
+Увімкніть: {&#39;hall_filament_width_sensor&#39; в принтері}
+Ім&#39;я: Сирий: {&#39;%4.0F&#39; % принтер.hall_filament_width_sensor.Raw}
+Індекс: 1 час
 </code></pre></div>
 
-<h2 id="calibration-procedure">Calibration procedure<a class="headerlink" href="#calibration-procedure" title="Permanent link">&para;</a></h2>
-<p>To get raw sensor value you can use menu item or <strong>QUERY_RAW_FILAMENT_WIDTH</strong> command in terminal.</p>
+<h2 id="_4">Процедура калібрування<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Для отримання значення сирого датчика можна використовувати пункт меню або <strong>QUERY_RAW_FILAMENT_WIDTH</strong> в терміналі.</p>
 <ol>
-<li>Insert first calibration rod (1.5 mm size) get first raw sensor value</li>
-<li>Insert second calibration rod (2.0 mm size) get second raw sensor value</li>
-<li>Save raw sensor values in config parameter <code>Raw_dia1</code> and <code>Raw_dia2</code></li>
+<li>Вставити перший калібрувальний стрижень (розмір 1,5 мм) отримати перше значення датчика</li>
+<li>Вставте другий калібрувальний стрижень (розмір 2,0 мм) отримайте друге значення датчика</li>
+<li>Зберегти значення датчика в параметрі конфігурації <code>Raw_dia1</code> і <code>Raw_dia2</code></li>
 </ol>
-<h2 id="how-to-enable-sensor">How to enable sensor<a class="headerlink" href="#how-to-enable-sensor" title="Permanent link">&para;</a></h2>
-<p>By default, the sensor is disabled at power-on.</p>
-<p>To enable the sensor, issue <strong>ENABLE_FILAMENT_WIDTH_SENSOR</strong> command or set the <code>enable</code> parameter to <code>true</code>.</p>
-<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
-<p>By default, diameter logging is disabled at power-on.</p>
-<p>Issue <strong>ENABLE_FILAMENT_WIDTH_LOG</strong> command to start logging and issue <strong>DISABLE_FILAMENT_WIDTH_LOG</strong> command to stop logging. To enable logging at power-on, set the <code>logging</code> parameter to <code>true</code>.</p>
-<p>Filament diameter is logged on every measurement interval (10 mm by default).</p>
+<h2 id="_5">Як включити датчик<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>За замовчуванням датчик вимкнено в Power-on.</p>
+<p>Щоб увімкнути датчик, номер <strong>ENABLE_FILAMENT_WIDTH_SENSOR</strong> команди або <code>встановити</code> параметр <code>true</code>.</p>
+<h2 id="_6">Журналювання<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>За замовчуванням, вхід діаметра відключений на Power-on.</p>
+<p><strong>ENABLE_FILAMENT_WIDTH_LOG</strong> команди, щоб розпочати журналювання та випуск <strong>DISABLE_FILAMENT_WIDTH_LOG</strong> команди, щоб зупинити реєстрацію. Щоб увімкнути запис у Power-on, встановіть параметр <code></code> до <code>true</code>.</p>
+<p>Діаметр фільтра вводять на кожен інтервал вимірювання (10 мм за замовчуванням).</p>
 
               
             </article>

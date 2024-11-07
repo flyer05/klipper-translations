@@ -13,7 +13,7 @@
     
     
       
-        <title>Eddy Current Inductive probe - Klipper documentation</title>
+        <title>Eddy Поточний індуктивний зонд - Klipper documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#eddy-current-inductive-probe" class="md-skip">
+        <a href="#eddy" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Eddy Current Inductive probe
+              Eddy Поточний індуктивний зонд
             
           </span>
         </div>
@@ -1328,8 +1328,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#thermal-drift-calibration" class="md-nav__link">
-    Thermal Drift Calibration
+  <a href="#_1" class="md-nav__link">
+    Термозбіжне калібрування
   </a>
   
 </li>
@@ -1351,51 +1351,51 @@
 </a>
 
 
-<h1 id="eddy-current-inductive-probe">Eddy Current Inductive probe<a class="headerlink" href="#eddy-current-inductive-probe" title="Permanent link">&para;</a></h1>
-<p>This document describes how to use an <a href="https://en.wikipedia.org/wiki/Eddy_current">eddy current</a> inductive probe in Klipper.</p>
-<p>Currently, an eddy current probe can not be used for Z homing. The sensor can only be used for Z probing.</p>
-<p>Start by declaring a <a href="Config_Reference.html#probe_eddy_current">probe_eddy_current config section</a> in the printer.cfg file. It is recommended to set the <code>z_offset</code> to 0.5mm. It is typical for the sensor to require an <code>x_offset</code> and <code>y_offset</code>. If these values are not known, one should estimate the values during initial calibration.</p>
-<p>The first step in calibration is to determine the appropriate DRIVE_CURRENT for the sensor. Home the printer and navigate the toolhead so that the sensor is near the center of the bed and is about 20mm above the bed. Then issue an <code>LDC_CALIBRATE_DRIVE_CURRENT CHIP=&lt;config_name&gt;</code> command. For example, if the config section was named <code>[probe_eddy_current my_eddy_probe]</code> then one would run <code>LDC_CALIBRATE_DRIVE_CURRENT CHIP=my_eddy_probe</code>. This command should complete in a few seconds. After it completes, issue a <code>SAVE_CONFIG</code> command to save the results to the printer.cfg and restart.</p>
-<p>The second step in calibration is to correlate the sensor readings to the corresponding Z heights. Home the printer and navigate the toolhead so that the nozzle is near the center of the bed. Then run an <code>PROBE_EDDY_CURRENT_CALIBRATE CHIP=my_eddy_probe</code> command. Once the tool starts, follow the steps described at <a href="Bed_Level.html#the-paper-test">"the paper test"</a> to determine the actual distance between the nozzle and bed at the given location. Once those steps are complete one can <code>ACCEPT</code> the position. The tool will then move the the toolhead so that the sensor is above the point where the nozzle used to be and run a series of movements to correlate the sensor to Z positions. This will take a couple of minutes. After the tool completes, issue a <code>SAVE_CONFIG</code> command to save the results to the printer.cfg and restart.</p>
-<p>After initial calibration it is a good idea to verify that the <code>x_offset</code> and <code>y_offset</code> are accurate. Follow the steps to <a href="Probe_Calibrate.html#calibrating-probe-x-and-y-offsets">calibrate probe x and y offsets</a>. If either the <code>x_offset</code> or <code>y_offset</code> is modified then be sure to run the <code>PROBE_EDDY_CURRENT_CALIBRATE</code> command (as described above) after making the change.</p>
-<p>Once calibration is complete, one may use all the standard Klipper tools that use a Z probe.</p>
-<p>Note that eddy current sensors (and inductive probes in general) are susceptible to "thermal drift". That is, changes in temperature can result in changes in reported Z height. Changes in either the bed surface temperature or sensor hardware temperature can skew the results. It is important that calibration and probing is only done when the printer is at a stable temperature.</p>
-<h2 id="thermal-drift-calibration">Thermal Drift Calibration<a class="headerlink" href="#thermal-drift-calibration" title="Permanent link">&para;</a></h2>
-<p>As with all inductive probes, eddy current probes are subject to significant thermal drift. If the eddy probe has a temperature sensor on the coil it is possible to configure a <code>[temperature_probe]</code> to report coil temperature and enable software drift compensation. To link a temperature probe to an eddy current probe the <code>[temperature_probe]</code> section must share a name with the <code>[probe_eddy_current]</code> section. For example:</p>
+<h1 id="eddy">Eddy Поточний індуктивний зонд<a class="headerlink" href="#eddy" title="Permanent link">&para;</a></h1>
+<p>Цей документ описує, як використовувати <a href="https://en.wikipedia.org/wiki/Eddy_current">видимий струм</a> індуктивний зонд в Klipper.</p>
+<p>В даний час eddy поточний зонд не може використовуватися для Z-підсмоктування. Датчик може використовуватися тільки для зондування Z.</p>
+<p>Початок, декларування <a href="Config_Reference.html#probe_eddy_current">probe_eddy_current_config section</a> в файлі принтера.cfg. Рекомендується встановити <code>z_offset</code> до 0.5mm. Для датчика потрібно <code>x_offset</code> і <code>y_offset</code>. Якщо ці значення не відомі, слід оцінити значення при початковому калібруванні.</p>
+<p>Для визначення відповідного DRIVE_CURRENT для датчика. Головна принтер і навігація інструментальногоголови так, щоб датчик знаходиться біля центру ліжка і становить близько 20мм над ліжком. <code>LDC_CALIBRATE_DRIVE_CURRENT CHIP=&lt;config_name&gt;</code> команда. Наприклад, якщо розділ конфігурації був названий <code>[probe_eddy_current my_eddy_probe]</code> потім один буде курсувати <code>LDC_CALIBRATE_DRIVE_CURRENT CHIP=my_eddy_probe</code>. Ця команда повинна завершитися протягом декількох секунд. Після завершення випуску <code>SAVE_CONFIG</code> команди зберегти результати на принтері.cfg і перезавантаження.</p>
+<p>Другим кроком у калібруванні є співвіднесення показань датчика з відповідними висотами Z. Встановіть принтер і перемістіть інструментальну головку так, щоб сопло було поблизу центру станини. Потім запустіть команду <code>PROBE_EDDY_CURRENT_CALIBRATE CHIP=my_eddy_probe</code>. Коли інструмент запуститься, виконайте кроки, описані в <a href="Bed_Level.html#the-paper-test">"тест паперу"</a>, щоб визначити фактичну відстань між соплом і ложем у вказаному місці. Після завершення цих кроків можна «ПРИЙНЯТИ» позицію. Потім інструмент перемістить головку так, щоб датчик знаходився над точкою, де раніше було сопло, і виконає серію рухів, щоб співвіднести датчик із положеннями Z. Це займе кілька хвилин. Після завершення роботи інструменту введіть команду <code>SAVE_CONFIG</code>, щоб зберегти результати в printer.cfg і перезапустіть.</p>
+<p>Після початкового калібрування це хороша ідея, щоб переконатися, що <code>x_offset</code> і <code>y_offset</code> є точним. Дотримуйтесь кроків до <a href="Probe_Calibrate.html#calibrating-probe-x-і-offsets">calibrate probe x і y offsets</a>. Якщо ви використовуєте <code>x_offset</code> або <code>y_offset</code>, то обов'язково запустіть <code>PROBE_EDDY_CURRENT_CALIBRATE</code> команди (як описано вище) після внесення змін.</p>
+<p>Після завершення калібрування можна скористатися всіма стандартними інструментами для затискачів, які використовують зонд Z.</p>
+<p>Зауважте, що датчики денного струму (і індуктивні зонди в цілому) схильні до «термального дрейфу». Таким чином, зміни температури можуть призвести до змін, внесених до висоти Z. Зміна температури поверхні ліжка або датчика температури апаратного пристрою можна розрізати результати. Важливо, що калібрування і пробування проводиться тільки при стабільній температурі принтера.</p>
+<h2 id="_1">Термозбіжне калібрування<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Як з усіма індуктивними зонами, вихровими струмовими зонами підлягають значному термічному дрейфу. Якщо eddy probe має датчик температури на котушкі, можна налаштувати <code>[температурний_probe]</code>, щоб повідомити температуру котушки і увімкнути компенсацію накопичувача програмного забезпечення. Щоб зв'язати температурний зонд до eddy поточного зонду <code>[температурний_probe]</code> розділ повинен ділитися назвою <code>[probe_eddy_current]</code> розділ. Наприклад:</p>
 <div class="highlight"><pre><span></span><code>[probe_eddy_current my_probe]
-# eddy probe configuration...
+# eddy probe конфігурації ...
 
-[temperature_probe my_probe]
-# temperature probe configuration...
+[температура_пробе мій_пробе]
+# конфігурації температурного зонда ...
 </code></pre></div>
 
-<p>See the <a href="Config_Reference.html#temperature_probe">configuration reference</a> for further details on how to configure a <code>temperature_probe</code>. It is advised to configure the <code>calibration_position</code>, <code>calibration_extruder_temp</code>, <code>extruder_heating_z</code>, and <code>calibration_bed_temp</code> options, as doing so will automate some of the steps outlined below.</p>
-<p>Eddy probe manufacturers may offer a stock drift calibration that can be manually added to <code>drift_calibration</code> option of the <code>[probe_eddy_current]</code> section. If they do not, or if the stock calibration does not perform well on your system, the <code>temperature_probe</code> module offers a manual calibration procedure via the <code>TEMPERATURE_PROBE_CALIBRATE</code> gcode command.</p>
-<p>Prior to performing calibration the user should have an idea of what the maximum attainable temperature probe coil temperature is. This temperature should be used to set the <code>TARGET</code> parameter of the <code>TEMPERATURE_PROBE_CALIBRATE</code> command. The goal is to calibrate across the widest temperature range possible, thus its desirable to start with the printer cold and finish with the coil at the maximum temperature it can reach.</p>
-<p>Once a <code>[temperature_probe]</code> is configured, the following steps may be taken to perform thermal drift calibration:</p>
+<p>Див. <a href="Config_Reference.html# Infrastructure_probe">Налаштування посилання</a> для подальших відомостей про те, як налаштувати <code>темперія_probe</code>. Налаштуйте <code>calibration_position</code>, <code>calibration_extruder_temp</code>, <code>extruder_heating_z</code>, і <code>calibration_bed_temp</code> параметри, так як це буде автоматизувати деякі кроки, викладені нижче.</p>
+<p>Виробники Едді-пробе можуть запропонувати калібрування запасів, які можна вручну додавати до <code>drift_calibration</code> параметр <code>[probe_eddy_current]</code>. Якщо вони не є, або якщо калібрування запасів не виконує добре на вашій системі, модуль <code>Температура_probe</code> пропонує процедуру ручного калібрування через <code>TEMPERATURE_PROBE_CALIBRATE</code> gcode команди.</p>
+<p>Перед виконанням калібрування користувач повинен мати уявлення про те, що максимальна інтенсивна температура зондової температури є температура. Ця температура повинна бути використана для встановлення параметра <code>TARGET</code> <code>TEMPERATURE_PROBE_CALIBRATE</code>. Мета полягає в тому, щоб калібрувати по широкому діапазоні температур, таким чином, бажано починати з принтера холодом і закінчуючи котушкою при максимальній температурі вона може досягати.</p>
+<p>Після того, як налаштовується <code>[температурний_probe]</code>, можна приймати наступні кроки для виконання термообробки:</p>
 <ul>
-<li>The probe must be calibrated using <code>PROBE_EDDY_CURRENT_CALIBRATE</code> when a <code>[temperature_probe]</code> is configured and linked. This captures the temperature during calibration which is necessary to perform thermal drift compensation.</li>
-<li>Make sure the nozzle is free of debris and filament.</li>
-<li>The bed, nozzle, and probe coil should be cold prior to calibration.</li>
-<li>The following steps are required if the <code>calibration_position</code>, <code>calibration_extruder_temp</code>, and <code>extruder_heating_z</code> options in <code>[temperature_probe]</code> are <strong>NOT</strong> configured:<ul>
-<li>Move the tool to the center of the bed. Z should be 30mm+ above the bed.</li>
-<li>Heat the extruder to a temperature above the maximum safe bed temperature. 150-170C should be sufficient for most configurations. The purpose of heating the extruder is to avoid nozzle expansion during calibration.</li>
-<li>When the extruder temperature has settled, move the Z axis down to about 1mm above the bed.</li>
+<li>Ви повинні бути калібровані за допомогою <code>PROBE_EDDY_CURRENT_CALIBRATE</code> при налаштуванні та пов'язаному настройку `. Це захоплює температуру під час калібрування, яка необхідна для виконання теплової компенсації.</li>
+<li>Переконайтеся, що сопла є безкоштовним від сміття і ниток.</li>
+<li>Ліжко, насадка, і пробіжна котушка повинна бути холодною до калібрування.</li>
+<li>Наступні кроки потрібні, якщо <code>calibration_position</code>, <code>calibration_extruder_temp</code>, і <code>extruder_heating_z</code> параметри <code>[температур_probe]</code> <strong>NOT</strong> налаштовані:<ul>
+<li>Перемістити засіб до центру ліжка. З повинно бути 30мм+ над ліжком.</li>
+<li>Підігрів екструдера до температури над максимальною кімнатною температурою. 150-170К повинен бути достатнім для більшості конфігурацій. Мета обігріву екструдера полягає в тому, щоб уникнути розширення насадок під час калібрування.</li>
+<li>Коли температура екструдера влаштована, перемістіть осі Z до близько 1 мм над ліжком.</li>
 </ul>
 </li>
-<li>Start drift calibration. If the probe's name is <code>my_probe</code> and the maximum probe temperature we can achieve is 80C, the appropriate gcode command is <code>TEMPERATURE_PROBE_CALIBRATE PROBE=my_probe TARGET=80</code>. If configured, the tool will move to the X,Y coordinate specified by the <code>calibration_position</code> and the Z value specified by <code>extruder_heating_z</code>. After heating the extruder to the specified temperature the tool will move to the Z value specified by the<code>calibration_position</code>.</li>
-<li>The procedure will request a manual probe. Perform the manual probe with the paper test and <code>ACCEPT</code>. The calibration procedure will take the first set of samples with the probe then park the probe in the heating position.</li>
-<li>If the <code>calibration_bed_temp</code> is <strong>NOT</strong> configured turn on the bed heat to the maximum safe temperature. Otherwise this step will be performed automatically.</li>
-<li>By default the calibration procedure will request a manual probe every 2C between samples until the <code>TARGET</code> is reached. The temperature delta between samples can be customized by setting the <code>STEP</code> parameter in <code>TEMPERATURE_PROBE_CALIBRATE</code>. Care should be taken when setting a custom <code>STEP</code> value, a value too high may request too few samples resulting in a poor calibration.</li>
-<li>The following additional gcode commands are available during drift calibration:<ul>
-<li><code>TEMPERATURE_PROBE_NEXT</code> may be used to force a new sample before the step delta has been reached.</li>
-<li><code>TEMPERATURE_PROBE_COMPLETE</code> may be used to complete calibration before the <code>TARGET</code> has been reached.</li>
-<li><code>ABORT</code> may be used to end calibration and discard results.</li>
+<li>Почати калібрування дрейфу. Якщо ім'я пробе <code>my_probe</code> і максимальна температура проби ми можемо досягати 80C, відповідна команда gcode <code>TEMPERATURE_PROBE_CALIBRATE PROBE=my_probe TARGET=80</code>. При налаштуванні інструмент перейде до координат X,Y, зазначеного <code>calibration_position</code> і значення Z, зазначеного <code>extruder_heating_z</code>. Після нагріву екструдера до вказаної температури інструмент перейде до значення Z, зазначеного <code>calibration_position</code>.</li>
+<li>Процедуру буде вимагати ручного зонду. Виконайте ручний зонд з паперовим тестом та <code>ACCEPT</code>. Процедуру калібрування візьмуть перший набір зразків зондом, потім паркують зону в положенні опалення.</li>
+<li>Якщо <code>calibration_bed_temp</code> is <strong>NOT</strong> налаштовується поворот на вогні ліжка до максимальної безпечної температури. В іншому випадку цей крок буде виконуватися автоматично.</li>
+<li>За замовчуванням процедура калібрування буде вимагати ручного зонду кожні 2C між зразками до досягнення <code>TARGET</code>. Температурний дельта між зразками можна налаштувати за допомогою параметра <code>STEP</code> <code>TEMPERATURE_PROBE_CALIBRATE</code>. Порада повинна бути прийнята при налаштуванні на замовлення <code>STP</code> значення, значення занадто висока може вимагати занадто кілька зразків, що призводить до поганого калібрування.</li>
+<li>Для калібрування дрифт доступні наступні додаткові команди gcode:<ul>
+<li><code>TEMPERATURE_PROBE_NEXT</code> може використовуватися для посилення нового зразка перед початком дельти.</li>
+<li><code>TEMPERATURE_PROBE_COMPLETE</code> може використовуватися для повного калібрування до <code>TARGET</code>.</li>
+<li><code>ABORT</code> може бути використана для кінцевого калібрування та результатів віддачі.</li>
 </ul>
 </li>
-<li>When calibration is finished use <code>SAVE_CONFIG</code> to store the drift calibration.</li>
+<li>Після закінчення калібрування використовується <code>SAVE_CONFIG</code> для зберігання калібрування дрифту.</li>
 </ul>
-<p>As one may conclude, the calibration process outlined above is more challenging and time consuming than most other procedures. It may require practice and several attempts to achieve an optimal calibration.</p>
+<p>Як можна зробити висновок, процес калібрування окреслено вище, є більш складним і трудомістким, ніж більшість інших процедур. Для досягнення оптимального калібрування може знадобитися практика та декілька спроб.</p>
 
               
             </article>
